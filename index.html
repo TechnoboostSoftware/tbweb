@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Technoboost</title>
+  </head>
+  <body class="bg-custom">
+    <div class="bg-primary md:pb-24 pb-10 md:rounded-b-[66px] rounded-b-2xl">
+      <header
+        class="flex justify-between items-center mx-4 md:mx-10 relative"
+        style="transform: translateY(-30px)"
+      >
+        <div class="flex items-center md:mt-4 md:mx-0">
+          <a href="index.html">
+            <img
+              src="images/logo.svg"
+              class="w-44 md:w-full pt-5 md:pt-0"
+              alt="Logo"
+            />
+          </a>
+        </div>
+      </header>
+      <!-- LETS CONNECT -->
+      <lets-connect></lets-connect>
+      <techno-boost-fixed-nav></techno-boost-fixed-nav>
+      <!-- HERO SECTION -->
+      <section
+        class="md:flex flex-col px-4 md:px-10 mb-20 overflow-hidden hidden"
+      >
+        <div
+          class="flex flex-col md:flex-row md:justify-between items-center text-center md:text-left"
+        >
+          <h1 class="text-6xl lg:text-9xl text-center animate-from-left">
+            Driving Growth
+          </h1>
+          <img
+            src="images/hero.svg"
+            alt="Hero Image"
+            class="w-full md:w-1/3 lg:w-1/4 lg:block hidden animate-from-right"
+          />
+        </div>
+        <h1
+          class="text-4xl md:text-6xl lg:text-9xl text-nowrap md:mt-7 mt-4 animate-from-left text-center md:text-left"
+        >
+          With <span class="herotextcolor">AI & Automation.</span>
+        </h1>
+        <h1
+          class="text-2xl md:text-6xl text-subTitel md:mt-7 mt-4 text-center md:text-left typing leading-18"
+        >
+          Cloud First, Digital First, AI First.
+        </h1>
+      </section>
+      <!-- MOBILE HERO SECTION -->
+      <div class="flex flex-col gap-4 mx-4 overflow-hidden md:hidden">
+        <h1 class="text-5xl animate-from-left">Driving Growth</h1>
+        <div class="flex gap-2 items-center">
+          <span class="text-5xl animate-from-left">With</span>
+          <span
+            ><img
+              src="images/hero-moblie.svg"
+              class="w-52 animate-from-right"
+              alt=""
+          /></span>
+        </div>
+        <h1 class="text-5xl herotextcolor animate-from-left">
+          AI & Automation
+        </h1>
+        <h1 class="text-subTitel text-lg typing">
+          Cloud First, Digital First, AI First.
+        </h1>
+      </div>
+      <!-- FIXED NAV -->
+      <techno-boost-fixed-nav></techno-boost-fixed-nav>
+      <!-- TIME SECTION -->
+      <div class="flex flex-col gap-2 md:mb-20 my-10 md:my-0 px-10">
+        <div class="flex flex-col md:flex-row gap-1 items-center">
+          <span><img src="images/time.svg" alt="" /></span>
+          <div class="flex">
+            <span>HQ: </span>
+            <h1 class="font-semibold" id="clock"></h1>
+            <h1 class="ml-1">IST</h1>
+            <h1 class="text-xs ml-3 md:block hidden">Servicing Earth</h1>
+          </div>
+        </div>
+
+        <div class="max-w-xs text-sm md:block hidden">
+          <h1>
+            Turn bold ideas into impactful brand experiences with the handiwork
+            and help of our collective bunch.
+          </h1>
+        </div>
+      </div>
+
+      <div
+        class="bg-white mx-4 lg:mx-14 rounded-3xl flex flex-col items-center"
+      >
+        <div class="flex flex-col items-center mt-13 pt-10 mx-4">
+          <h1 class="text-center text-5xl">
+            Innovate. Scale. <span class="herotextcolor">Succeed</span>
+          </h1>
+          <h1 class="text-center max-w-5xl text-lg text-[#667085] mt-5">
+            Your Partner in Transformative Business Solutions. With Technoboost,
+            you are not just building software solutions you're creating a
+            custom digital solutions that is tailor designed for your business,
+            customers and data.
+          </h1>
+        </div>
+        <!-- CARD SECTION -->
+        <div
+          class="flex flex-col lg:flex-row justify-center gap-5 mx-4 lg:mx-8 py-10"
+        >
+          <!-- Card 1 -->
+          <div
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+          >
+            <div>
+              <h1 class="text-lg">Build With Speed.</h1>
+              <p class="mt-3 text-[#667085]">
+                We aim to help you innovate and grow quickly while upholding top
+                quality.
+              </p>
+            </div>
+            <div class="h-[150px] flex items-center justify-center my-8">
+              <img
+                src="images/card-1.svg"
+                class="max-h-full object-contain"
+                alt="Build With Speed"
+              />
+            </div>
+            <div class="mt-auto hidden">
+              <a href="#" class="">Know More ></a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+          >
+            <div>
+              <h1 class="text-lg">Deploy With Confidence.</h1>
+              <p class="mt-3 text-[#667085]">
+                We provide secure, scalable solutions for seamless deployments
+                that drive your growth.
+              </p>
+            </div>
+            <div class="h-[150px] flex items-center justify-center my-2">
+              <img
+                src="images/card-2.svg"
+                class="max-h-full object-contain"
+                alt="Deploy With Confidence"
+              />
+            </div>
+            <div class="mt-auto hidden">
+              <a href="#" class="">Know More ></a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+          >
+            <div>
+              <h1 class="text-lg">Secure Your ROI.</h1>
+              <p class="mt-3 text-[#667085]">
+                One-size-fits-all doesn't apply to software. We create tailored
+                solutions that enhance your returns.
+              </p>
+            </div>
+            <div class="h-[150px] flex items-center justify-center my-6">
+              <img
+                src="images/card-3.svg"
+                class="max-h-full object-contain"
+                alt="Secure Your ROI"
+              />
+            </div>
+            <div class="mt-auto hidden">
+              <a href="#" class="">Know More ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- OUR SERVICES -->
+      <div id="our-service" class="lg:mx-18 mx-4 md:mt-32 mt-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
+        >
+          <span class="text-5xl lg:text-9xl flex md:flex-col gap-2 gap-0">
+            <h1 class="pb-0 text-center md:text-left">Our</h1>
+            <h1>Services</h1>
+          </span>
+          <h1 class="text-center text-sm mt-1 block md:hidden">
+            Your brand is more than just a look; it’s a vibrant entity. We
+            nurture its growth by infusing a fresh outlook and teamwork into
+            every project we undertake.
+          </h1>
+        </div>
+        <div class="mt-10">
+          <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="pages/ux-design.html"
+              ;
+              class="bg-[#31F7C8] p-4 md: p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
+            >
+              <div class="w-full md:max-w-2xs">
+                <img
+                  src="images/ux-design.svg"
+                  class="w-16 mb-5 md:mb-8"
+                  alt="UX Design"
+                />
+                <h1 class="text-2xl md:md:text-4xl text-2xl mb-3">
+                  UX Design.
+                </h1>
+                <p class="">
+                  Your vision drives our mission. We prioritize teamwork and go
+                  the extra mile to bring your UX design dreams to life.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="pages/software-product.html"
+              ;
+              class="md:p-12 p-4 md:col-span-2 bg-white rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
+            >
+              <img
+                src="images/sowftwere-product.svg"
+                class="w-16 self-start 2xl:ml-6"
+                alt=""
+              />
+              <div class="md:mt-8 mt-5">
+                <h1 class="text-2xl md:md:text-4xl text-2xl mb-3">
+                  Product Engineering & Digital Services.
+                </h1>
+                <p class="max-w-2xl hidden md:block">
+                  We embrace cutting-edge technologies, providing innovative
+                  software engineering services that adapt to tomorrow's
+                  demands. Our team delivers solutions that meet current needs
+                  and anticipate future trends.
+                </p>
+                <p class="block md:hidden">
+                  We provide software services that adapt to tomorrow's demands.
+                  Our team delivers solutions.
+                </p>
+              </div>
+            </a>
+            <a
+              href="pages/smartsheet-solutions.html"
+              ;
+              class="bg-[#17313B] p-4 md:p-12 rounded-4xl text-white flex flex-col items-start md:items-center cursor-pointer hover:scale-105 transition-all"
+            >
+              <div class="w-full md:max-w-2xs">
+                <img
+                  src="images/smart-sheet.svg"
+                  class="w-16 self-start"
+                  alt=""
+                />
+                <div class="md:mt-8 mt-5">
+                  <h1 class="md:text-4xl text-2xl mb-3">Smart-sheet.</h1>
+                  <p class="max-w-2xs">
+                    You’re vital to our vision. We focus on collaboration and
+                    work hard to help you grow & succeed with our services.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="pages/data-analytics.html"
+              ;
+              class="bg-[#F6FA5E] p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
+            >
+              <div class="w-full md:max-w-2xs">
+                <img
+                  src="images/data-analyticks.svg"
+                  class="w-16 self-start"
+                  alt=""
+                />
+                <div class="md:mt-8 mt-5">
+                  <h1 class="md:text-4xl text-2xl mb-3 text-nowrap">
+                    Data & Analytics.
+                  </h1>
+                  <p class="max-w-2xs">
+                    "Data-driven" is our foundation. Stay connected with our
+                    data analytics team as we track every insight.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="pages/ai-automation.html"
+              ;
+              class="bg-[#61C6FF] p-4 md:p-12 rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
+            >
+              <div class="w-full md:max-w-2xs">
+                <img
+                  src="images/ai-automation.svg"
+                  class="w-16 self-start"
+                  alt=""
+                />
+                <div class="md:mt-8 mt-5">
+                  <h1 class="md:text-4xl text-2xl mb-3">AI & Automation</h1>
+                  <p class="max-w-2xs">
+                    Innovate, automate, and embrace change. Our team creates AI
+                    solutions that inspire and transform the future.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center overflow-hidden py-10 md:my-20 lg:my-24">
+        <div class="w-full md:py-8 py-4 bg-[#F6FA5E]">
+          <div class="animate-marquee flex items-center md:text-4xl text-2xl">
+            <!-- Double  looping -->
+            <span class="marquee-item">Cloud first</span>
+            <span class="marquee-item">You first</span>
+            <span class="marquee-item">Digital first</span>
+            <span class="marquee-item">AI first</span>
+            <span class="marquee-item">More secure</span>
+            <span class="marquee-item">You first</span>
+
+            <!-- Repeat  looping -->
+            <span class="marquee-item">Cloud first</span>
+            <span class="marquee-item">You first</span>
+            <span class="marquee-item">Digital first</span>
+            <span class="marquee-item">AI first</span>
+            <span class="marquee-item">More secure</span>
+            <span class="marquee-item">You first</span>
+          </div>
+        </div>
+      </div>
+      <div class="mx-4 lg:mx-18" id="client-success">
+        <span
+          class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-9xl"
+        >
+          <h1 class="">Featured</h1>
+          <h1 class="">Work</h1>
+        </span>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5">
+          <!-- Card 1 -->
+          <a
+            class="flex flex-col gap-3"
+            href="pages/transforming-pharma.html"
+            ;
+          >
+            <div class="flip-box rounded-2xl overflow-hidden">
+              <div class="flip-box-inner">
+                <!-- Front -->
+
+                <div class="flip-box-front relative w-full h-full">
+                  <img
+                    src="images/feature-1.svg"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <!-- Back -->
+                <div class="flip-box-back relative">
+                  <img
+                    src="images/feature-1.svg"
+                    class="w-full h-full object-cover opacity-25"
+                    alt=""
+                  />
+                  <!-- Overlay Shadow -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351] opacity-90"
+                  ></div>
+                  <div
+                    class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
+                  >
+                    <div class="flex flex-col items-end gap-3 mb-8">
+                      <h1 class="text-center text-2xl">
+                        Automated Smart Pharma Solutions.
+                      </h1>
+                      <p
+                        class="max-w-sm text-center text-sm font-light mx-auto"
+                      >
+                        Custom inventory management is crucial.Technoboost
+                        enhances analytics simplifies workflows with an
+                        easy-to-use interface.
+                      </p>
+                      <p class="self-end font-light text-sm mt-4">
+                        Know More >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>WEB</h1>
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>CUSTOM SOLUTION</h1>
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>DATA & ANALYTICS</h1>
+            </div>
+            <h1 class="lg:text-2xl">Automated Smart Pharma Solutions.</h1>
+          </a>
+
+          <!-- Card 2 (Duplicate with different content) -->
+          <a
+            class="flex flex-col gap-3"
+            href="pages/transforming-jewelry.html"
+            ;
+          >
+            <div class="flip-box rounded-2xl overflow-hidden">
+              <div class="flip-box-inner">
+                <!-- Front -->
+                <div class="flip-box-front">
+                  <img
+                    src="images/feature-2.svg"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <!-- Back -->
+                <div class="flip-box-back relative">
+                  <img
+                    src="images/feature-2.svg"
+                    class="w-full h-full object-cover opacity-25"
+                    alt=""
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351]"
+                  ></div>
+                  <div
+                    class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
+                  >
+                    <div
+                      class="flex flex-col justify-center items-end gap-3 mb-8"
+                    >
+                      <h1 class="text-center text-2xl">
+                        Revolutionizing Jewellery Operations
+                      </h1>
+                      <p
+                        class="max-w-sm text-center text-sm font-light mx-auto"
+                      >
+                        Transforming jewelry operations is essential.GemCraft
+                        elevates insights and streamlines processes with a
+                        user-friendly design.
+                      </p>
+                      <p class="self-end font-light text-sm mt-4">
+                        Know More >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>WEB</h1>
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>MOBILE</h1>
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>DATA & ANALYTICS</h1>
+              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+              <h1>AI</h1>
+            </div>
+            <h1 class="lg:text-2xl">
+              Revolutionizing Fashion Jewelry Operations
+            </h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-custom text-white py-5 md:py-10 flex flex-col items-center justify-center"
+    >
+      <!-- Marquee Section -->
+      <marquee
+        scrollamount="15"
+        class="text-4xl md:text-7xl lg:text-[100px] font-bold leading-tight"
+      >
+        Go Big. Go Bold. <span class="text-[#31F7C8]">Go Technoboost.</span>
+      </marquee>
+      <div class="max-w-9xl mx-auto flex-col gap-20 mt-20 hidden md:flex">
+        <!-- Top Section: Intro + Links -->
+        <div class="flex flex-col lg:flex-row gap-28 items-center">
+          <!-- Left: Intro -->
+          <div class="max-w-2xl">
+            <h1 class="text-3xl md:text-5xl leading-snug">
+              We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
+              dedicated individuals collaborating on amazing initiatives and
+              fostering lasting relationships that go far beyond just the final
+              product.
+            </h1>
+          </div>
+
+          <!-- Right: Links -->
+          <div class="flex flex-col gap-10 text-lg">
+            <div class="flex flex-col gap-2">
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+              <a href="#">LinkedIn</a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="#">Client Success</a>
+              <a href="#">About</a>
+              <a href="#">Careers</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="flex flex-col lg:flex-row gap-28 items-center">
+          <h2 class="text-2xl md:text-4xl max-w-2xl leading-snug">
+            Want to collaborate with a super down-to-earth, mad-talented team?
+            Hit us up!
+          </h2>
+
+          <!-- Address -->
+          <p class="text-lg text-gray-300 max-w-xs">
+            Technoboost Services<br />
+            24, 2nd Floor, Shree Durga Arcade<br />
+            1st Cross Rd, Kasavanahalli.
+          </p>
+        </div>
+        <!-- CONNECT BUTTON -->
+        <div
+          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-12 mx-4 lg:mx-0"
+        >
+          <div>
+            <p class="text-3xl lg:text-9xl">Let's Connect</p>
+            <p class="font-light lg:text-3xl lg:pl-2 mt-2 text-sm pl-0">
+              Let's have a quick virtual chat about project
+            </p>
+          </div>
+          <div>
+            <img
+              src="images/arrow.svg"
+              class="w-12 lg:w-32 hover:scale-125 cursor-pointer transition-all"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="flex gap-2 items-center">
+          <img src="images/web-white.svg" alt="" />
+          <p>Online</p>
+          <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+        </div>
+      </div>
+      <!-- MOBILE FOOTER -->
+      <techno-boost-footer></techno-boost-footer>
+    </div>
+    <script src="js/common.js"></script>
+    <script>
+      function showTime() {
+        const now = new Date();
+        const time = now.toLocaleTimeString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+
+          hour12: true,
+        });
+        document.getElementById("clock").innerText = time;
+      }
+
+      setInterval(showTime, 60000);
+      showTime();
+    </script>
+  </body>
+</html>
