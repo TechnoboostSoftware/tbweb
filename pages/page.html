@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messy to Aligned Testimonials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #f0f4f8;
+      }
+
+      .testimonial {
+        opacity: 0.2;
+        transform: translate(var(--x, 0px), var(--y, 0px))
+          rotate(var(--r, 0deg)) scale(0.8);
+        transition: transform 0.5s ease, opacity 0.3s ease;
+      }
+
+      .testimonial.animate {
+        animation: alignCards 1s forwards ease-out;
+      }
+
+      @keyframes alignCards {
+        to {
+          opacity: 1;
+          transform: translate(0, 0) rotate(0deg) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="testimonial-section" class="relative overflow-hidden py-32">
+      <!-- Title -->
+      <div class="text-center mb-24 px-4">
+        <h2 class="text-4xl font-bold text-gray-800">Our Clients Love Us</h2>
+        <p class="text-sm text-gray-600 mt-4 max-w-xl mx-auto">
+          Here's what they say
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="relative max-w-6xl mx-auto h-[600px]">
+        <div
+          class="testimonial absolute top-0 left-0 w-64 bg-white p-4 rounded-xl shadow-lg"
+          style="--x: -120px; --y: -80px; --r: -15deg"
+        >
+          <p class="text-sm">
+            “In the top 1% of companies I’ve ever worked with...”
+          </p>
+          <p class="text-xs text-gray-500 mt-2">— John Doe</p>
+        </div>
+
+        <div
+          class="testimonial absolute top-0 right-0 w-64 bg-white p-4 rounded-xl shadow-lg"
+          style="--x: 100px; --y: -100px; --r: 20deg"
+        >
+          <p class="text-sm">
+            “UX/UI looks so clean our data team was impressed.”
+          </p>
+          <p class="text-xs text-gray-500 mt-2">— Jane Smith</p>
+        </div>
+
+        <div
+          class="testimonial absolute bottom-0 left-0 w-64 bg-white p-4 rounded-xl shadow-lg"
+          style="--x: -80px; --y: 100px; --r: -10deg"
+        >
+          <p class="text-sm">
+            “We built in a month what took 6 months before.”
+          </p>
+          <p class="text-xs text-gray-500 mt-2">— Mark Johnson</p>
+        </div>
+
+        <div
+          class="testimonial absolute bottom-0 right-0 w-64 bg-white p-4 rounded-xl shadow-lg"
+          style="--x: 150px; --y: 90px; --r: 12deg"
+        >
+          <p class="text-sm">“Huge thanks to the team. Proud of this one.”</p>
+          <p class="text-xs text-gray-500 mt-2">— Lisa Ray</p>
+        </div>
+
+        <div
+          class="testimonial absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 bg-white p-4 rounded-xl shadow-lg"
+          style="--x: 0px; --y: 120px; --r: -25deg"
+        >
+          <p class="text-sm">“Your design team brings game-changing ideas.”</p>
+          <p class="text-xs text-gray-500 mt-2">— Alex Carter</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Intersection Observer to trigger animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target); // Trigger once
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      document.querySelectorAll(".testimonial").forEach((card) => {
+        observer.observe(card);
+      });
+    </script>
+  </body>
+</html>
