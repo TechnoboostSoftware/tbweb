@@ -28,6 +28,10 @@ html {
 .text-header {
   color: #258b87;
 }
+.active-nav-link {
+  background-color: black;
+  color: white;
+}
 * {
   font-family: "Inter", sans-serif;
 }

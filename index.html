@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Technoboost</title>
   </head>
   <body class="bg-custom">
@@ -78,11 +84,11 @@
       <div class="flex flex-col gap-2 md:mb-20 my-10 md:my-0 px-10">
         <div class="flex flex-col md:flex-row gap-1 items-center">
           <span><img src="images/time.svg" alt="" /></span>
-          <div class="flex">
+          <div class="flex items-center">
             <span>HQ: </span>
             <h1 class="font-semibold" id="clock"></h1>
             <h1 class="ml-1">IST</h1>
-            <h1 class="text-xs ml-3 md:block hidden">Servicing Earth</h1>
+            <h1 class="text-xs ml-2 md:block hidden">Servicing Earth</h1>
           </div>
         </div>
 
@@ -200,7 +206,7 @@
         <div class="mt-10">
           <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
-              href="pages/ux-design.html"
+              href="ux-design.html"
               ;
               class="bg-[#31F7C8] p-4 md: p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
             >
@@ -214,14 +220,15 @@
                   UX Design.
                 </h1>
                 <p class="">
-                  Your vision drives our mission. We prioritize teamwork and go
-                  the extra mile to bring your UX design dreams to life.
+                  Your vision drives our mission. <br />
+                  We prioritize teamwork and go the extra mile to bring your UX
+                  design dreams to life.
                 </p>
               </div>
             </a>
 
             <a
-              href="pages/software-product.html"
+              href="software-product.html"
               ;
               class="md:p-12 p-4 md:col-span-2 bg-white rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
             >
@@ -247,7 +254,7 @@
               </div>
             </a>
             <a
-              href="pages/smartsheet-solutions.html"
+              href="smartsheet-solutions.html"
               ;
               class="bg-[#17313B] p-4 md:p-12 rounded-4xl text-white flex flex-col items-start md:items-center cursor-pointer hover:scale-105 transition-all"
             >
@@ -259,7 +266,7 @@
                 />
                 <div class="md:mt-8 mt-5">
                   <h1 class="md:text-4xl text-2xl mb-3">Smart-sheet.</h1>
-                  <p class="max-w-2xs">
+                  <p class="md:max-w-2xs">
                     You’re vital to our vision. We focus on collaboration and
                     work hard to help you grow & succeed with our services.
                   </p>
@@ -267,7 +274,7 @@
               </div>
             </a>
             <a
-              href="pages/data-analytics.html"
+              href="data-analytics.html"
               ;
               class="bg-[#F6FA5E] p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
             >
@@ -281,15 +288,15 @@
                   <h1 class="md:text-4xl text-2xl mb-3 text-nowrap">
                     Data & Analytics.
                   </h1>
-                  <p class="max-w-2xs">
-                    "Data-driven" is our foundation. Stay connected with our
-                    data analytics team as we track every insight.
+                  <p class="md:max-w-2xs">
+                    Data-driven is our foundation. Stay connected with our data
+                    analytics team as we track every insight.
                   </p>
                 </div>
               </div>
             </a>
             <a
-              href="pages/ai-automation.html"
+              href="ai-automation.html"
               ;
               class="bg-[#61C6FF] p-4 md:p-12 rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
             >
@@ -301,7 +308,7 @@
                 />
                 <div class="md:mt-8 mt-5">
                   <h1 class="md:text-4xl text-2xl mb-3">AI & Automation</h1>
-                  <p class="max-w-2xs">
+                  <p class="md:max-w-2xs">
                     Innovate, automate, and embrace change. Our team creates AI
                     solutions that inspire and transform the future.
                   </p>
@@ -342,11 +349,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5">
           <!-- Card 1 -->
-          <a
-            class="flex flex-col gap-3"
-            href="pages/transforming-pharma.html"
-            ;
-          >
+          <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
             <div class="flip-box rounded-2xl overflow-hidden">
               <div class="flip-box-inner">
                 <!-- Front -->
@@ -372,18 +375,20 @@
                   <div
                     class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
                   >
-                    <div class="flex flex-col items-end gap-3 mb-8">
-                      <h1 class="text-center text-2xl">
+                    <div
+                      class="flex flex-col items-end gap-3 mb-8 md:mx-0 mx-4"
+                    >
+                      <h1 class="md:text-2xl text-xl text-center">
                         Automated Smart Pharma Solutions.
                       </h1>
                       <p
-                        class="max-w-sm text-center text-sm font-light mx-auto"
+                        class="max-w-sm text-center md:text-sm text-xs font-light mx-auto"
                       >
-                        Custom inventory management is crucial.Technoboost
-                        enhances analytics simplifies workflows with an
-                        easy-to-use interface.
+                        Custom inventory management is crucial. <br />
+                        Technoboost enhances analytics simplifies workflows with
+                        an easy-to-use interface.
                       </p>
-                      <p class="self-end font-light text-sm mt-4">
+                      <p class="self-end font-light text-sm md:mt-4 mt-2">
                         Know More >
                       </p>
                     </div>
@@ -403,11 +408,7 @@
           </a>
 
           <!-- Card 2 (Duplicate with different content) -->
-          <a
-            class="flex flex-col gap-3"
-            href="pages/transforming-jewelry.html"
-            ;
-          >
+          <a class="flex flex-col gap-3" href="transforming-jewelry.html" ;>
             <div class="flip-box rounded-2xl overflow-hidden">
               <div class="flip-box-inner">
                 <!-- Front -->
@@ -432,19 +433,19 @@
                     class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
                   >
                     <div
-                      class="flex flex-col justify-center items-end gap-3 mb-8"
+                      class="flex flex-col justify-center items-end gap-3 mb-8 md:mx-0 mx-4"
                     >
-                      <h1 class="text-center text-2xl">
+                      <h1 class="text-center md:text-2xl text-xl">
                         Revolutionizing Jewellery Operations
                       </h1>
                       <p
-                        class="max-w-sm text-center text-sm font-light mx-auto"
+                        class="max-w-sm text-center md:text-sm text-xs font-light mx-auto"
                       >
-                        Transforming jewelry operations is essential.GemCraft
-                        elevates insights and streamlines processes with a
-                        user-friendly design.
+                        Transforming jewelry operations is essential. <br />
+                        Technoboost elevates insights and streamlines processes
+                        with a user-friendly design.
                       </p>
-                      <p class="self-end font-light text-sm mt-4">
+                      <p class="self-end font-light text-sm md:mt-4 mt-2">
                         Know More >
                       </p>
                     </div>
@@ -532,11 +533,13 @@
             </p>
           </div>
           <div>
-            <img
-              src="images/arrow.svg"
-              class="w-12 lg:w-32 hover:scale-125 cursor-pointer transition-all"
-              alt=""
-            />
+            <a href="contact-us.html">
+              <img
+                src="images/arrow.svg"
+                class="w-12 lg:w-32 hover:scale-125 cursor-pointer transition-all"
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="flex gap-2 items-center">
