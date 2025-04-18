@@ -21,7 +21,7 @@ class TechnoBoostFooter extends HTMLElement {
               <a href="">LinkedIn</a>
             </div>
             <div class="flex flex-col">
-              <a href="">Client Success</a>
+              <a href="#client-success">Client Success</a>
               <a href="">About</a>
               <a href="">Careers</a>
             </div>
@@ -44,7 +44,7 @@ class TechnoBoostFooter extends HTMLElement {
             </div>
             <div>
               <img
-                src="../images/arrow.svg"
+                src="images/arrow.svg"
                 class="w-12 hover:scale-125 cursor-pointer transition-all"
                 alt="Arrow"
               />
@@ -52,7 +52,7 @@ class TechnoBoostFooter extends HTMLElement {
           </div>
         </div>
         <div class="flex gap-2 mt-5 items-center">
-          <img src="../images/web-white.svg" alt="Web Icon" />
+          <img src="images/web-white.svg" alt="Web Icon" />
           <p>Online</p>
           <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
         </div>
@@ -67,35 +67,64 @@ class TechnoBoostFixNav extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <nav
+       <nav
         class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 bg-white py-2 shadow-lg px-5 rounded-4xl"
       >
         <div class="flex justify-center">
           <div class="flex gap-4 text-xs">
             <a
-              href="/index.html"
-              class="hover:bg-[#05070F] hover:text-white p-2 rounded-xl"
-              >HOME</a
-            >
+              href="index.html"
+              id="home"
+              class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
+            >HOME</a>
             <a
               href="#our-service"
-              class="hover:bg-[#05070F] hover:text-white p-2 rounded-xl"
-              >SERVICES</a
-            >
+              id="services"
+              class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
+            >SERVICES</a>
             <a
               href=""
-              class="hover:bg-[#05070F] hover:text-white p-2 rounded-xl hidden"
-              >PRODUCTS</a
-            >
+              class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl hidden cursor-pointer"
+            >PRODUCTS</a>
             <a
               href="#client-success"
-              class="hover:bg-[#05070F] hover:text-white p-2 rounded-xl text-nowrap"
-              >CLIENT SUCCESS</a
-            >
+              id="client"
+              class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl text-nowrap cursor-pointer"
+            >CLIENT SUCCESS</a>
           </div>
         </div>
       </nav>
     `;
+    this.setSelectedPath();
+  }
+  setSelectedPath() {
+    const location = window.location.href;
+    const locationSplit = location.split("/");
+    const currentLocation = locationSplit[locationSplit.length - 1];
+
+    const $nav = $(this);
+    $nav.find(".nav-link").removeClass("bg-[#05070F] text-white");
+
+    const home =
+      currentLocation === "index.html" ||
+      currentLocation === "index.html#our-service" ||
+      currentLocation === "index.html#client-success";
+    const clientSuccess =
+      currentLocation === "transforming-pharma.html" ||
+      currentLocation === "transforming-jewelry.html";
+    const services =
+      currentLocation === "ux-design.html" ||
+      currentLocation === "software-product.html" ||
+      currentLocation === "smartsheet-solutions.html" ||
+      currentLocation === "data-analytics.html" ||
+      currentLocation === "ai-automation.html";
+    if (home) {
+      $nav.find("#home").addClass("bg-[#05070F] text-white");
+    } else if (clientSuccess) {
+      $nav.find("#client").addClass("bg-[#05070F] text-white");
+    } else if (services) {
+      $nav.find("#services").addClass("bg-[#05070F] text-white");
+    }
   }
 }
 customElements.define("techno-boost-fixed-nav", TechnoBoostFixNav);
@@ -105,8 +134,8 @@ class LetsConnect extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <a href="../pages/contact-us.html" class="let-connect yellow h-28 w-28 lg:h-36 lg:w-36 flex items-center justify-center rounded-full yellow shadow-sm hover:scale-125 transition-all cursor-pointer fixed right-6 z-50 translate-y-[-125%] opacity-100 transition-transform duration-500 ease-in-out">
-      <h1 class="text-xs md:text-sm" style="transform: translateY(25px)">
+      <a href="contact-us.html" class="let-connect yellow h-28 w-28 lg:h-36 lg:w-36 flex items-center justify-center rounded-full yellow shadow-sm hover:scale-125 transition-all cursor-pointer fixed right-6 z-50 translate-y-[-140%] opacity-100 transition-transform duration-500 ease-in-out">
+      <h1 class="text-[10px] md:text-sm" style="transform: translateY(35px)">
     Let's Connect
       </h1>
       </a>
@@ -143,17 +172,3 @@ function toggleSection(elem) {
 
   $img.toggleClass("rotate-180");
 }
-
-// window.onload = () => {
-//   const letConnect = document.querySelector(".let-connect");
-
-//   if (letConnect) {
-//     window.addEventListener("scroll", () => {
-//       if (window.scrollY > 1200) {
-//         letConnect.classList.remove("fixed", "top-[-4rem]", "right-6");
-//       } else {
-//         letConnect.classList.add("fixed", "top-[-4rem]", "right-6");
-//       }
-//     });
-//   }
-// };
