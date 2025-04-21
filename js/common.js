@@ -6,7 +6,7 @@ class TechnoBoostFooter extends HTMLElement {
       <div class="mx-4 mt-8 text-white font-sans md:hidden block">
         <div class="flex flex-col gap-5">
           <h1 class="text-2xl">
-            We’re Technoboost. A group of dedicated individuals collaborating on
+            We’re <span class="text-[#31F7C8]">Technoboost.</span> A group of dedicated individuals collaborating on
             amazing initiatives and fostering lasting relationships that go far
             beyond just the final product.
           </h1>
@@ -43,11 +43,13 @@ class TechnoBoostFooter extends HTMLElement {
               </p>
             </div>
             <div>
+            <a href="contact-us.html">
               <img
                 src="images/arrow.svg"
                 class="w-12 hover:scale-125 cursor-pointer transition-all"
                 alt="Arrow"
               />
+              </a>
             </div>
           </div>
         </div>
