@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Technoboost drives business growth with AI and automation solutions. Our Cloud First, Digital First, AI First approach empowers companies to innovate and optimize operations."
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
     <script
@@ -11,7 +16,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <title>Technoboost</title>
+    <title>
+      Technoboost | Driving Growth with AI & Automation | Cloud First, Digital
+      First, AI First
+    </title>
+    <link href="images/favicon.svg" rel="icon" />
   </head>
   <body class="bg-custom">
     <div class="bg-primary md:pb-24 pb-10 md:rounded-b-[66px] rounded-b-2xl">
@@ -101,7 +110,7 @@
       </div>
 
       <div
-        class="bg-white mx-4 lg:mx-14 rounded-3xl flex flex-col items-center"
+        class="bg-white mx-4 lg:mx-14 md:rounded-3xl rounded-2xl flex flex-col items-center"
       >
         <div class="flex flex-col items-center mt-13 pt-10 mx-4">
           <h1 class="text-center text-5xl">
@@ -188,8 +197,32 @@
           </div>
         </div>
       </div>
+      <!-- MOBILE MARQUEE -->
+      <div
+        class="flex items-center overflow-hidden py-10 md:my-20 lg:my-24 md:hidden"
+      >
+        <div class="w-full md:py-8 py-4 bg-[#F6FA5E]">
+          <div class="animate-marquee flex items-center md:text-4xl text-2xl">
+            <!-- Double  looping -->
+            <span class="marquee-item-mobile">Cloud first</span>
+            <span class="marquee-item-mobile">You first</span>
+            <span class="marquee-item-mobile">Digital first</span>
+            <span class="marquee-item-mobile">AI first</span>
+            <span class="marquee-item-mobile">More secure</span>
+            <span class="marquee-item-mobile">You first</span>
+
+            <!-- Repeat  looping -->
+            <span class="marquee-item-mobile">Cloud first</span>
+            <span class="marquee-item-mobile">You first</span>
+            <span class="marquee-item-mobile">Digital first</span>
+            <span class="marquee-item-mobile">AI first</span>
+            <span class="marquee-item-mobile">More secure</span>
+            <span class="marquee-item-mobile">You first</span>
+          </div>
+        </div>
+      </div>
       <!-- OUR SERVICES -->
-      <div id="our-service" class="lg:mx-18 mx-4 md:mt-32 mt-10">
+      <div id="our-service" class="lg:mx-18 mx-4 md:mt-32 mt-5">
         <div
           class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
         >
@@ -208,7 +241,7 @@
             <a
               href="ux-design.html"
               ;
-              class="bg-[#31F7C8] p-4 md: p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
+              class="bg-[#31F7C8] p-4 md: p-4 md:p-12 md:rounded-4xl rounded-2xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
             >
               <div class="w-full md:max-w-2xs">
                 <img
@@ -230,7 +263,7 @@
             <a
               href="software-product.html"
               ;
-              class="md:p-12 p-4 md:col-span-2 bg-white rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
+              class="md:p-12 p-4 md:col-span-2 bg-white md:rounded-4xl rounded-2xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
             >
               <img
                 src="images/sowftwere-product.svg"
@@ -256,7 +289,7 @@
             <a
               href="smartsheet-solutions.html"
               ;
-              class="bg-[#17313B] p-4 md:p-12 rounded-4xl text-white flex flex-col items-start md:items-center cursor-pointer hover:scale-105 transition-all"
+              class="bg-[#17313B] p-4 md:p-12 md:rounded-4xl rounded-2xl text-white flex flex-col items-start md:items-center cursor-pointer hover:scale-105 transition-all"
             >
               <div class="w-full md:max-w-2xs">
                 <img
@@ -276,7 +309,7 @@
             <a
               href="data-analytics.html"
               ;
-              class="bg-[#F6FA5E] p-4 md:p-12 rounded-4xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
+              class="bg-[#F6FA5E] p-4 md:p-12 md:rounded-4xl rounded-2xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
             >
               <div class="w-full md:max-w-2xs">
                 <img
@@ -298,7 +331,7 @@
             <a
               href="ai-automation.html"
               ;
-              class="bg-[#61C6FF] p-4 md:p-12 rounded-4xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
+              class="bg-[#61C6FF] p-4 md:p-12 md:rounded-4xl rounded-2xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
             >
               <div class="w-full md:max-w-2xs">
                 <img
@@ -318,7 +351,9 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center overflow-hidden py-10 md:my-20 lg:my-24">
+      <div
+        class="md:flex items-center overflow-hidden py-10 md:my-20 lg:my-24 hidden"
+      >
         <div class="w-full md:py-8 py-4 bg-[#F6FA5E]">
           <div class="animate-marquee flex items-center md:text-4xl text-2xl">
             <!-- Double  looping -->
@@ -339,15 +374,19 @@
           </div>
         </div>
       </div>
-      <div class="mx-4 lg:mx-18" id="client-success">
+      <div class="mx-4 lg:mx-18 md:mt-0 mt-16" id="client-success">
         <span
-          class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-9xl"
+          class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-5xl md:text-6xl lg:text-9xl"
         >
           <h1 class="">Featured</h1>
-          <h1 class="">Work</h1>
+          <h1 class="">Work.</h1>
         </span>
+        <p class="text-center text-xs md:hidden block max-w-xs mx-auto mt-1">
+          Your brand is more than just looks; it’s a powerful force. We drive
+          its growth by blending fresh ideas and teamwork into everything we do.
+        </p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5 md:mt-16">
           <!-- Card 1 -->
           <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
             <div class="flip-box rounded-2xl overflow-hidden">
@@ -376,7 +415,7 @@
                     class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
                   >
                     <div
-                      class="flex flex-col items-end gap-3 mb-8 md:mx-0 mx-4"
+                      class="flex flex-col items-center gap-3 mb-8 md:mx-0 mx-4"
                     >
                       <h1 class="md:text-2xl text-xl text-center">
                         Automated Smart Pharma Solutions.
@@ -471,12 +510,12 @@
       </div>
     </div>
     <div
-      class="bg-custom text-white py-5 md:py-10 flex flex-col items-center justify-center"
+      class="bg-custom text-white py-2 md:py-10 flex flex-col items-center justify-center"
     >
       <!-- Marquee Section -->
       <marquee
-        scrollamount="15"
-        class="text-4xl md:text-7xl lg:text-[100px] font-bold leading-tight"
+        scrollamount="12"
+        class="text-6xl font-light md:text-7xl lg:text-[100px] leading-tight"
       >
         Go Big. Go Bold. <span class="text-[#31F7C8]">Go Technoboost.</span>
       </marquee>

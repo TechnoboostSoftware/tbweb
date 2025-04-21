@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get in touch with Technoboost. We offer AI, automation, and digital solutions to drive business growth. Contact us for inquiries, support, or consultations."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>contact-us</title>
+    <title>Contact Us | Technoboost - AI, Automation & Digital Solutions</title>
+    <link href="images/favicon.svg" rel="icon" />
   </head>
   <body class="bg-custom">
     <div class="bg-primary md:rounded-b-[70px] rounded-2xl md:pb-6">
@@ -38,7 +48,7 @@
       <techno-boost-fixed-nav></techno-boost-fixed-nav>
       <!-- FORM SECTION -->
       <div
-        class="bg-white md:mx-28 md:px-18 px-4 md:py-18 py-10 mb-24 rounded-4xl"
+        class="bg-white md:mx-28 md:px-18 px-4 md:py-18 py-10 md:mb-24 mb-0 rounded-4xl"
       >
         <h1 class="md:text-6xl text-3xl">Project Type</h1>
         <div class="md:mt-18 mt-10">
@@ -53,7 +63,7 @@
               />
               <label
                 for="ux-designing"
-                class="flex justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 Ux Designing
               </label>
@@ -68,7 +78,7 @@
               />
               <label
                 for="software-product"
-                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 Software Product Engineering
               </label>
@@ -83,7 +93,7 @@
               />
               <label
                 for="ai-automation"
-                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 AI & Automation
               </label>
@@ -98,7 +108,7 @@
               />
               <label
                 for="data-analytics"
-                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 Data & Analytics
               </label>
@@ -106,7 +116,7 @@
           </ul>
         </div>
         <div>
-          <ul id="timetable" class="flex gap-5 items-center mt-5 flex-wrap">
+          <ul id="timetable" class="flex gap-5 items-center mt-2 flex-wrap">
             <li>
               <input
                 type="radio"
@@ -117,7 +127,7 @@
               />
               <label
                 for="smart-sheet-solutions"
-                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 Smart-Sheet Solutions
               </label>
@@ -132,7 +142,7 @@
               />
               <label
                 for="other"
-                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white px-5 py-4"
+                class="flex items-center justify-center md:text-xl text-sm text-center bg-[#e7f0f9] border rounded-full cursor-pointer peer-checked:bg-black peer-checked:text-white md:px-5 px-2 md:py-4 py-2"
               >
                 Other
               </label>
@@ -209,19 +219,19 @@
     </div>
     <!-- FOOTER SECTION -->
     <div
-      class="bg-custom text-white py-10 md:flex flex-col items-center justify-center hidden"
+      class="bg-custom text-white md:py-10 py-2 flex flex-col items-center justify-center"
     >
       <!-- Marquee Section -->
       <marquee
-        scrollamount="15"
-        class="text-4xl md:text-7xl lg:text-[100px] font-bold leading-tight"
+        scrollamount="12"
+        class="text-6xl font-light md:text-7xl lg:text-[100px] leading-tight"
       >
         Go Big. Go Bold. <span class="text-[#31F7C8]">Go Technoboost.</span>
       </marquee>
-      <div class="max-w-9xl mx-auto flex flex-col gap-20 mt-20">
-        <!-- Top Section: Intro + Links -->
+      <div class="max-w-9xl mx-auto md:flex flex-col gap-20 mt-20 hidden">
+        <!-- Top  -->
         <div class="flex flex-col lg:flex-row gap-28 items-center">
-          <!-- Left: Intro -->
+          <!-- Left -->
           <div class="max-w-2xl">
             <h1 class="text-3xl md:text-5xl leading-snug">
               We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
@@ -286,13 +296,7 @@
       </div>
     </div>
     <techno-boost-footer></techno-boost-footer>
-    <script src="../js/common.js"></script>
-    <script src="../js/contactUs.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="js/common.js"></script>
+    <script src="js/contactUs.js"></script>
   </body>
 </html>
