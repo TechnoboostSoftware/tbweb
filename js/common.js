@@ -68,6 +68,14 @@ class TechnoBoostFixNav extends HTMLElement {
   constructor() {
     super();
 
+    let serviceurl='#our-service'
+    let clientSuccessUrl='#client-success'
+    if(!location.pathname.includes('index.html')){
+        serviceurl='index.html#our-service'
+        clientSuccessUrl='index.html#client-success'
+    }
+
+    
     this.innerHTML = `
        <nav
         class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 bg-white py-2 shadow-lg px-5 rounded-4xl"
@@ -80,7 +88,7 @@ class TechnoBoostFixNav extends HTMLElement {
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
             >HOME</a>
             <a
-              href="#our-service"
+              href="${serviceurl}"
               id="services"
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
             >SERVICES</a>
@@ -89,7 +97,7 @@ class TechnoBoostFixNav extends HTMLElement {
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl hidden cursor-pointer"
             >PRODUCTS</a>
             <a
-              href="#client-success"
+              href="${clientSuccessUrl}"
               id="client"
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl text-nowrap cursor-pointer"
             >CLIENT SUCCESS</a>
