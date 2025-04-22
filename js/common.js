@@ -15,7 +15,7 @@ class TechnoBoostFooter extends HTMLElement {
             Hit us up!
           </h1>
           <div class="flex flex-col gap-3 text-lg">
-            <div class="flex flex-col">
+            <div class="flex flex-col hidden">
               <a href="">Instagram</a>
               <a href="">Facebook</a>
               <a href="">LinkedIn</a>
