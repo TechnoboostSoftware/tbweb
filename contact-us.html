@@ -59,7 +59,7 @@
                 id="ux-designing"
                 value="Ux Designing"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="ux-designing"
@@ -74,7 +74,7 @@
                 id="software-product"
                 value="software-product"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="software-product"
@@ -89,7 +89,7 @@
                 id="ai-automation"
                 value="ai-automation"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="ai-automation"
@@ -104,7 +104,7 @@
                 id="data-analytics"
                 value="data-analytics"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="data-analytics"
@@ -123,7 +123,7 @@
                 id="smart-sheet-solutions"
                 value="smart-sheet-solutions"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="smart-sheet-solutions"
@@ -138,7 +138,7 @@
                 id="other"
                 value="other"
                 class="hidden peer"
-                name="timetable"
+                name="projectType"
               />
               <label
                 for="other"
@@ -207,13 +207,14 @@
             ></textarea>
           </div>
         </form>
-        <div class="mt-16">
-          <button
+        <div class="mt-16 flex items-center gap-3">
+          <button id="submitForm"
             class="px-10 py-4 text-black bg-[#F6FA5E] rounded-3xl text-2xl cursor-pointer"
             onclick="formValidation()"
           >
             Submit
           </button>
+          <p id="successMessage" class="hidden" ></p>
         </div>
       </div>
     </div>
@@ -243,13 +244,13 @@
 
           <!-- Right: Links -->
           <div class="flex flex-col gap-10 text-lg">
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 hidden">
               <a href="#">Instagram</a>
               <a href="#">Facebook</a>
               <a href="#">LinkedIn</a>
             </div>
             <div class="flex flex-col gap-2">
-              <a href="#">Client Success</a>
+              <a href="index.html#client-success">Client Success</a>
               <a href="#">About</a>
               <a href="#">Careers</a>
             </div>
