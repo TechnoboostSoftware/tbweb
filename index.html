@@ -46,9 +46,9 @@
         class="md:flex flex-col px-4 md:px-10 mb-20 overflow-hidden hidden"
       >
         <div
-          class="flex flex-col md:flex-row md:justify-between items-center text-center md:text-left"
+          class="flex flex-col md:flex-row md:gap-10 items-center text-center md:text-left"
         >
-          <h1 class="text-6xl lg:text-9xl text-center animate-from-left">
+          <h1 class="text-6xl lg:text-[120px] text-center animate-from-left">
             Driving Growth
           </h1>
           <img
@@ -58,12 +58,15 @@
           />
         </div>
         <h1
-          class="text-4xl md:text-6xl lg:text-9xl text-nowrap md:mt-7 mt-4 animate-from-left text-center md:text-left"
+          class="text-4xl md:text-6xl lg:text-[120px] text-nowrap md:mt-7 mt-4 animate-from-left text-center md:text-left"
         >
-          With <span class="herotextcolor">AI & Automation.</span>
+          With
+          <span class="herotextcolor"
+            >AI & Automation<span class="text-black">.</span></span
+          >
         </h1>
         <h1
-          class="text-2xl md:text-6xl text-subTitel md:mt-7 mt-4 text-center md:text-left typing leading-18"
+          class="text-2xl md:text-[52px] text-subTitel md:mt-7 mt-4 text-center md:text-left typing leading-18"
         >
           Cloud First, Digital First, AI First.
         </h1>
@@ -93,15 +96,16 @@
       <div class="flex flex-col gap-2 md:mb-20 my-10 md:my-0 px-10">
         <div class="flex flex-col md:flex-row gap-1 items-center">
           <span><img src="images/time.svg" alt="" /></span>
-          <div class="flex items-center">
+          <div class="flex items-center text-sm">
             <span>HQ: </span>
-            <h1 class="font-semibold" id="clock"></h1>
-            <h1 class="ml-1">IST</h1>
-            <h1 class="text-xs ml-2 md:block hidden">Servicing Earth</h1>
+            <p class="font-semibold clock md:hidden block"></p>
+            <p class="clock md:block hidden"></p>
+            <p class="ml-1">IST</p>
+            <p class="text-[10px] ml-2 md:block hidden">Servicing Earth</p>
           </div>
         </div>
 
-        <div class="max-w-xs text-sm md:block hidden">
+        <div class="max-w-xs text-base md:block hidden">
           <h1>
             Turn bold ideas into impactful brand experiences with the handiwork
             and help of our collective bunch.
@@ -112,11 +116,11 @@
       <div
         class="bg-white mx-4 lg:mx-14 md:rounded-3xl rounded-2xl flex flex-col items-center"
       >
-        <div class="flex flex-col items-center mt-13 pt-10 mx-4">
-          <h1 class="text-center text-5xl">
-            Innovate. Scale. <span class="herotextcolor">Succeed</span>
+        <div class="flex flex-col items-center mt-13 pt-5 mx-4">
+          <h1 class="text-center text-[40px]">
+            Innovate. Scale. <span class="herotextcolor">Succeed.</span>
           </h1>
-          <h1 class="text-center max-w-5xl text-lg text-[#667085] mt-5">
+          <h1 class="text-center max-w-5xl text-lg text-[#667085] mt-2">
             Your Partner in Transformative Business Solutions. With Technoboost,
             you are not just building software solutions you're creating a
             custom digital solutions that is tailor designed for your business,
@@ -129,11 +133,11 @@
         >
           <!-- Card 1 -->
           <div
-            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-md h-[350px]"
           >
             <div>
               <h1 class="text-lg">Build With Speed.</h1>
-              <p class="mt-3 text-[#667085]">
+              <p class="mt-3 text-[#667085] text-sm">
                 We aim to help you innovate and grow quickly while upholding top
                 quality.
               </p>
@@ -152,11 +156,11 @@
 
           <!-- Card 2 -->
           <div
-            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-md h-[350px]"
           >
             <div>
               <h1 class="text-lg">Deploy With Confidence.</h1>
-              <p class="mt-3 text-[#667085]">
+              <p class="mt-3 text-[#667085] text-sm">
                 We provide secure, scalable solutions for seamless deployments
                 that drive your growth.
               </p>
@@ -175,11 +179,11 @@
 
           <!-- Card 3 -->
           <div
-            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-sm h-[350px]"
+            class="flex flex-col bg-[#F2F4F7] rounded-2xl p-6 w-full max-w-md h-[350px]"
           >
             <div>
               <h1 class="text-lg">Secure Your ROI.</h1>
-              <p class="mt-3 text-[#667085]">
+              <p class="mt-3 text-[#667085] text-sm">
                 One-size-fits-all doesn't apply to software. We create tailored
                 solutions that enhance your returns.
               </p>
@@ -222,15 +226,15 @@
         </div>
       </div>
       <!-- OUR SERVICES -->
-      <div id="our-service" class="lg:mx-18 mx-4 md:mt-32 mt-5">
+      <div id="our-service" class="lg:mx-18 mx-6 md:mt-32 mt-5">
         <div
           class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
         >
-          <span class="text-5xl lg:text-9xl flex md:flex-col gap-2 gap-0">
+          <span class="text-5xl lg:text-8xl flex md:flex-col gap-2 gap-0">
             <h1 class="pb-0 text-center md:text-left">Our</h1>
             <h1>Services</h1>
           </span>
-          <h1 class="text-center text-sm mt-1 block md:hidden">
+          <h1 class="text-center text-sm mt-3 block md:hidden">
             Your brand is more than just a look; it’s a vibrant entity. We
             nurture its growth by infusing a fresh outlook and teamwork into
             every project we undertake.
@@ -246,12 +250,10 @@
               <div class="w-full md:max-w-2xs">
                 <img
                   src="images/ux-design.svg"
-                  class="w-16 mb-5 md:mb-8"
+                  class="w-16 mb-2 md:mb-8"
                   alt="UX Design"
                 />
-                <h1 class="text-2xl md:md:text-4xl text-2xl mb-3">
-                  UX Design.
-                </h1>
+                <h1 class="text-2xl md:text-4xl mb-2">UX Design.</h1>
                 <p class="">
                   Your vision drives our mission. <br />
                   We prioritize teamwork and go the extra mile to bring your UX
@@ -265,25 +267,27 @@
               ;
               class="md:p-12 p-4 md:col-span-2 bg-white md:rounded-4xl rounded-2xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
             >
-              <img
-                src="images/sowftwere-product.svg"
-                class="w-16 self-start 2xl:ml-6"
-                alt=""
-              />
-              <div class="md:mt-8 mt-5">
-                <h1 class="text-2xl md:md:text-4xl text-2xl mb-3">
-                  Product Engineering & Digital Services.
-                </h1>
-                <p class="max-w-2xl hidden md:block">
-                  We embrace cutting-edge technologies, providing innovative
-                  software engineering services that adapt to tomorrow's
-                  demands. Our team delivers solutions that meet current needs
-                  and anticipate future trends.
-                </p>
-                <p class="block md:hidden">
-                  We provide software services that adapt to tomorrow's demands.
-                  Our team delivers solutions.
-                </p>
+              <div>
+                <img
+                  src="images/sowftwere-product.svg"
+                  class="w-16 self-start"
+                  alt=""
+                />
+                <div class="md:mt-8 mt-2">
+                  <h1 class="text-2xl md:text-4xl mb-2">
+                    Product Engineering & Digital Services.
+                  </h1>
+                  <p class="max-w-2xl hidden md:block">
+                    We embrace cutting-edge technologies, providing innovative
+                    software engineering services that adapt to tomorrow's
+                    demands. Our team delivers solutions that meet current needs
+                    and anticipate future trends.
+                  </p>
+                  <p class="block md:hidden">
+                    We provide software services that adapt to tomorrow's
+                    demands. Our team delivers solutions.
+                  </p>
+                </div>
               </div>
             </a>
             <a
@@ -297,8 +301,8 @@
                   class="w-16 self-start"
                   alt=""
                 />
-                <div class="md:mt-8 mt-5">
-                  <h1 class="md:text-4xl text-2xl mb-3">Smart-sheet.</h1>
+                <div class="md:mt-8 mt-2">
+                  <h1 class="md:text-4xl text-2xl mb-2">Smart-sheets.</h1>
                   <p class="md:max-w-2xs">
                     You’re vital to our vision. We focus on collaboration and
                     work hard to help you grow & succeed with our services.
@@ -317,8 +321,8 @@
                   class="w-16 self-start"
                   alt=""
                 />
-                <div class="md:mt-8 mt-5">
-                  <h1 class="md:text-4xl text-2xl mb-3 text-nowrap">
+                <div class="md:mt-8 mt-2">
+                  <h1 class="md:text-4xl text-2xl mb-2 text-nowrap">
                     Data & Analytics.
                   </h1>
                   <p class="md:max-w-2xs">
@@ -330,8 +334,7 @@
             </a>
             <a
               href="ai-automation.html"
-              ;
-              class="bg-[#61C6FF] p-4 md:p-12 md:rounded-4xl rounded-2xl flex flex-col items-center cursor-pointer hover:scale-105 transition-all"
+              class="bg-[#61C6FF] p-4 md:p-12 md:rounded-4xl rounded-2xl flex flex-col md:items-center items-start cursor-pointer hover:scale-105 transition-all"
             >
               <div class="w-full md:max-w-2xs">
                 <img
@@ -340,7 +343,9 @@
                   alt=""
                 />
                 <div class="md:mt-8 mt-5">
-                  <h1 class="md:text-4xl text-2xl mb-3">AI & Automation</h1>
+                  <h1 class="md:text-4xl text-2xl mb-3 text-nowrap">
+                    AI & Automation
+                  </h1>
                   <p class="md:max-w-2xs">
                     Innovate, automate, and embrace change. Our team creates AI
                     solutions that inspire and transform the future.
@@ -374,138 +379,163 @@
           </div>
         </div>
       </div>
-      <div class="mx-4 lg:mx-18 md:mt-0 mt-16" id="client-success">
-        <span
-          class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-5xl md:text-6xl lg:text-9xl"
-        >
-          <h1 class="">Featured</h1>
-          <h1 class="">Work.</h1>
-        </span>
-        <p class="text-center text-xs md:hidden block max-w-xs mx-auto mt-1">
-          Your brand is more than just looks; it’s a powerful force. We drive
-          its growth by blending fresh ideas and teamwork into everything we do.
-        </p>
+      <div
+        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 lg:mx-18 md:mt-0 mt-10"
+      >
+        <div class="mx-4" id="client-success">
+          <span
+            class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-[90px]"
+          >
+            <h1 class="">Featured</h1>
+            <h1 class="">Work.</h1>
+          </span>
+          <p class="text-center text-xs md:hidden block max-w-xs mx-auto mt-1">
+            Your brand is more than just looks; it’s a powerful force. We drive
+            its growth by blending fresh ideas and teamwork into everything we
+            do.
+          </p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5 md:mt-16">
-          <!-- Card 1 -->
-          <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
-            <div class="flip-box rounded-2xl overflow-hidden">
-              <div class="flip-box-inner">
-                <!-- Front -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-5 md:mt-16">
+            <!-- Card 1 -->
+            <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
+              <div class="flip-box rounded-2xl overflow-hidden">
+                <div class="flip-box-inner">
+                  <!-- Front -->
 
-                <div class="flip-box-front relative w-full h-full">
-                  <img
-                    src="images/feature-1.svg"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <!-- Back -->
-                <div class="flip-box-back relative">
-                  <img
-                    src="images/feature-1.svg"
-                    class="w-full h-full object-cover opacity-25"
-                    alt=""
-                  />
-                  <!-- Overlay Shadow -->
-                  <div
-                    class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351] opacity-90"
-                  ></div>
-                  <div
-                    class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
-                  >
+                  <div class="flip-box-front relative w-full h-full">
+                    <img
+                      src="images/feature-1.svg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Back -->
+                  <div class="flip-box-back relative">
+                    <img
+                      src="images/feature-1.svg"
+                      class="w-full h-full object-cover opacity-25"
+                      alt=""
+                    />
+                    <!-- Overlay Shadow -->
                     <div
-                      class="flex flex-col items-center gap-3 mb-8 md:mx-0 mx-4"
+                      class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351] opacity-90"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base z-10"
                     >
-                      <h1 class="md:text-2xl text-xl text-center">
-                        Automated Smart Pharma Solutions.
-                      </h1>
-                      <p
-                        class="max-w-sm text-center md:text-sm text-xs font-light mx-auto"
+                      <div
+                        class="flex flex-col items-center gap-3 md:mx-0 mx-4"
                       >
-                        Custom inventory management is crucial. <br />
-                        Technoboost enhances analytics simplifies workflows with
-                        an easy-to-use interface.
-                      </p>
-                      <p class="self-end font-light text-sm md:mt-4 mt-2">
-                        Know More >
-                      </p>
+                        <h1
+                          class="md:text-2xl text-base 2xl:text-4xl text-center"
+                        >
+                          Automated Smart Pharma Solutions.
+                        </h1>
+                        <p
+                          class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
+                        >
+                          Custom inventory management is crucial. <br />
+                          Technoboost enhances analytics simplifies workflows
+                          with an easy-to-use interface.
+                        </p>
+                        <p class="self-end font-light text-sm md:mt-4 mt-2">
+                          Know More >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>WEB</h1>
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>CUSTOM SOLUTION</h1>
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>DATA & ANALYTICS</h1>
-            </div>
-            <h1 class="lg:text-2xl">Automated Smart Pharma Solutions.</h1>
-          </a>
+              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>WEB</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>CUSTOM SOLUTION</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>DATA & ANALYTICS</h1>
+              </div>
+              <h1 class="lg:text-2xl text-base">
+                Automated Smart Pharma Solutions.
+              </h1>
+            </a>
 
-          <!-- Card 2 (Duplicate with different content) -->
-          <a class="flex flex-col gap-3" href="transforming-jewelry.html" ;>
-            <div class="flip-box rounded-2xl overflow-hidden">
-              <div class="flip-box-inner">
-                <!-- Front -->
-                <div class="flip-box-front">
-                  <img
-                    src="images/feature-2.svg"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <!-- Back -->
-                <div class="flip-box-back relative">
-                  <img
-                    src="images/feature-2.svg"
-                    class="w-full h-full object-cover opacity-25"
-                    alt=""
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351]"
-                  ></div>
-                  <div
-                    class="absolute inset-0 flex flex-col items-center justify-end text-white font-bold text-base z-10"
-                  >
+            <!-- Card 2 (Duplicate with different content) -->
+            <a class="flex flex-col gap-3" href="transforming-jewelry.html" ;>
+              <div class="flip-box rounded-2xl overflow-hidden">
+                <div class="flip-box-inner">
+                  <!-- Front -->
+                  <div class="flip-box-front">
+                    <img
+                      src="images/feature-2.svg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Back -->
+                  <div class="flip-box-back relative">
+                    <img
+                      src="images/feature-2.svg"
+                      class="w-full h-full object-cover opacity-25"
+                      alt=""
+                    />
                     <div
-                      class="flex flex-col justify-center items-end gap-3 mb-8 md:mx-0 mx-4"
+                      class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351]"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base z-10"
                     >
-                      <h1 class="text-center md:text-2xl text-xl">
-                        Revolutionizing Jewellery Operations
-                      </h1>
-                      <p
-                        class="max-w-sm text-center md:text-sm text-xs font-light mx-auto"
+                      <div
+                        class="flex flex-col justify-center items-center gap-3 md:mx-0 mx-4"
                       >
-                        Transforming jewelry operations is essential. <br />
-                        Technoboost elevates insights and streamlines processes
-                        with a user-friendly design.
-                      </p>
-                      <p class="self-end font-light text-sm md:mt-4 mt-2">
-                        Know More >
-                      </p>
+                        <h1
+                          class="text-center md:text-2xl 2xl:text-4xl text-base"
+                        >
+                          Revolutionizing Jewellery Operations
+                        </h1>
+                        <p
+                          class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
+                        >
+                          Transforming jewelry operations is essential. <br />
+                          Technoboost elevates insights and streamlines
+                          processes with a user-friendly design.
+                        </p>
+                        <p class="self-end font-light text-sm md:mt-4 mt-2">
+                          Know More >
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>WEB</h1>
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>MOBILE</h1>
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>DATA & ANALYTICS</h1>
-              <span class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
-              <h1>AI</h1>
-            </div>
-            <h1 class="lg:text-2xl">
-              Revolutionizing Fashion Jewelry Operations
-            </h1>
-          </a>
+              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>WEB</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>MOBILE</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>DATA & ANALYTICS</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>AI</h1>
+              </div>
+              <h1 class="lg:text-2xl text-base">
+                Revolutionizing Fashion Jewelry Operations
+              </h1>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -515,16 +545,16 @@
       <!-- Marquee Section -->
       <marquee
         scrollamount="12"
-        class="text-6xl font-light md:text-7xl lg:text-[100px] leading-tight"
+        class="text-6xl font-light md:text-7xl lg:text-[120px] leading-tight"
       >
         Go Big. Go Bold. <span class="text-[#31F7C8]">Go Technoboost.</span>
       </marquee>
       <div class="max-w-9xl mx-auto flex-col gap-20 mt-20 hidden md:flex">
-        <!-- Top Section: Intro + Links -->
+        <!-- Top Section -->
         <div class="flex flex-col lg:flex-row gap-28 items-center">
-          <!-- Left: Intro -->
+          <!-- Left -->
           <div class="max-w-2xl">
-            <h1 class="text-3xl md:text-5xl leading-snug">
+            <h1 class="text-3xl md:text-4xl leading-snug">
               We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
               dedicated individuals collaborating on amazing initiatives and
               fostering lasting relationships that go far beyond just the final
@@ -532,8 +562,8 @@
             </h1>
           </div>
 
-          <!-- Right: Links -->
-          <div class="flex flex-col gap-10 text-lg">
+          <!-- Right -->
+          <div class="flex flex-col gap-10 text-base">
             <div class="flex flex-col gap-2 hidden">
               <a href="#">Instagram</a>
               <a href="#">Facebook</a>
@@ -566,8 +596,8 @@
           class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-12 mx-4 lg:mx-0"
         >
           <div>
-            <p class="text-3xl lg:text-9xl">Let's Connect</p>
-            <p class="font-light lg:text-3xl lg:pl-2 mt-2 text-sm pl-0">
+            <p class="text-3xl lg:text-[105px]">Let's Connect</p>
+            <p class="font-light lg:text-2xl lg:pl-2 mt-2 text-sm pl-0">
               Let's have a quick virtual chat about project
             </p>
           </div>
@@ -601,7 +631,9 @@
 
           hour12: true,
         });
-        document.getElementById("clock").innerText = time;
+        document.querySelectorAll(".clock").forEach((el) => {
+          el.innerText = time;
+        });
       }
 
       setInterval(showTime, 60000);
