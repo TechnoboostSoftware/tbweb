@@ -68,14 +68,13 @@ class TechnoBoostFixNav extends HTMLElement {
   constructor() {
     super();
 
-    let serviceurl='#our-service'
-    let clientSuccessUrl='#client-success'
-    if(!location.pathname.includes('index.html')){
-        serviceurl='index.html#our-service'
-        clientSuccessUrl='index.html#client-success'
+    let serviceurl = "#our-service";
+    let clientSuccessUrl = "#client-success";
+    if (!location.pathname.includes("index.html")) {
+      serviceurl = "index.html#our-service";
+      clientSuccessUrl = "index.html#client-success";
     }
 
-    
     this.innerHTML = `
        <nav
         class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 bg-white py-2 shadow-lg px-5 rounded-4xl"
@@ -168,6 +167,253 @@ class LetsConnect extends HTMLElement {
 }
 
 customElements.define("lets-connect", LetsConnect);
+
+class FeatureWork extends HTMLElement {
+  constructor() {
+    super();
+
+    this.innerHTML = `
+       <div
+        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 lg:mx-18 md:mt-28 mt-16 lg:mx-18"
+      >
+        <div class="mx-4" id="client-success">
+          <span
+            class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-[108px]"
+          >
+            <h1 class="">Featured</h1>
+            <h1 class="">Work.</h1>
+          </span>
+          <p class="text-center text-xs md:hidden block max-w-xs mx-auto mt-4">
+            Your brand is more than just looks; it’s a powerful force. We drive
+            its growth by blending fresh ideas and teamwork into everything we
+            do.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-7 md:mt-16">
+            <!-- Card 1 -->
+            <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
+              <div class="flip-box rounded-2xl overflow-hidden">
+                <div class="flip-box-inner">
+                  <!-- Front -->
+
+                  <div class="flip-box-front relative w-full h-full">
+                    <img
+                      src="images/feature-1.svg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Back -->
+                  <div class="flip-box-back relative">
+                    <img
+                      src="images/feature-1.svg"
+                      class="w-full h-full object-cover opacity-25"
+                      alt=""
+                    />
+                    <!-- Overlay Shadow -->
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351] opacity-90"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base z-10"
+                    >
+                      <div
+                        class="flex flex-col items-center gap-3 md:mx-0 mx-4"
+                      >
+                        <h1
+                          class="md:text-2xl text-base 2xl:text-4xl text-center"
+                        >
+                          Automated Smart Pharma Solutions.
+                        </h1>
+                        <p
+                          class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
+                        >
+                          Custom inventory management is crucial. <br />
+                          Technoboost enhances analytics simplifies workflows
+                          with an easy-to-use interface.
+                        </p>
+                        <p class="self-end font-light text-sm md:mt-4 mt-2">
+                          Know More >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>WEB</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>CUSTOM SOLUTION</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>DATA & ANALYTICS</h1>
+              </div>
+              <h1 class="lg:text-2xl">Automated Smart Pharma Solutions.</h1>
+            </a>
+
+            <!-- Card 2 (Duplicate with different content) -->
+            <a class="flex flex-col gap-3" href="transforming-jewelry.html" ;>
+              <div class="flip-box rounded-2xl overflow-hidden">
+                <div class="flip-box-inner">
+                  <!-- Front -->
+                  <div class="flip-box-front">
+                    <img
+                      src="images/feature-2.svg"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Back -->
+                  <div class="flip-box-back relative">
+                    <img
+                      src="images/feature-2.svg"
+                      class="w-full h-full object-cover opacity-25"
+                      alt=""
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[#1E5351]"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base z-10"
+                    >
+                      <div
+                        class="flex flex-col justify-center items-center gap-3 md:mx-0 mx-4"
+                      >
+                        <h1
+                          class="text-center md:text-2xl 2xl:text-4xl text-base"
+                        >
+                          Revolutionizing Jewellery Operations.
+                        </h1>
+                        <p
+                          class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
+                        >
+                          Transforming jewelry operations is essential. <br />
+                          Technoboost elevates insights and streamlines
+                          processes with a user-friendly design.
+                        </p>
+                        <p class="self-end font-light text-sm md:mt-4 mt-2">
+                          Know More >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>WEB</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>MOBILE</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>DATA & ANALYTICS</h1>
+                <span
+                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                ></span>
+                <h1>AI</h1>
+              </div>
+              <h1 class="lg:text-2xl">
+                Revolutionizing Fashion Jewelry Operations
+              </h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+customElements.define("feature-work-section", FeatureWork);
+
+class TechnoboostFooter extends HTMLElement {
+  constructor() {
+    super();
+
+    this.innerHTML = ` <div class="max-w-9xl mx-auto md:flex flex-col gap-20 mt-28 hidden">
+        <!-- Top  -->
+        <div class="flex flex-col lg:flex-row gap-28 items-center">
+          <!-- Left -->
+          <div class="max-w-2xl">
+            <h1 class="text-3xl md:text-4xl leading-snug">
+              We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
+              dedicated individuals collaborating on amazing initiatives and
+              fostering lasting relationships that go far beyond just the final
+              product.
+            </h1>
+          </div>
+
+          <!-- Right -->
+          <div class="flex flex-col gap-10 text-base">
+            <div class="flex flex-col gap-2 hidden">
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+              <a href="#">LinkedIn</a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="index.html#client-success">Client Success</a>
+              <a href="#">About</a>
+              <a href="#">Careers</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="flex flex-col lg:flex-row gap-28 items-center">
+          <h2 class="text-2xl md:text-4xl max-w-2xl leading-snug">
+            Want to collaborate with a super down-to-earth, mad-talented team?
+            Hit us up!
+          </h2>
+
+          <!-- Address -->
+          <p class="text-base text-gray-300 max-w-xs">
+            Technoboost Services<br />
+            24, 2nd Floor, Shree Durga Arcade<br />
+            1st Cross Rd, Kasavanahalli.
+          </p>
+        </div>
+        <!-- CONNECT BUTTON -->
+        <div
+          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-12 mx-4 lg:mx-0"
+        >
+          <div>
+            <p class="text-3xl lg:text-[105px]">Let's Connect</p>
+            <p class="font-light lg:text-2xl lg:pl-2 mt-2 text-sm pl-0">
+              Let's have a quick virtual chat about project
+            </p>
+          </div>
+          <div>
+            <a href="contact-us.html">
+              <img
+                src="images/arrow.svg"
+                class="w-12 lg:w-32 hover:scale-125 cursor-pointer transition-all"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+        <div class="flex gap-2 items-center">
+          <img src="images/web-white.svg" alt="" />
+          <p>Online</p>
+          <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
+        </div>
+      </div>
+      
+    `;
+  }
+}
+
+customElements.define("technoboost-footer", TechnoboostFooter);
 
 const element = document.querySelector(".typing");
 const contents = document.querySelectorAll(".accordion-content");
