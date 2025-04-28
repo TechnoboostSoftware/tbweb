@@ -53,11 +53,12 @@ class TechnoBoostFooter extends HTMLElement {
             </div>
           </div>
         </div>
-        <div class="flex gap-2 mt-5 items-center">
+        <div class="flex gap-2 mt-5 items-center hidden">
           <img src="images/web-white.svg" alt="Web Icon" />
           <p>Online</p>
           <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
         </div>
+         <p class="text-xs mt-5 text-center">Copyright © Technoboost. All rights reserved</p>
       </div>
     `;
   }
@@ -229,8 +230,7 @@ class FeatureWork extends HTMLElement {
                           class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
                         >
                           Custom inventory management is crucial. <br />
-                          Technoboost enhances analytics simplifies workflows
-                          with an easy-to-use interface.
+                         Technoboost enhances analytics and simplifies workflows with an easy-to-use interface
                         </p>
                         <p class="self-end font-light text-sm md:mt-4 mt-2">
                           Know More >
@@ -293,8 +293,8 @@ class FeatureWork extends HTMLElement {
                         <p
                           class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
                         >
-                          Transforming jewelry operations is essential. <br />
-                          Technoboost elevates insights and streamlines
+                          Transforming jewellery operations is essential. <br />
+                          Technoboost enhances insights and streamlines
                           processes with a user-friendly design.
                         </p>
                         <p class="self-end font-light text-sm md:mt-4 mt-2">
@@ -401,11 +401,13 @@ class TechnoboostFooter extends HTMLElement {
             </a>
           </div>
         </div>
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center hidden">
           <img src="images/web-white.svg" alt="" />
           <p>Online</p>
           <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
         </div>
+        <p class="text-xs">Copyright © Technoboost. All rights reserved</p>
+
       </div>
       
     `;
