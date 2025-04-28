@@ -3,7 +3,7 @@ class TechnoBoostFooter extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <div class="mx-4 mt-8 text-white font-sans md:hidden block">
+      <div class="mx-4 mt-8 text-white font-sans md:hidden block md:pb-0 pb-30">
         <div class="flex flex-col gap-5">
           <h1 class="text-2xl">
             We’re <span class="text-[#31F7C8]">Technoboost.</span> A group of dedicated individuals collaborating on
@@ -174,11 +174,11 @@ class FeatureWork extends HTMLElement {
 
     this.innerHTML = `
        <div
-        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 lg:mx-18 md:mt-28 mt-16 lg:mx-18"
+        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 lg:mx-18 md:mt-10 mt-5 lg:mx-18"
       >
         <div class="mx-4" id="client-success">
           <span
-            class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-[108px]"
+            class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-[60px]"
           >
             <h1 class="">Featured</h1>
             <h1 class="">Work.</h1>
@@ -189,7 +189,7 @@ class FeatureWork extends HTMLElement {
             do.
           </p>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-7 md:mt-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
             <!-- Card 1 -->
             <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
               <div class="flip-box rounded-2xl overflow-hidden">
@@ -340,12 +340,12 @@ class TechnoboostFooter extends HTMLElement {
   constructor() {
     super();
 
-    this.innerHTML = ` <div class="max-w-9xl mx-auto md:flex flex-col gap-20 mt-28 hidden">
+    this.innerHTML = ` <div class="max-w-9xl mx-auto md:flex flex-col gap-10 mt-10 hidden">
         <!-- Top  -->
         <div class="flex flex-col lg:flex-row gap-28 items-center">
           <!-- Left -->
           <div class="max-w-2xl">
-            <h1 class="text-3xl md:text-4xl leading-snug">
+            <h1 class="text-xl md:text-2xl leading-snug">
               We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
               dedicated individuals collaborating on amazing initiatives and
               fostering lasting relationships that go far beyond just the final
@@ -354,7 +354,7 @@ class TechnoboostFooter extends HTMLElement {
           </div>
 
           <!-- Right -->
-          <div class="flex flex-col gap-10 text-base">
+          <div class="flex flex-col gap-10 text-base text-xl">
             <div class="flex flex-col gap-2 hidden">
               <a href="#">Instagram</a>
               <a href="#">Facebook</a>
@@ -362,15 +362,14 @@ class TechnoboostFooter extends HTMLElement {
             </div>
             <div class="flex flex-col gap-2">
               <a href="index.html#client-success">Client Success</a>
-              <a href="#">About</a>
-              <a href="#">Careers</a>
+              <a href="index.html#our-service">About</a>
             </div>
           </div>
         </div>
 
         <!-- Bottom Section -->
         <div class="flex flex-col lg:flex-row gap-28 items-center">
-          <h2 class="text-2xl md:text-4xl max-w-2xl leading-snug">
+          <h2 class="text-xl md:text-2xl max-w-2xl leading-snug">
             Want to collaborate with a super down-to-earth, mad-talented team?
             Hit us up!
           </h2>
@@ -384,10 +383,10 @@ class TechnoboostFooter extends HTMLElement {
         </div>
         <!-- CONNECT BUTTON -->
         <div
-          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-12 mx-4 lg:mx-0"
+          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-8 mx-4 lg:mx-0"
         >
           <div>
-            <p class="text-3xl lg:text-[105px]">Let's Connect</p>
+            <p class="text-3xl lg:text-[60px]">Let's Connect</p>
             <p class="font-light lg:text-2xl lg:pl-2 mt-2 text-sm pl-0">
               Let's have a quick virtual chat about project
             </p>
@@ -428,3 +427,14 @@ function toggleSection(elem) {
 
   $img.toggleClass("rotate-180");
 }
+
+// function toggleSection(elem) {
+//   const $section = $(elem).closest("div");
+//   const $body = $section.next(".body");
+//   const $img = $section.find("img");
+//   $(".body").not($body).slideUp(300);
+//   $(".body").not($body).prev().find("img").removeClass("rotate-180");
+//   $body.stop(true, true).slideToggle(300);
+
+//   $img.toggleClass("rotate-180");
+// }
