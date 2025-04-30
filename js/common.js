@@ -5,15 +5,15 @@ class TechnoBoostFooter extends HTMLElement {
     this.innerHTML = `
       <div class="mx-4 mt-8 text-white font-sans md:hidden block md:pb-0 pb-30">
         <div class="flex flex-col gap-5">
-          <h1 class="text-2xl">
+          <p class="text-2xl">
             We’re <span class="text-[#31F7C8]">Technoboost.</span> A group of dedicated individuals collaborating on
             amazing initiatives and fostering lasting relationships that go far
             beyond just the final product.
-          </h1>
-          <h1 class="text-2xl">
+          </p>
+          <p class="text-2xl">
             Want to collaborate with a super down-to-earth, mad-talented team?
             Hit us up!
-          </h1>
+          </p>
           <div class="flex flex-col gap-3 text-lg">
             <div class="flex flex-col hidden">
               <a href="">Instagram</a>
@@ -22,22 +22,22 @@ class TechnoBoostFooter extends HTMLElement {
             </div>
             <div class="flex flex-col">
               <a href="#client-success">Client Success</a>
-              <a href="">About</a>
-              <a href="">Careers</a>
+              <a href="">Services</a>
+              <a href="" class="hidden">Careers</a>
             </div>
           </div>
           <div>
-            <h1>
+            <h4>
               Technoboost Services <br />
               24, 2nd Floor, Shree Durga Arcade <br />
               1st Cross Rd, Kasavanahalli.
-            </h1>
+            </h4>
           </div>
           <div
             class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-2xl px-6 py-3"
           >
             <div>
-              <p class="text-4xl">Let's Connect</p>
+              <h4 class="text-4xl">Let's Connect</h4>
               <p class="font-light mt-2 text-xs">
                 Let's have a quick virtual chat about project
               </p>
@@ -144,10 +144,10 @@ class LetsConnect extends HTMLElement {
     super();
 
     this.innerHTML = `
-      <a href="contact-us.html" class="let-connect yellow h-28 w-28 lg:h-36 lg:w-36 flex items-center justify-center rounded-full yellow shadow-sm hover:scale-125 transition-all cursor-pointer fixed right-6 z-50 translate-y-[-140%] opacity-100 transition-transform duration-500 ease-in-out">
-      <h1 class="text-[10px] md:text-sm" style="transform: translateY(35px)">
+      <a href="contact-us.html" class="let-connect yellow h-28 w-28 md:h-36 md:w-36 flex items-center justify-center rounded-full yellow shadow-sm hover:scale-125 transition-all cursor-pointer fixed right-6 z-50 md:translate-y-[-120%] translate-y-[-140%] opacity-100 transition-transform duration-500 ease-in-out">
+      <h4 class="text-[10px] md:text-sm" style="transform: translateY(35px)">
     Let's Connect
-      </h1>
+      </h4>
       </a>
     `;
   }
@@ -175,14 +175,14 @@ class FeatureWork extends HTMLElement {
 
     this.innerHTML = `
        <div
-        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 lg:mx-18 md:mt-10 mt-5 lg:mx-18"
+        class="bg-white md:bg-transparent mx-4 rounded-2xl px-4 py-6 md:mx-18 md:mt-10 mt-5 md:mx-18"
       >
         <div class="mx-4" id="client-success">
           <span
-            class="flex lg:flex-col justify-center gap-2 lg:gap-0 text-3xl md:text-6xl lg:text-[60px]"
+            class="flex md:flex-col justify-center gap-2 md:gap-0 text-3xl md:text-6xl md:text-[50px]"
           >
-            <h1 class="">Featured</h1>
-            <h1 class="">Work.</h1>
+            <h3 class="">Client</h3>
+            <h3 class="">Success</h3>
           </span>
           <p class="text-center text-xs md:hidden block max-w-xs mx-auto mt-4">
             Your brand is more than just looks; it’s a powerful force. We drive
@@ -190,7 +190,7 @@ class FeatureWork extends HTMLElement {
             do.
           </p>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-5">
             <!-- Card 1 -->
             <a class="flex flex-col gap-3" href="transforming-pharma.html" ;>
               <div class="flip-box rounded-2xl overflow-hidden">
@@ -199,7 +199,7 @@ class FeatureWork extends HTMLElement {
 
                   <div class="flip-box-front relative w-full h-full">
                     <img
-                      src="images/feature-1.svg"
+                      src="images/feature-1.png"
                       alt=""
                       class="w-full h-full object-cover"
                     />
@@ -207,7 +207,7 @@ class FeatureWork extends HTMLElement {
                   <!-- Back -->
                   <div class="flip-box-back relative">
                     <img
-                      src="images/feature-1.svg"
+                      src="images/feature-1.png"
                       class="w-full h-full object-cover opacity-25"
                       alt=""
                     />
@@ -221,11 +221,11 @@ class FeatureWork extends HTMLElement {
                       <div
                         class="flex flex-col items-center gap-3 md:mx-0 mx-4"
                       >
-                        <h1
+                        <h4
                           class="md:text-2xl text-base 2xl:text-4xl text-center"
                         >
                           Automated Smart Pharma Solutions.
-                        </h1>
+                        </h4>
                         <p
                           class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
                         >
@@ -244,17 +244,17 @@ class FeatureWork extends HTMLElement {
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>WEB</h1>
+                <h4>WEB</h4>
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>CUSTOM SOLUTION</h1>
+                <h4>CUSTOM SOLUTION</h4>
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>DATA & ANALYTICS</h1>
+                <h4>DATA & ANALYTICS</h4>
               </div>
-              <h1 class="lg:text-2xl">Automated Smart Pharma Solutions.</h1>
+              <h4 class="md:text-2xl">Automated Smart Pharma Solutions.</h4>
             </a>
 
             <!-- Card 2 (Duplicate with different content) -->
@@ -264,7 +264,7 @@ class FeatureWork extends HTMLElement {
                   <!-- Front -->
                   <div class="flip-box-front">
                     <img
-                      src="images/feature-2.svg"
+                      src="images/feature-2.png"
                       alt=""
                       class="w-full h-full object-cover"
                     />
@@ -272,7 +272,7 @@ class FeatureWork extends HTMLElement {
                   <!-- Back -->
                   <div class="flip-box-back relative">
                     <img
-                      src="images/feature-2.svg"
+                      src="images/feature-2.png"
                       class="w-full h-full object-cover opacity-25"
                       alt=""
                     />
@@ -285,11 +285,11 @@ class FeatureWork extends HTMLElement {
                       <div
                         class="flex flex-col justify-center items-center gap-3 md:mx-0 mx-4"
                       >
-                        <h1
+                        <h4
                           class="text-center md:text-2xl 2xl:text-4xl text-base"
                         >
                           Revolutionizing Jewellery Operations.
-                        </h1>
+                        </h4>
                         <p
                           class="max-w-sm 2xl:max-w-md text-center md:text-sm 2xl:text-xl text-xs font-light mx-auto"
                         >
@@ -309,23 +309,23 @@ class FeatureWork extends HTMLElement {
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>WEB</h1>
+                <h4>WEB</h4>
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>MOBILE</h1>
+                <h4>MOBILE</h4>
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>DATA & ANALYTICS</h1>
+                <h4>DATA & ANALYTICS</h4>
                 <span
                   class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
                 ></span>
-                <h1>AI</h1>
+                <h4>AI</h4>
               </div>
-              <h1 class="lg:text-2xl">
+              <h4 class="md:text-2xl">
                 Revolutionizing Fashion Jewelry Operations
-              </h1>
+              </h4>
             </a>
           </div>
         </div>
@@ -342,15 +342,15 @@ class TechnoboostFooter extends HTMLElement {
 
     this.innerHTML = ` <div class="max-w-9xl mx-auto md:flex flex-col gap-10 mt-10 hidden">
         <!-- Top  -->
-        <div class="flex flex-col lg:flex-row gap-28 items-center">
+        <div class="flex flex-col md:flex-row gap-28 items-center">
           <!-- Left -->
           <div class="max-w-2xl">
-            <h1 class="text-xl md:text-2xl leading-snug">
+            <p class="text-xl md:text-2xl leading-snug">
               We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
               dedicated individuals collaborating on amazing initiatives and
               fostering lasting relationships that go far beyond just the final
               product.
-            </h1>
+            </p>
           </div>
 
           <!-- Right -->
@@ -362,32 +362,32 @@ class TechnoboostFooter extends HTMLElement {
             </div>
             <div class="flex flex-col gap-2">
               <a href="index.html#client-success">Client Success</a>
-              <a href="index.html#our-service">About</a>
+              <a href="index.html#our-service">Services</a>
             </div>
           </div>
         </div>
 
         <!-- Bottom Section -->
-        <div class="flex flex-col lg:flex-row gap-28 items-center">
-          <h2 class="text-xl md:text-2xl max-w-2xl leading-snug">
+        <div class="flex flex-col md:flex-row gap-28 items-center">
+          <h3 class="text-xl md:text-2xl max-w-2xl leading-snug">
             Want to collaborate with a super down-to-earth, mad-talented team?
             Hit us up!
-          </h2>
+          </h3>
 
           <!-- Address -->
-          <p class="text-base text-gray-300 max-w-xs">
+          <h4 class="text-base text-gray-300 max-w-xs">
             Technoboost Services<br />
             24, 2nd Floor, Shree Durga Arcade<br />
             1st Cross Rd, Kasavanahalli.
-          </p>
+          </h4>
         </div>
         <!-- CONNECT BUTTON -->
         <div
-          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 lg:py-8 mx-4 lg:mx-0"
+          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 md:py-8 mx-4 md:mx-0"
         >
-          <div>
-            <p class="text-3xl lg:text-[60px]">Let's Connect</p>
-            <p class="font-light lg:text-2xl lg:pl-2 mt-2 text-sm pl-0">
+          <div class="flex flex-col justify-center">
+            <h4 class="text-3xl md:text-[50px]">Let's Connect</h4>
+            <p class="font-light md:text-2xl mt-2 text-sm">
               Let's have a quick virtual chat about project
             </p>
           </div>
@@ -395,7 +395,7 @@ class TechnoboostFooter extends HTMLElement {
             <a href="contact-us.html">
               <img
                 src="images/arrow.svg"
-                class="w-12 lg:w-32 hover:scale-125 cursor-pointer transition-all"
+                class="w-12 md:w-32 hover:scale-125 cursor-pointer transition-all"
                 alt=""
               />
             </a>
