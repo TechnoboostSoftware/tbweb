@@ -49,52 +49,54 @@ function formValidation() {
   }
   let projectType = $('input[name="projectType"]:checked').val();
 
-
-  var emailBodyContent = '<b>First Name :</b> ' + firstName + '<br> ';
-  emailBodyContent += '<b>Last Name :</b> ' + lastName + '<br> ';
-  emailBodyContent += '<b>Email : </b> ' + email + '<br>';
-  emailBodyContent += '<b>Phone : </b> ' + phoneNumber + '<br>';
-  emailBodyContent += '<b>Company : </b> ' + companyName + '<br>';
-  emailBodyContent += '<b>Project Type : </b> ' + projectType + '<br>';
-  emailBodyContent += '<b>Details:</b>' + projectDetails;
+  var emailBodyContent = "<b>First Name :</b> " + firstName + "<br> ";
+  emailBodyContent += "<b>Last Name :</b> " + lastName + "<br> ";
+  emailBodyContent += "<b>Email : </b> " + email + "<br>";
+  emailBodyContent += "<b>Phone : </b> " + phoneNumber + "<br>";
+  emailBodyContent += "<b>Company : </b> " + companyName + "<br>";
+  emailBodyContent += "<b>Project Type : </b> " + projectType + "<br>";
+  emailBodyContent += "<b>Details:</b>" + projectDetails;
 
   var jsondata = {
-    "token": "i2rp4k4ibxpmlcyynm8e",
-    "emailSubjectLine": "Enquiry for business",
-    "emailBodyContent": emailBodyContent
-}
-  $("#submitForm").attr("disabled", true)
-        $.ajax({
-            type: "POST",
-            url: "https://es.technoboost.in/api/v1/mail-send",
-            data: JSON.stringify(jsondata),
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $("#submitForm").attr("disabled", false)
-                // $(".alert").toggle('alert')
-                // $(".alert").addClass('show')
-                if (result.hasOwnProperty('status') && result.status == 'NOT_FOUND') {
-                    $(".successMessage").removeClass('hidden')
-                    // $(".alert").addClass('alert-danger')
+    token: "gUXMeJn%P8gRVxMH",
+    emailSubjectLine: "Enquiry for business",
+    emailBodyContent: emailBodyContent,
+  };
+  $("#submitForm").attr("disabled", true);
+  $.ajax({
+    type: "POST",
+    url: "https://es.technoboost.in/api/v1/mail-send",
+    data: JSON.stringify(jsondata),
+    contentType: "application/json; charset=utf-8",
+    success: function (result) {
+      $("#submitForm").attr("disabled", false);
+      // $(".alert").toggle('alert')
+      // $(".alert").addClass('show')
+      if (result.hasOwnProperty("status") && result.status == "NOT_FOUND") {
+        $(".successMessage").removeClass("hidden");
+        // $(".alert").addClass('alert-danger')
 
-                    $("#successMessage").html('<strong style="color:red"> Someting went wrong try again </b>')
-                } else {
-                    // $(".alert").addClass('alert-success')
-                    // $(".alert").removeClass('alert-danger')
-                    $("#successMessage").html(' <span  style="color:green"><strong>Thankyou for contacting us!  </strong> Our team will get back to you.</span>')
-                    $(".contactInput").val('')
-                }
-            },
-            error: function (err) {
-                $("#submitForm").attr("disabled", false)
-                // $(".alert").toggle('alert')
-                // $(".alert").addClass('show')
-                // $(".alert").removeClass('alert-success')
-                // $(".alert").addClass('alert-danger')
-                $("#successMessage").html('<strong style="color:red"> Someting went wrong try again </b>')
-
-            }
-        });
-
-
+        $("#successMessage").html(
+          '<strong style="color:red"> Someting went wrong try again </b>'
+        );
+      } else {
+        // $(".alert").addClass('alert-success')
+        // $(".alert").removeClass('alert-danger')
+        $("#successMessage").html(
+          ' <span  style="color:green"><strong>Thankyou for contacting us!  </strong> Our team will get back to you.</span>'
+        );
+        $(".contactInput").val("");
+      }
+    },
+    error: function (err) {
+      $("#submitForm").attr("disabled", false);
+      // $(".alert").toggle('alert')
+      // $(".alert").addClass('show')
+      // $(".alert").removeClass('alert-success')
+      // $(".alert").addClass('alert-danger')
+      $("#successMessage").html(
+        '<strong style="color:red"> Someting went wrong try again </b>'
+      );
+    },
+  });
 }
