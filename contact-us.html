@@ -46,8 +46,9 @@
       <!-- FIXED NAV -->
       <techno-boost-fixed-nav></techno-boost-fixed-nav>
       <!-- FORM SECTION -->
-      <div
+      <form
         class="bg-white md:mx-28 md:px-10 px-4 md:py-10 py-10 md:mb-10 mb-0 rounded-4xl"
+        id="formSection"
       >
         <h2 class="md:text-[40px] text-3xl">Project Type</h2>
         <div class="mt-10">
@@ -150,7 +151,7 @@
         </div>
 
         <!-- Input Fields -->
-        <form class="mt-5 space-y-6">
+        <div class="mt-5 space-y-6">
           <div class="mb-4">
             <input
               type="text"
@@ -205,7 +206,7 @@
               class="border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-500 w-full placeholder:text-lg mt-3 pb-2"
             ></textarea>
           </div>
-        </form>
+        </div>
         <div class="mt-10 flex items-center gap-3">
           <button
             id="submitForm"
@@ -216,7 +217,7 @@
           </button>
           <p id="successMessage" class="hidden"></p>
         </div>
-      </div>
+      </form>
     </div>
     <!-- FOOTER SECTION -->
     <div
