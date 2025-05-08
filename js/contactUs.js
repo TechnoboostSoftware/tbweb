@@ -6,6 +6,7 @@ function showError(id) {
 function removeError(id) {
   $(id).removeClass("border-red-500");
   $(id).addClass("border-gray-300");
+  $("#successMessage").addClass("hidden");
 }
 
 function formValidation() {
@@ -73,19 +74,21 @@ function formValidation() {
       // $(".alert").toggle('alert')
       // $(".alert").addClass('show')
       if (result.hasOwnProperty("status") && result.status == "NOT_FOUND") {
-        $(".successMessage").removeClass("hidden");
+        $("#successMessage").removeClass("hidden");
         // $(".alert").addClass('alert-danger')
 
         $("#successMessage").html(
-          '<strong style="color:red"> Someting went wrong try again </b>'
+          '<strong style="color: red;">Something went wrong, try again</strong>'
         );
       } else {
         // $(".alert").addClass('alert-success')
         // $(".alert").removeClass('alert-danger')
+        $("#successMessage").removeClass("hidden");
         $("#successMessage").html(
-          ' <span  style="color:green"><strong>Thankyou for contacting us!  </strong> Our team will get back to you.</span>'
+          ' <span style="color:green"><strong>Thankyou for contacting us!  </strong> Our team will get back to you.</span>'
         );
-        $(".contactInput").val("");
+        // $(".contactInput").val("");
+        $("#formSection")[0].reset();
       }
     },
     error: function (err) {
@@ -94,6 +97,7 @@ function formValidation() {
       // $(".alert").addClass('show')
       // $(".alert").removeClass('alert-success')
       // $(".alert").addClass('alert-danger')
+      $("#successMessage").removeClass("hidden");
       $("#successMessage").html(
         '<strong style="color:red"> Someting went wrong try again </b>'
       );
