@@ -33,8 +33,8 @@ class TechnoBoostFooter extends HTMLElement {
               1st Cross Rd, Kasavanahalli.
             </h4>
           </div>
-          <div
-            class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-2xl px-6 py-3"
+          <a href="contact-us.html"
+            class="flex items-center justify-between group bg-[#F6FA5E] text-black rounded-2xl px-6 py-3"
           >
             <div>
               <h4 class="text-4xl">Let's Connect</h4>
@@ -43,22 +43,22 @@ class TechnoBoostFooter extends HTMLElement {
               </p>
             </div>
             <div>
-            <a href="contact-us.html">
+            <div>
               <img
                 src="images/arrow.svg"
-                class="w-12 hover:scale-125 cursor-pointer transition-all"
+                class="w-12 group-hover:scale-125 cursor-pointer transition-all"
                 alt="Arrow"
               />
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="flex gap-2 mt-5 items-center hidden">
           <img src="images/web-white.svg" alt="Web Icon" />
           <p>Online</p>
           <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
         </div>
-         <p class="text-xs mt-5 text-center">Copyright © Technoboost. All rights reserved</p>
+         <p class="text-xs mt-5 text-center">Copyright © Technoboost. All rights reserved.</p>
       </div>
     `;
   }
@@ -111,10 +111,8 @@ class TechnoBoostFixNav extends HTMLElement {
     const location = window.location.href;
     const locationSplit = location.split("/");
     const currentLocation = locationSplit[locationSplit.length - 1];
-
     const $nav = $(this);
     $nav.find(".nav-link").removeClass("bg-[#05070F] text-white");
-
     const home =
       currentLocation === "index.html" ||
       currentLocation === "index.html#our-service" ||
@@ -137,6 +135,7 @@ class TechnoBoostFixNav extends HTMLElement {
     }
   }
 }
+
 customElements.define("techno-boost-fixed-nav", TechnoBoostFixNav);
 
 class LetsConnect extends HTMLElement {
@@ -240,17 +239,17 @@ class FeatureWork extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+              <div class="flex gap-1 items-baseline text-xs">
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>WEB</h4>
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>CUSTOM SOLUTION</h4>
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>DATA & ANALYTICS</h4>
               </div>
@@ -305,21 +304,21 @@ class FeatureWork extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="flex md:gap-2 gap-1 items-center md:text-sm text-xs">
+              <div class="flex gap-1 items-baseline text-xs">
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>WEB</h4>
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>MOBILE</h4>
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>DATA & ANALYTICS</h4>
                 <span
-                  class="bg-black md:w-4 md:h-4 w-2 h-2 rounded-full"
+                  class="bg-black w-2 h-2 rounded-full"
                 ></span>
                 <h4>AI</h4>
               </div>
@@ -368,7 +367,7 @@ class TechnoboostFooter extends HTMLElement {
         </div>
 
         <!-- Bottom Section -->
-        <div class="flex flex-col md:flex-row gap-28 items-center">
+        <div class="flex flex-col md:flex-row gap-28 items-baseline">
           <h3 class="text-xl md:text-2xl max-w-2xl leading-snug">
             Want to collaborate with a super down-to-earth, mad-talented team?
             Hit us up!
@@ -382,8 +381,8 @@ class TechnoboostFooter extends HTMLElement {
           </h4>
         </div>
         <!-- CONNECT BUTTON -->
-        <div
-          class="flex items-center justify-between bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 md:py-8 mx-4 md:mx-0"
+        <a href="contact-us.html"
+          class="flex items-center justify-between group bg-[#F6FA5E] text-black rounded-4xl px-8 py-6 md:py-8 mx-4 md:mx-0"
         >
           <div class="flex flex-col justify-center">
             <h4 class="text-3xl md:text-[50px]">Let's Connect</h4>
@@ -392,21 +391,21 @@ class TechnoboostFooter extends HTMLElement {
             </p>
           </div>
           <div>
-            <a href="contact-us.html">
+            <div>
               <img
                 src="images/arrow.svg"
-                class="w-12 md:w-32 hover:scale-125 cursor-pointer transition-all"
+                class="w-12 md:w-32 group-hover:scale-125 cursor-pointer transition-all"
                 alt=""
               />
-            </a>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="flex gap-2 items-center hidden">
           <img src="images/web-white.svg" alt="" />
           <p>Online</p>
           <span class="bg-[#31F7C8] md:w-4 md:h-4 w-2 h-2 rounded-full"></span>
         </div>
-        <p class="text-xs">Copyright © Technoboost. All rights reserved</p>
+        <p class="text-xs">Copyright © 2025 Technoboost. All rights reserved.</p>
 
       </div>
       
