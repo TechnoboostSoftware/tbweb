@@ -39,7 +39,7 @@ class TechnoBoostFooter extends HTMLElement {
             <div>
               <h4 class="text-4xl">Let's Connect</h4>
               <p class="font-light mt-2 text-xs">
-                Let's have a quick virtual chat about project
+                Let's have a quick chat about project
               </p>
             </div>
             <div>
@@ -151,19 +151,19 @@ class LetsConnect extends HTMLElement {
     `;
   }
 
-  connectedCallback() {
-    const letConnect = this.querySelector(".let-connect");
+  // connectedCallback() {
+  //   const letConnect = this.querySelector(".let-connect");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 1200) {
-        letConnect.classList.add("translate-y-[-100%]", "opacity-0");
-        letConnect.classList.remove("translate-y-0", "opacity-100");
-      } else {
-        letConnect.classList.remove("translate-y-[-100%]", "opacity-0");
-        letConnect.classList.add("translate-y-0", "opacity-100");
-      }
-    });
-  }
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 1200) {
+  //       letConnect.classList.add("translate-y-[-100%]", "opacity-0");
+  //       letConnect.classList.remove("translate-y-0", "opacity-100");
+  //     } else {
+  //       letConnect.classList.remove("translate-y-[-100%]", "opacity-0");
+  //       letConnect.classList.add("translate-y-0", "opacity-100");
+  //     }
+  //   });
+  // }
 }
 
 customElements.define("lets-connect", LetsConnect);
@@ -239,21 +239,27 @@ class FeatureWork extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="flex gap-1 items-baseline text-xs">
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>WEB</h4>
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>CUSTOM SOLUTION</h4>
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>DATA & ANALYTICS</h4>
+              <div class="flex gap-2 items-baseline text-xs">
+                <span class="flex items-center gap-1">
+                  <span
+                    class="bg-black w-2 h-2 rounded-full inline-block"
+                  ></span>
+                  <p>WEB</p>
+                </span>
+                <span class="flex items-center gap-1">
+                  <span
+                    class="bg-black w-2 h-2 rounded-full inline-block"
+                  ></span>
+                  <span>CUSTOM SOLUTION</span>
+                </span>
+                <span class="flex items-center gap-1">
+                  <span
+                    class="bg-black w-2 h-2 rounded-full inline-block"
+                  ></span>
+                  <span>DATA & ANALYTICS</span>
+                </span>
               </div>
-              <h4 class="md:text-2xl">Automated Smart Pharma Solutions.</h4>
+              <h4 class="md:text-2xl">Automated Smart Pharma Solutions</h4>
             </a>
 
             <!-- Card 2 (Duplicate with different content) -->
@@ -304,23 +310,23 @@ class FeatureWork extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="flex gap-1 items-baseline text-xs">
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>WEB</h4>
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>MOBILE</h4>
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>DATA & ANALYTICS</h4>
-                <span
-                  class="bg-black w-2 h-2 rounded-full"
-                ></span>
-                <h4>AI</h4>
+             <div class="flex gap-2 items-baseline text-xs">
+                <span class="flex items-center gap-1">
+                  <span class="bg-black w-2 h-2 rounded-full"></span>
+                  <p>WEB</p>
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="bg-black w-2 h-2 rounded-full"></span>
+                  <span>MOBILE</span>
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="bg-black w-2 h-2 rounded-full"></span>
+                  <span>DATA & ANALYTICS</span>
+                </span>
+                <span class="flex items-center gap-1">
+                  <span class="bg-black w-2 h-2 rounded-full"></span>
+                  <span>AI</span>
+                </span>
               </div>
               <h4 class="md:text-2xl">
                 Revolutionizing Fashion Jewelry Operations
@@ -387,7 +393,7 @@ class TechnoboostFooter extends HTMLElement {
           <div class="flex flex-col justify-center">
             <h4 class="text-3xl md:text-[50px]">Let's Connect</h4>
             <p class="font-light md:text-2xl mt-2 text-sm">
-              Let's have a quick virtual chat about project
+              Let's have a quick chat about project
             </p>
           </div>
           <div>
