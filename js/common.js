@@ -86,12 +86,12 @@ class TechnoBoostFixNav extends HTMLElement {
               href="index.html"
               id="home"
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
-            >HOME</a>
+            >Home</a>
             <a
               href="${serviceurl}"
               id="services"
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl cursor-pointer"
-            >SERVICES</a>
+            >Services</a>
             <a
               href=""
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl hidden cursor-pointer"
@@ -100,7 +100,7 @@ class TechnoBoostFixNav extends HTMLElement {
               href="${clientSuccessUrl}"
               id="client"
               class="hover:bg-[#05070F] nav-link hover:text-white p-2 rounded-xl text-nowrap cursor-pointer"
-            >CLIENT SUCCESS</a>
+            >Client Success</a>
           </div>
         </div>
       </nav>
@@ -345,13 +345,13 @@ class TechnoboostFooter extends HTMLElement {
   constructor() {
     super();
 
-    this.innerHTML = ` <div class="max-w-9xl mx-auto md:flex flex-col gap-10 mt-10 hidden">
+    this.innerHTML = ` <div class="md:flex flex-col gap-10 mx-10 lg:mx-auto mt-10 hidden">
         <!-- Top  -->
-        <div class="flex flex-col md:flex-row gap-28 items-center">
+        <div class="flex flex-col md:flex-row lg:gap-28 gap-8 items-center">
           <!-- Left -->
-          <div class="max-w-2xl">
+          <div class="lg:max-w-2xl max-w-lg">
             <p class="text-xl md:text-2xl leading-snug">
-              We’re <span class="text-[#31F7C8]">Technoboost</span>. A group of
+              We’re <span class="text-[#31F7C8]"><a href="index.html">Technoboost</a></span>. A group of
               dedicated individuals collaborating on amazing initiatives and
               fostering lasting relationships that go far beyond just the final
               product.
