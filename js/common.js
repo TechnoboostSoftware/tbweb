@@ -21,9 +21,10 @@ class TechnoBoostFooter extends HTMLElement {
               <a href="">LinkedIn</a>
             </div>
             <div class="flex flex-col">
-              <a href="#client-success">Client Success</a>
-              <a href="">Services</a>
-              <a href="" class="hidden">Careers</a>
+              <a href="index.html#client-success">Client Success</a>
+              <a href="index.html#our-service">Services</a>
+               <a href="terms-condition.html">Terms & Conditions</a>
+              <a href="privacy-policy.html">Privacy Policy</a>
             </div>
           </div>
           <div>
@@ -365,9 +366,12 @@ class TechnoboostFooter extends HTMLElement {
               <a href="#">Facebook</a>
               <a href="#">LinkedIn</a>
             </div>
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 text-lg">
               <a href="index.html#client-success">Client Success</a>
               <a href="index.html#our-service">Services</a>
+              <a href="terms-condition.html">Terms & Conditions</a>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              
             </div>
           </div>
         </div>
