@@ -17,8 +17,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
     <title>
       Technoboost | Driving Growth with AI & Automation | Cloud First, Digital
       First, AI First
@@ -46,7 +44,7 @@
       <!-- HERO SECTION -->
 
       <section
-        class="md:flex px-4 md:px-10 mb-10 items-center justify-between overflow-hidden hidden"
+        class="md:flex px-4 md:px-10 items-center justify-between overflow-hidden hidden"
       >
         <div class="w-full md:w-1/2">
           <div class="md:gap-10 text-center md:text-left">
@@ -62,7 +60,7 @@
             <span class="herotextcolor">AI & Automation </span>
           </h2>
           <h2
-            class="text-lg lg:text-[30px] text-subTitel text-center md:text-left typing leading-18"
+            class="text-lg lg:text-[20px] text-subTitel text-center md:text-left typing leading-18"
           >
             Cloud-Powered, Digital-Led, AI-Driven
           </h2>
@@ -76,22 +74,28 @@
         </div>
       </section>
       <!-- MOBILE HERO SECTION -->
-      <div class="flex flex-col mx-4 overflow-hidden md:hidden">
-        <div class="flex justify-between items-center">
-          <div class="text-[38px] leading-tight">
-            <h3>Driving</h3>
-            <h3>Growth</h3>
-            <h3>With <span class="herotextcolor">AI &</span></h3>
+      <div class="flex flex-col mx-2 overflow-hidden md:hidden">
+        <div class="flex flex-col items-center">
+          <div class="text-[34px] leading-tight text-center">
+            <h3 class="animate-from-left">Driving Growth</h3>
+
+            <h3 class="text-nowrap">
+              <span class="herotextcolor animated-text-slideup"
+                >With AI & Automation</span
+              >
+            </h3>
+            <h3 class="text-subTitel text-lg typing mt-2">
+              Cloud-Powered, Digital-Led, AI-Driven
+            </h3>
           </div>
-          <div class="w-[60%]">
-            <img src="images/hero image.png" alt="" />
+          <div class="mt-5 flex justify-center animate-from-right">
+            <img
+              src="images/hero image.png"
+              class="object-contain w-[90%]"
+              alt=""
+            />
           </div>
         </div>
-        <h3 class="text-4xl herotextcolor">Automation</h3>
-
-        <h3 class="text-subTitel text-lg typing">
-          Cloud-Powered, Digital-Led, AI-Driven
-        </h3>
       </div>
       <!-- FIXED NAV -->
       <techno-boost-fixed-nav></techno-boost-fixed-nav>
@@ -107,8 +111,7 @@
             <p class="text-[10px] ml-2 md:block hidden">Servicing Earth</p>
           </div>
         </div>
-
-        <div class="max-w-xs text-base md:block hidden">
+        <div class="max-w-2xs text-sm md:block hidden">
           <p>
             Turn bold ideas into impactful brand experiences with the handiwork
             and help of our collective bunch.
@@ -543,9 +546,11 @@
               <a href="#">Facebook</a>
               <a href="#">LinkedIn</a>
             </div>
-            <div class="flex flex-col gap-2 text-xl">
+            <div class="flex flex-col gap-2 text-lg">
               <a href="#client-success">Client Success</a>
               <a href="#our-service">Services</a>
+              <a href="terms-condition.html">Terms & Conditions</a>
+              <a href="privacy-policy.html">Privacy Policy</a>
               <!-- <a href="#">Careers</a> -->
             </div>
           </div>
@@ -600,7 +605,6 @@
     </div>
     <script src="js/common.js"></script>
     <script>
-      AOS.init();
       function showTime() {
         const now = new Date();
         const time = now.toLocaleTimeString("en-IN", {
