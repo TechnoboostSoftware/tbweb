@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
-import { ArrowRight, ArrowLeft, BarChart3, TrendingUp, Database, Eye, Brain, Sparkles, CheckCircle, Target, Zap, PieChart, LineChart, Activity, Users, Clock, Rocket } from "lucide-react";
+import { ArrowRight, ArrowLeft, BarChart3, TrendingUp, Database, Eye, Brain, Sparkles, CheckCircle, Target, Zap, PieChart, LineChart, Activity } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function DataAnalyticsPage() {

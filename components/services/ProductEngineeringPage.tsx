@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { ArrowRight, ArrowLeft, Cpu, Zap, Shield, TrendingUp, CheckCircle, Clock, Rocket, Users, Target, GitBranch, Code, Database, Settings, Layers, Award } from "lucide-react";
+import { ArrowRight, ArrowLeft, Cpu, Zap, Shield, TrendingUp, CheckCircle, Clock, Rocket, Users, Code, Database, Settings, Award } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function ProductEngineeringPage() {

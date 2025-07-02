@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { ArrowRight, Mail, Phone, MapPin, Sparkles, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Sparkles, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 
@@ -267,7 +267,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-[var(--teal-primary)] to-[var(--teal-secondary)] hover:from-[var(--teal-secondary)] hover:to-[var(--teal-primary)] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] h-14"
+                    className="w-full bg-gradient-to-r from-[var(--teal-primary)] to-[var(--teal-secondary)] hover:from-[var(--teal-secondary)] hover:to-[var(--teal-primary)] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] h-14 cursor-pointer"
                   >
                     Send Message & Get Free Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />

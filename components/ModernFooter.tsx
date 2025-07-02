@@ -72,7 +72,7 @@ export function ModernFooter() {
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-3 mb-6 cursor-pointer">
               <img 
                 src={newLogo} 
                 alt="Technoboost Logo" 

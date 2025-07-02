@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { ArrowRight, ArrowLeft, Code, Globe, Smartphone, Zap, Shield, Sparkles, CheckCircle, Clock, TrendingUp, Star, Rocket, Users, Terminal, Brackets, FileCode, GitBranch } from "lucide-react";
+import { ArrowRight, ArrowLeft, Code, Globe, Zap, Shield, Clock, TrendingUp, Rocket, Users, Terminal, Brackets, FileCode, GitBranch } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function WebDevelopmentPage() {

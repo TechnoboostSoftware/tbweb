@@ -72,7 +72,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <button onClick={handleLogoClick} className="flex items-center hover:opacity-80 transition-opacity">
+          <button onClick={handleLogoClick} className="flex items-center hover:opacity-80 transition-opacity cursor-pointer">
             <img 
               src={technoboostLogo} 
               alt="Technoboost Logo" 
@@ -101,7 +101,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
           <div className="hidden lg:flex items-center space-x-4">
             <Button 
               onClick={handleContactClick}
-              className="bg-gradient-to-r from-[var(--teal-primary)] to-[var(--teal-secondary)] hover:from-[var(--teal-secondary)] hover:to-[var(--teal-primary)] text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg border-0"
+              className="bg-gradient-to-r from-[var(--teal-primary)] to-[var(--teal-secondary)] hover:from-[var(--teal-secondary)] hover:to-[var(--teal-primary)] text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg border-0 cursor-pointer"
             >
               Let's Connect
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -127,7 +127,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
             >
               <div className="flex flex-col h-full">
                 {/* Mobile Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between p-6 border-b border-gray-200 cursor-pointer">
                   <img 
                     src={technoboostLogo} 
                     alt="Technoboost Logo" 

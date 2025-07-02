@@ -466,7 +466,7 @@ function Frame1410087280() {
   return (
     <div className="absolute left-[42.75px] top-[286.5px] w-[611.25px]">
       <div className="box-border content-stretch flex flex-col gap-[21px] items-start justify-start leading-[0] not-italic p-0 relative text-left w-[611.25px]">
-        <div className="font-['FK_Grotesk_Trial:Regular',_sans-serif] h-[153px] leading-[normal] relative shrink-0 text-[#000000] text-[0px] text-[60px] w-[611.25px]">
+        <div className="font-['FK_Grotesk_Trial:Regular',_sans-serif] h-[153px] leading-[normal] relative shrink-0 text-[#000000] text-[60px] w-[611.25px]">
           <p className="block font-['FK_Display:Regular_Alt',_sans-serif] mb-0">
             Driving Growth
           </p>

@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { ArrowRight, ArrowLeft, FileSpreadsheet, BarChart3, Zap, Cog, CheckCircle, Clock, TrendingUp, Star, FileX, Database, Target, Users, Shield, Grid, Calculator, RefreshCw } from "lucide-react";
+import { ArrowRight, ArrowLeft, FileSpreadsheet, Zap, Cog, CheckCircle, Clock, TrendingUp, Database, Target, Users, Shield, Grid, Calculator, RefreshCw } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function SmartSheetSolutionsPage() {

@@ -959,19 +959,19 @@ function Frame1410087270() {
           <p className="block leading-[normal]">Challenges</p>
         </div>
         <div className="flex flex-col justify-center relative shrink-0 text-[#667085] text-[30px] w-full">
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">{`Our clients faced multiple operational hurdles across their businesses. They lacked comprehensive visibility into inventory across diverse geographic locations, making it difficult to track stock levels and manage expirations efficiently. `}</span>
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">{`Additionally, they struggled with accessing real-time data for executive decision-making in fast-paced markets, with no robust reporting system to support strategic planning. `}</span>
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal" start="1">
+          <ol className="list-decimal">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">
                 Cost analysis also presented significant difficulties, as they
@@ -1005,7 +1005,7 @@ function Frame1410087271() {
           <p className="block leading-[normal]">Solutions</p>
         </div>
         <div className="flex flex-col justify-center relative shrink-0 text-[#667085] text-[30px] w-full">
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">
                 Our inventory management system provided complete visibility
@@ -1016,13 +1016,13 @@ function Frame1410087271() {
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">{`We complemented this with an advanced Business Intelligence reporting system featuring live sales/margin reports, accurate gross-to-net calculations for the US market, and clear budget-to-actuals comparisons. `}</span>
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal" start="1">
+          <ol className="list-decimal">
             <li className="mb-0 ms-[45px]">
               <span className="leading-[normal]">{`To complete the ecosystem, our Cost Insight Analyzer implemented BOM-based cost sheets for detailed product cost breakdowns and sophisticated what-if analysis capabilities, allowing stakeholders to model the impact of material price changes on their overall P&L statement.`}</span>
             </li>

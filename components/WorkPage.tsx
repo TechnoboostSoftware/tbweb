@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ArrowRight, ArrowLeft, TrendingUp, Clock, CheckCircle, Building2, Gem, BarChart3, Zap, Target, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, TrendingUp, CheckCircle, Building2, Gem, BarChart3, Zap, Target, Sparkles } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
 export function WorkPage() {
@@ -127,7 +127,7 @@ export function WorkPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-              {caseStudies.map((study, index) => {
+              {caseStudies.map((study) => {
                 const IconComponent = study.icon;
                 return (
                   <Card 

@@ -175,7 +175,7 @@ export function ClientsCarousel() {
                   className="flex items-center justify-center min-h-[80px]" 
                   style={{ width: `${100 / totalSlides}%` }}
                 >
-                  {slideClients.map((client, clientIndex) => (
+                  {slideClients.map((client) => (
                     <div
                       key={client.id}
                       className={`clients-carousel-item flex items-center justify-center h-16 px-3 ${
@@ -236,7 +236,7 @@ export function ClientsCarousel() {
         <Button 
           onClick={() => window.location.hash = 'projects'}
           variant="outline"
-          className="border-[var(--teal-primary)] text-[var(--teal-primary)] hover:bg-[var(--teal-primary)] hover:text-white transition-all duration-300"
+          className="border-[var(--teal-primary)] text-[var(--teal-primary)] hover:bg-[var(--teal-primary)] hover:text-white transition-all duration-300 cursor-pointer"
         >
           Know More
         </Button>

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { ArrowRight, Palette, Code, Database, Zap, Shield, BarChart3, Sparkles, Globe, Users, FileSpreadsheet, Cpu } from "lucide-react";
+import { ArrowRight, Palette, Code, Zap, Shield, BarChart3, FileSpreadsheet, Cpu } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
 export function ModernServices() {
@@ -199,7 +199,7 @@ export function ModernServices() {
               <ContactForm>
                 <Button 
                   size="lg"
-                  className="bg-white text-[var(--teal-primary)] hover:bg-gray-100 hover:text-[var(--teal-secondary)] rounded-full px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg"
+                  className="bg-white text-[var(--teal-primary)] hover:bg-gray-100 hover:text-[var(--teal-secondary)] rounded-full px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg cursor-pointer"
                 >
                   Start Your Project
                   <ArrowRight className="ml-2 h-5 w-5" />

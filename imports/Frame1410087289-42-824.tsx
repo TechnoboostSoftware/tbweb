@@ -980,7 +980,7 @@ function Frame1410087270() {
           <p className="block leading-[normal]">Challenges</p>
         </div>
         <div className="flex flex-col justify-center relative shrink-0 text-[#667085] text-[26.6667px] w-full">
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">
                 The inventory management was severely impacted by poor turnover
@@ -990,7 +990,7 @@ function Frame1410087270() {
             </li>
           </ol>
           <p className="block leading-[normal] mb-0"> </p>
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">
                 Product distribution inefficiencies created persistent
@@ -1000,7 +1000,7 @@ function Frame1410087270() {
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal" start="1">
+          <ol className="list-decimal">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">
                 Warehouse operations were plagued by slow processes, with stock
@@ -1036,13 +1036,13 @@ function Frame1410087271() {
           <p className="block leading-[normal]">Solutions</p>
         </div>
         <div className="flex flex-col justify-center relative shrink-0 text-[#667085] text-[26.6667px] w-full">
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">{` Our digital eCommerce solution included both a user-friendly mobile application and an integrated web platform, enabling customers to browse products seamlessly, make secure purchases, and receive personalized recommendations while providing powerful inventory management and customer engagement features. `}</span>
             </li>
           </ol>
           <p className="block leading-[normal] mb-0">&nbsp;</p>
-          <ol className="list-decimal mb-0" start="1">
+          <ol className="list-decimal mb-0">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">
                 We developed a sophisticated data analytics and reporting
@@ -1054,7 +1054,7 @@ function Frame1410087271() {
             </li>
           </ol>
           <p className="block leading-[normal] mb-0"> </p>
-          <ol className="list-decimal" start="1">
+          <ol className="list-decimal">
             <li className="mb-0 ms-10">
               <span className="leading-[normal]">
                 Finally, our custom warehouse management system streamlined the

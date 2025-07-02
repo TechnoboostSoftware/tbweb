@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ArrowRight, ArrowLeft, CheckCircle, Clock, TrendingUp, Star, BarChart3, Zap, Target, Users } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle, TrendingUp, Star, BarChart3, Zap, Target } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 // import imgImage9 from "figma:asset/25d58db97deddc9255540b230f1492bb4fbcbcd1.png";
 // import imgImage44 from "figma:asset/fe075902f42f6c71c8a0a08fe8c3a95584a47291.png";
@@ -138,7 +138,7 @@ export function CaseStudiesPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="space-y-24">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <div key={study.id} className="max-w-7xl mx-auto">
                 {/* Case Study Hero */}
                 <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden mb-16 group">

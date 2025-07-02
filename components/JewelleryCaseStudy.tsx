@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ArrowRight, Gem, TrendingUp, BarChart3, Users, Clock, Target, CheckCircle, Lightbulb, ShoppingCart, Warehouse, Smartphone } from "lucide-react";
+import { ArrowRight, Gem, TrendingUp, BarChart3, Clock, Target, CheckCircle, ShoppingCart, Warehouse, Smartphone } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
 export function JewelleryCaseStudy() {

@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
-import { ArrowRight, ArrowLeft, Smartphone, Apple, Chrome, Zap, Users, Sparkles, CheckCircle, Download, Star, Timer, Tablet, Monitor, Wifi, Bell } from "lucide-react";
+import { ArrowRight, ArrowLeft, Smartphone, Apple, Chrome, Zap, Users, Sparkles, CheckCircle, Download, Star, Timer, Wifi, Bell } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function MobileAppsPage() {

@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { ArrowRight, ArrowLeft, Palette, Eye, Users, Zap, CheckCircle, Clock, TrendingUp, Star, Rocket, Heart, Figma, Smartphone, Monitor, Tablet } from "lucide-react";
+import { ArrowRight, ArrowLeft, Palette, Eye, Users, Zap, CheckCircle, Clock, TrendingUp, Rocket, Heart, Figma, Smartphone, Monitor, Tablet } from "lucide-react";
 import { ContactForm } from "../ContactForm";
 
 export function UXUIDesignPage() {
