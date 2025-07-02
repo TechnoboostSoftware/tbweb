@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/tbweb',
+  base: '',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./"),
