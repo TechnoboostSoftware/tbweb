@@ -161,7 +161,7 @@ export function ClientsCarousel() {
           <div 
             className="flex transition-transform duration-700 ease-in-out"
             style={{ 
-              transform: `translateX(-${currentSlide * 100}%)`,
+               transform: `translateX(-${currentSlide * (100 / totalSlides)}%)`,
               width: `${totalSlides * 100}%`
             }}
             onMouseEnter={handleMouseEnter}
@@ -172,7 +172,7 @@ export function ClientsCarousel() {
               return (
                 <div 
                   key={slideIndex} 
-                  className="flex items-center justify-center min-h-[80px]" 
+                  className="flex items-center justify-center min-h-[80px] shrink-0" 
                   style={{ width: `${100 / totalSlides}%` }}
                 >
                   {slideClients.map((client) => (

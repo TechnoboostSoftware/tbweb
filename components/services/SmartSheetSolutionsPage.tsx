@@ -406,7 +406,7 @@ export function SmartSheetSolutionsPage() {
                 className="rounded-full px-8 py-6 border-white/30 text-[#2dcbc5] hover:bg-white/10 hover:border-white/50"
                 onClick={() => window.open('tel:+91963296805', '_self')}
               >
-                Call us: +91 963296805
+                Call us: +91 9632968050
               </Button>
             </div>
             

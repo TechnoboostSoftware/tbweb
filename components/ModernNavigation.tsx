@@ -23,7 +23,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
   }, []);
 
   const navigationItems = [
-    { name: "Services", href: "#expertise" },
+    { name: "Services", href: "expertise" },
     { name: "About", href: "about" },
     { name: "Work", href: "work" }
   ];
