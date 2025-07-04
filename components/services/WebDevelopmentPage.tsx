@@ -91,14 +91,14 @@ window.location.hash = 'work';
         {/* Enhanced Web Development Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Top Left Code Snippet */}
-          <div className="absolute top-8 left-8 opacity-15">
+          {/* <div className="absolute top-8 left-8 opacity-15">
             <div className="bg-gray-800 rounded-lg p-3 text-xs font-mono">
               <div className="text-cyan-400">&lt;div</div>
               <div className="text-blue-400 ml-2">className="app"&gt;</div>
               <div className="text-green-400 ml-4">Hello World</div>
               <div className="text-blue-400">&lt;/div&gt;</div>
             </div>
-          </div>
+          </div> */}
           
           {/* Top Right Browser Window */}
           <div className="absolute top-12 right-12 opacity-20">
