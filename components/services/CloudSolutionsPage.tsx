@@ -169,14 +169,34 @@ export function CloudSolutionsPage() {
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Button 
+
+ <Button 
+           variant="ghost" 
+            onClick={() => {
+           // Update the hash in the URL
+            window.location.hash = 'expertise';
+
+        // Scroll to the section manually
+           setTimeout(() => {
+            const section = document.getElementById('expertise');
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+            }
+         }, 100); // Delay ensures hash is updated first
+        }}
+         className="mb-8 text-[var(--teal-primary)] hover:text-[var(--teal-secondary)] group">
+        <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+        Back to Services
+            </Button>
+
+            {/* <Button 
               variant="ghost" 
               onClick={() => window.location.hash = 'home'}
               className="mb-8 text-[var(--teal-primary)] hover:text-[var(--teal-secondary)] group"
             >
               <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to Services
-            </Button>
+            </Button> */}
             
             <div className="relative mb-8">
               <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl hover:scale-110 transition-transform duration-300 relative">

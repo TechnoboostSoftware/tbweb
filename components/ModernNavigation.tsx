@@ -23,7 +23,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
   }, []);
 
   const navigationItems = [
-    { name: "Services", href: "#expertise" },
+    { name: "Services", href: "expertise" },
     { name: "About", href: "about" },
     { name: "Case Studies", href: "work" }
   ];
@@ -33,31 +33,45 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
   };
 
   const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    if (href.startsWith('#')) {
-      // If we're not on home page, go to home first
-      if (currentRoute !== 'home') {
-       window.location.hash = 'expertise';
-        setTimeout(() => {
-          const element = document.querySelector(href);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 300);
-      } else {
-        window.location.hash = 'expertise';
-        setTimeout(() => {
-          const element = document.querySelector(href);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 100);
-      }
-    } else {
-      // For route navigation
-      window.location.hash = href;
+  setIsOpen(false);
+  window.location.hash = href; // Update the hash
+
+  // Smooth scroll to the section
+  setTimeout(() => {
+    const element = document.getElementById(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  };
+  }, 100); // small delay allows hash change to complete
+};
+
+
+  // const handleNavClick = (href: string) => {
+  //   setIsOpen(false);
+  //   if (href.startsWith('#')) {
+  //     // If we're not on home page, go to home first
+  //     if (currentRoute !== 'home') {
+  //      window.location.hash = 'expertise';
+  //       setTimeout(() => {
+  //         const element = document.querySelector(href);
+  //         if (element) {
+  //           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //         }
+  //       }, 300);
+  //     } else {
+  //       window.location.hash = 'expertise';
+  //       setTimeout(() => {
+  //         const element = document.querySelector(href);
+  //         if (element) {
+  //           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //         }
+  //       }, 100);
+  //     }
+  //   } else {
+  //     // For route navigation
+  //     window.location.hash = href;
+  //   }
+  // };
 
   const handleContactClick = () => {
     setIsOpen(false);
