@@ -5,6 +5,9 @@ import { ArrowRight, ArrowLeft, Cpu, Zap, Shield, TrendingUp, CheckCircle, Clock
 import { ContactForm } from "../ContactForm";
 
 export function ProductEngineeringPage() {
+      const handleCaseStudies = () =>{
+      window.location.hash = 'work';
+       }
   const keyBenefits = [
     {
       icon: TrendingUp,
@@ -288,7 +291,8 @@ export function ProductEngineeringPage() {
                   variant="outline"
                   size="lg"
                   className="rounded-full px-8 py-6 border-gray-300 hover:border-[var(--teal-primary)] hover:text-[var(--teal-primary)] hover:bg-teal-50 transition-all duration-300"
-                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  // onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                   onClick={handleCaseStudies}
                 >
                   View Case Studies
                 </Button>

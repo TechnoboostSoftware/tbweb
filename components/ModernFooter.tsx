@@ -5,7 +5,7 @@ import newLogo from '../components/assets/technoboosticonWhite.png';
 export function ModernFooter() {
   const services = [
     "UX/UI Design",
-    "Software Development",
+    "Full-Stack Development",
     "AI & Automation",
     "Data Analytics",
     "Smart-sheet solutions",

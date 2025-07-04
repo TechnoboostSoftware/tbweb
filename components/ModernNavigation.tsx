@@ -23,9 +23,9 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
   }, []);
 
   const navigationItems = [
-    { name: "Services", href: "expertise" },
+    { name: "Services", href: "#expertise" },
     { name: "About", href: "about" },
-    { name: "Work", href: "work" }
+    { name: "Case Studies", href: "work" }
   ];
 
   const handleLogoClick = () => {
@@ -37,7 +37,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
     if (href.startsWith('#')) {
       // If we're not on home page, go to home first
       if (currentRoute !== 'home') {
-        window.location.hash = 'home';
+       window.location.hash = 'expertise';
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
@@ -45,6 +45,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
           }
         }, 300);
       } else {
+        window.location.hash = 'expertise';
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {

@@ -5,6 +5,9 @@ import { ArrowRight, ArrowLeft, Code, Globe, Zap, Shield, Clock, TrendingUp, Roc
 import { ContactForm } from "../ContactForm";
 
 export function WebDevelopmentPage() {
+    const handleCaseStudies = () =>{
+window.location.hash = 'work';
+  }
   const keyBenefits = [
     {
       icon: TrendingUp,
@@ -237,7 +240,7 @@ export function WebDevelopmentPage() {
               </div>
               
               <h1 className="text-4xl lg:text-6xl font-bold text-[var(--dark-primary)] mb-6 leading-tight">
-                Web Development Services
+                Full-Stack Development
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-4xl mx-auto">
@@ -271,9 +274,10 @@ export function WebDevelopmentPage() {
                   variant="outline"
                   size="lg"
                   className="rounded-full px-8 py-6 border-gray-300 hover:border-[var(--teal-primary)] hover:text-[var(--teal-primary)] hover:bg-teal-50 transition-all duration-300"
-                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  // onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={handleCaseStudies}
                 >
-                  View Portfolio
+                  View Case Studies
                 </Button>
               </div>
             </div>

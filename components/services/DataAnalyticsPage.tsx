@@ -223,7 +223,7 @@ export function DataAnalyticsPage() {
         </div>
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto">
             <Button 
               variant="ghost" 
               onClick={() => window.location.hash = 'home'}
@@ -233,7 +233,8 @@ export function DataAnalyticsPage() {
               Back to Services
             </Button>
             
-            <div className="relative mb-8">
+      <div className="text-center">
+              <div className="relative mb-8">
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl hover:scale-110 transition-transform duration-300 relative">
                 <BarChart3 className="w-10 h-10 text-white" />
                 {/* Decorative rings around icon */}
@@ -243,7 +244,7 @@ export function DataAnalyticsPage() {
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-[var(--dark-primary)] mb-6 leading-tight">
-              Data Analytics
+              Data & Analytics
             </h1>
             
             <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
@@ -272,6 +273,7 @@ export function DataAnalyticsPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </ContactForm>
+      </div>
           </div>
         </div>
       </section>

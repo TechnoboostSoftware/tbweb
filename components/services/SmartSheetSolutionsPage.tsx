@@ -225,14 +225,14 @@ export function SmartSheetSolutionsPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </ContactForm>
-                <Button 
+                {/* <Button 
                   variant="outline"
                   size="lg"
                   className="rounded-full px-8 py-6 border-gray-300 hover:border-[var(--teal-primary)] hover:text-[var(--teal-primary)] hover:bg-teal-50 transition-all duration-300"
                   onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Success Stories
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
