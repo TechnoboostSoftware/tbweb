@@ -101,7 +101,7 @@ export function ModernNavigation({ currentRoute = 'home' }: NavigationProps) {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className={`font-medium transition-colors duration-200 ${
+                className={`font-medium transition-colors duration-200 cursor-pointer ${
                   currentRoute === item.href 
                     ? 'text-[var(--teal-primary)]' 
                     : 'text-gray-700 hover:text-[var(--teal-primary)]'
