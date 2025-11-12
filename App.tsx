@@ -5,11 +5,11 @@ import { ModernFooter } from "./components/ModernFooter";
 import { Toaster } from "./components/ui/sonner";
 
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState('home');
+  const [currentRoute, setCurrentRoute] = useState("home");
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+      const hash = window.location.hash.slice(1) || "home";
       setCurrentRoute(hash);
     };
 
@@ -17,18 +17,20 @@ export default function App() {
     handleHashChange();
 
     // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
+    window.addEventListener("hashchange", handleHashChange);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
+  const isShopify = currentRoute === "shopify";
+
   return (
     <div className="min-h-screen">
-      <ModernNavigation currentRoute={currentRoute} />
+      {!isShopify && <ModernNavigation currentRoute={currentRoute} />}
       <Router />
-      <ModernFooter />
+      {!isShopify && <ModernFooter />}
       <Toaster />
     </div>
   );

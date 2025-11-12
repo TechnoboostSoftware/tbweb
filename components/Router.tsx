@@ -21,13 +21,14 @@ import { PrivacyPolicyPage } from "./PrivacyPolicyPage";
 import { TermsOfServicePage } from "./TermsOfServicePage";
 import { CookiePolicyPage } from "./CookiePolicyPage";
 import { useEffect, useState } from "react";
+import { ShopifyHomePage } from "../shopify/pages/ShopifyHomePage";
 
 export function Router() {
-  const [currentRoute, setCurrentRoute] = useState('home');
+  const [currentRoute, setCurrentRoute] = useState("home");
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+      const hash = window.location.hash.slice(1) || "home";
       setCurrentRoute(hash);
     };
 
@@ -35,21 +36,21 @@ export function Router() {
     handleHashChange();
 
     // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
+    window.addEventListener("hashchange", handleHashChange);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
   // Scroll to top when route changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentRoute]);
 
   const renderCurrentPage = () => {
     switch (currentRoute) {
-      case 'home':
+      case "home":
         return (
           <>
             <ModernHero />
@@ -57,48 +58,50 @@ export function Router() {
             <ModernTestimonials />
           </>
         );
-      case 'about':
+      case "about":
         return <AboutPage />;
-      case 'careers':
+      case "careers":
         return <CareersPage />;
-      case 'case-studies':
+      case "case-studies":
         return <CaseStudiesPage />;
-      case 'work':
+      case "work":
         return <WorkPage />;
-      case 'projects':
+      case "projects":
         return <ProjectsPage />;
-      case 'pharma-case-study':
+      case "pharma-case-study":
         return <PharmaCaseStudy />;
-      case 'jewellery-case-study':
+      case "jewellery-case-study":
         return <JewelleryCaseStudy />;
-      case 'web-development':
+      case "web-development":
         return <WebDevelopmentPage />;
-      case 'mobile-apps':
+      case "mobile-apps":
         return <MobileAppsPage />;
-      case 'full-stack-development':
+      case "full-stack-development":
         return <WebDevelopmentPage />; // For now, redirect to web development page
-      case 'product-engineering':
+      case "product-engineering":
         return <ProductEngineeringPage />;
-      case 'ux-ui-design':
+      case "ux-ui-design":
         return <UXUIDesignPage />;
-      case 'ai-automation':
+      case "ai-automation":
         return <AIAutomationPage />;
-      case 'data-analytics':
+      case "data-analytics":
         return <DataAnalyticsPage />;
-      case 'cloud-solutions':
+      case "cloud-solutions":
         return <CloudSolutionsPage />;
-      case 'smartsheet-solutions':
+      case "smartsheet-solutions":
         return <SmartSheetSolutionsPage />;
-      case 'smart-sheet-solutions':
+      case "smart-sheet-solutions":
         return <SmartSheetSolutionsPage />;
-      case 'contact':
+      case "contact":
         return <ContactPage />;
-      case 'privacy-policy':
+      case "privacy-policy":
         return <PrivacyPolicyPage />;
-      case 'terms-of-service':
+      case "terms-of-service":
         return <TermsOfServicePage />;
-      case 'cookie-policy':
+      case "cookie-policy":
         return <CookiePolicyPage />;
+      case "shopify":
+        return <ShopifyHomePage />;
       default:
         return (
           <>
