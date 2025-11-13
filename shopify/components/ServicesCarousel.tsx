@@ -76,7 +76,7 @@ const ServicesCarousel = () => {
       const tz = -Math.abs(diff) * Z_DEPTH;
       const ry = diff * -ROT_Y;
       const scale = diff === 0 ? 1.05 : 0.85;
-      const opacity = 1 - Math.abs(diff) * 0.25;
+      const opacity = 1;
 
       card.style.transform = `
           translate(-50%, -50%)
@@ -112,7 +112,7 @@ const ServicesCarousel = () => {
           High Quality Services
         </span>
       </h4>
-      <p className="max-w-2xl text-center mt-3 opacity-80">
+      <p className="max-w-2xl text-center mt-3">
         Delivering innovative, scalable, and reliable Shopify solutions tailored
         to your business needs, with a focus on performance, security, and user
         experience.

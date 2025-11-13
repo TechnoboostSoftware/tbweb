@@ -7,6 +7,7 @@ import BlackBtnArrow from "../assets/balck-btn-arrow.svg";
 
 const Hero = ({ openModal }: { openModal: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Mouse Parallax
   useEffect(() => {
@@ -24,6 +25,18 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    window.location.hash = href; // Update the hash
+
+    // Smooth scroll to the section
+    setTimeout(() => {
+      const element = document.getElementById(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100); // small delay allows hash change to complete
+  };
 
   return (
     <>
@@ -93,7 +106,7 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
 
         {/* HERO TEXT */}
         <div className="relative z-10 max-w-5xl px-4 mx-auto">
-          <h1 className="text-4xl md:text-[4rem] font-medium leading-none">
+          <h1 className="text-4xl md:text-[4rem] font-medium leading-none mt-0 md:mt-6">
             We Don’t Just Build <br />
             <span className="font-normal instrument-serif-font">
               Shopify Stores.
@@ -109,7 +122,7 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
             Serving Clients Across - India, USA & Australia.
           </p>
 
-          <div className="my-8 space-y-5 flex flex-col justify-center items-center">
+          <div className="md:my-8 my-4 space-y-5 flex flex-col justify-center items-center">
             <button
               onClick={openModal}
               className="flex items-center gap-2 bg-[#FDD531] text-black font-medium text-sm  px-4 py-2.5 rounded-full hover:bg-[#ffdf57] transition cursor-pointer"
