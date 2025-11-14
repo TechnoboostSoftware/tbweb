@@ -28,7 +28,7 @@ const About = ({ openModal }: { openModal: () => void }) => {
   return (
     <>
       {/* ABOUT US */}
-      <div className="md:mx-auto max-w-7xl mx-8 pt-12 lg:px-6 px-4">
+      <div className="md:mx-auto max-w-7xl mx-8 pt-16 lg:px-6 px-4">
         <div className="flex border rounded-2xl manrope-font">
           <div className="flex flex-col p-5 lg:p-12 lg:w-2/3 items-center md:items-start">
             <h3 className="font-bold text-[1.75rem] mb-4 text-black text-center lg:text-left">
@@ -78,7 +78,7 @@ const About = ({ openModal }: { openModal: () => void }) => {
       </div>
 
       {/* READY TO LAUNCH */}
-      <section className="max-w-7xl mx-auto my-12 px-6">
+      <section className="max-w-7xl mx-auto my-16 px-6">
         <div className="flex flex-col md:flex-row items-center justify-between rounded-2xl bg-gradient-to-r from-yellow-400 to-cyan-500 p-8 md:p-6 relative overflow-hidden">
           {/* Left Image */}
           <div className="hidden md:block relative w-[60%]">

@@ -5,6 +5,7 @@ import StoreSetupIcon from "../assets/store-setup1.svg";
 import ThemeDesignIcon from "../assets/theme-design.svg";
 import BrandIdentityIcon from "../assets/brand-identity1.svg";
 import Arrow from "../assets/Arrows.svg";
+import ArrowWhite from "../assets/Start-arrow-white.svg";
 
 const ServicesCarousel = () => {
   const cardsRef = useRef<HTMLDivElement[]>([]);
@@ -134,7 +135,21 @@ const ServicesCarousel = () => {
                 {service.text}
               </p>
 
-              <button className="glow-button">Start Your Journey →</button>
+              <button className="relative flex items-center gap-2 px-4 py-0.5 md:px-4 md:py-3 rounded-full bg-gradient-to-b from-gray-800 to-black text-white md:font-semibold overflow-hidden shadow-xl text-[10px] md:text-sm">
+                <span className="relative flex gap-2 items-center">
+                  <span className="z-10 text-nowrap">Start Your Journey</span>
+                  <span className="z-10 text-xl">
+                    <img src={ArrowWhite} alt="" className="w-4" />
+                  </span>
+                </span>
+
+                {/* Animated glossy bottom-right spot */}
+                <span className="absolute bottom-1 right-0 w-5 h-5 bg-white/70 rounded-full blur-lg"></span>
+                <span className="absolute bottom-9 right-14 w-5 h-5 bg-white/80 rounded-full blur-lg"></span>
+                <span className="absolute bottom-10 left-10 w-5 h-5 bg-white/80 rounded-full blur-lg"></span>
+                <span className="absolute top-10 left-16 w-12 h-5 bg-white/80 rounded-full blur-lg"></span>
+                <span className="absolute top-10 left-7 w-12 h-5 bg-white/70 rounded-full blur-lg"></span>
+              </button>
             </div>
           ))}
         </div>

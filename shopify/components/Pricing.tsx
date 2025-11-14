@@ -36,7 +36,7 @@ const Pricing = () => {
 
   return (
     <div style={{ backgroundImage: `url(${Tropology})` }}>
-      <section className="pt-12 px-6 max-w-7xl mx-auto text-black">
+      <section className="pt-16 px-6 max-w-7xl mx-auto text-black">
         {/* Heading */}
         <div className="text-center">
           <h3 className="text-[1.75rem] font-bold manrope-font">
@@ -58,8 +58,8 @@ const Pricing = () => {
               key={i}
               className={`border-2 rounded-2xl p-6 shadow-sm bg-white/60 transition-shadow duration-300 ${
                 plan.highlight
-                  ? "border-[#2AB7CA80] hover:shadow-[0_0_25px_4px_#2AB7CA80] relative"
-                  : "border-[#E5E7EB] hover:shadow-[0_0_25px_4px_#E5E7EB]"
+                  ? "border-[#2AB7CA80] hover:shadow-[0_0_5px_1px_#2AB7CA80] relative"
+                  : "border-[#E5E7EB] hover:shadow-[0_0_5px_1px_#E5E7EB]"
               }`}
             >
               {/* Recommended Badge */}

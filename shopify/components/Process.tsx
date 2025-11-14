@@ -65,7 +65,7 @@ const Process = () => {
       style={{ backgroundImage: `url(${Tropology})` }}
       className="bg-cover"
     >
-      <div className="mx-auto max-w-7xl mt-12 px-6 lg:px-32 text-black">
+      <div className="mx-auto max-w-7xl mt-16 px-6 lg:px-32 text-black">
         <div className="text-center mb-10">
           <h3 className="text-[1.75rem] font-bold manrope-font">
             Our{" "}

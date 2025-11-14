@@ -30,7 +30,7 @@ const Difference = ({ openModal }: { openModal: () => void }) => {
 
   return (
     <div style={{ backgroundImage: `url(${Tropology})` }}>
-      <div className="pt-12 max-w-7xl md:mx-auto mx-4 px-4">
+      <div className="pt-16 max-w-7xl md:mx-auto mx-4 px-4">
         {/* Heading */}
         <div className="flex flex-col items-center justify-center">
           <h3 className="font-bold text-[1.75rem] mb-1 text-black text-center manrope-font">
