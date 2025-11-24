@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import Logo from "../assets/logo.svg";
 const FooterShopify = () => {
   return (

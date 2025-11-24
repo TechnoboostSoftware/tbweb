@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tropology from "../assets/07-topography.jpg";
 import Call from "../assets/call.svg";
 import Quote from "../assets/fixed-quote.svg";

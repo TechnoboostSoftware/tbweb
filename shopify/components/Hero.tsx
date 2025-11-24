@@ -3,11 +3,9 @@ import { Menu, X } from "lucide-react";
 import BackgroundVideo from "../assets/Techno Banner Video.mp4";
 import Logo from "../assets/logo.svg";
 import MouseIcon from "../assets/mouseIcon.svg";
-import BlackBtnArrow from "../assets/balck-btn-arrow.svg";
 
 const Hero = ({ openModal }: { openModal: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   // Mouse Parallax
   useEffect(() => {
@@ -25,18 +23,6 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-  const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    window.location.hash = href; // Update the hash
-
-    // Smooth scroll to the section
-    setTimeout(() => {
-      const element = document.getElementById(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, 100); // small delay allows hash change to complete
-  };
 
   return (
     <>
