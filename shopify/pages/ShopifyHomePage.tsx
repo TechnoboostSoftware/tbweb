@@ -17,7 +17,7 @@ export function ShopifyHomePage() {
   return (
     <div className="manrope-font">
       <Hero openModal={openModal} />
-      <ServicesCarousel />
+      <ServicesCarousel openModal={openModal} />
       <Capabilities openModal={openModal} />
       <Process />
       <Pricing />

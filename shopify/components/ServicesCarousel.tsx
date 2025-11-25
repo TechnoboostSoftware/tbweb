@@ -7,7 +7,7 @@ import BrandIdentityIcon from "../assets/brand-identity1.svg";
 import Arrow from "../assets/Arrows.svg";
 import ArrowWhite from "../assets/Start-arrow-white.svg";
 
-const ServicesCarousel = () => {
+const ServicesCarousel = ({ openModal }: { openModal: () => void }) => {
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const dotsRef = useRef<HTMLDivElement[]>([]);
   const [current, setCurrent] = useState(2);
@@ -135,7 +135,10 @@ const ServicesCarousel = () => {
                 {service.text}
               </p>
 
-              <button className="relative flex items-center gap-2 px-4 py-0.5 md:px-4 md:py-3 rounded-full bg-gradient-to-b from-gray-800 to-black text-white md:font-semibold overflow-hidden shadow-xl text-[10px] md:text-sm">
+              <button
+                className="relative flex items-center gap-2 px-4 py-0.5 md:px-4 md:py-3 rounded-full bg-gradient-to-b from-gray-800 to-black text-white md:font-semibold overflow-hidden shadow-xl text-[10px] md:text-sm cursor-pointer"
+                onClick={openModal}
+              >
                 <span className="relative flex gap-2 items-center">
                   <span className="z-10 text-nowrap">Start Your Journey</span>
                   <span className="z-10 text-xl">

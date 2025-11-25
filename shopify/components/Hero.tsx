@@ -49,15 +49,9 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
           {/* Desktop Menu */}
           <nav className="rounded-full pl-5 pr-3 py-3 backdrop-blur-md hidden md:flex">
             <div className="flex items-center space-x-8 text-sm font-medium">
-              <a href="#" className="hover:text-yellow-400">
-                About Us
-              </a>
-              <a href="#" className="hover:text-yellow-400">
-                Services
-              </a>
-              <a href="#" className="hover:text-yellow-400">
-                Contact
-              </a>
+              <a className="hover:text-yellow-400">About Us</a>
+              <a className="hover:text-yellow-400">Services</a>
+              <a className="hover:text-yellow-400">Contact</a>
 
               <button
                 onClick={openModal}
@@ -132,7 +126,6 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
           </div>
         </div>
 
-        {/* Curve Divider */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg
             className="block w-full h-16 md:h-32"
@@ -144,13 +137,11 @@ const Hero = ({ openModal }: { openModal: () => void }) => {
           </svg>
         </div>
 
-        {/* Mouse Scroll Icon */}
         <div className="absolute bottom-[5%] md:bottom-[12%] left-1/2 -translate-x-1/2">
           <img src={MouseIcon} className="hero-content" alt="scroll" />
         </div>
       </section>
 
-      {/* ✅ Animated Mobile Menu */}
       <div
         className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
