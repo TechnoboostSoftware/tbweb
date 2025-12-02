@@ -7,6 +7,7 @@ import Pricing from "../components/Pricing";
 import Difference from "../components/Difference";
 import About from "../components/About";
 import FooterShopify from "../components/FooterShopify";
+import { X } from "lucide-react";
 
 export function ShopifyHomePage() {
   const [showModal, setShowModal] = useState(false);
@@ -31,17 +32,19 @@ export function ShopifyHomePage() {
           className="fixed inset-0 bg-black/60 flex items-center justify-center px-4 z-[1000]"
           onClick={(e) => e.target === e.currentTarget && closeModal()}
         >
-          <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              ×
-            </button>
-
-            <h2 className="text-xl font-semibold text-black mb-4">
-              Get My Shopify Store Live
-            </h2>
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 ">
+            <div className="flex justify-between items-center w-full mb-4">
+              <h2 className="text-xl font-semibold text-black">
+                Get My Shopify Store Live
+              </h2>
+              <button
+                onClick={closeModal}
+                className=" text-gray-500 hover:text-black text-xl cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
             <form className="space-y-3 text-black">
               <input

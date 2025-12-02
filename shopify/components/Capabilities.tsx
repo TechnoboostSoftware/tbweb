@@ -27,7 +27,7 @@ const Capabilities = ({ openModal }: { openModal: () => void }) => {
     {
       title: "Clear Pricing",
       points: [
-        "Two transparent tiers (Launch Kit & Growth Build)",
+        "Two transparent tiers",
         "Detailed inclusions listed upfront",
         "No unexpected add-on costs mid-project",
       ],
@@ -94,17 +94,17 @@ const Capabilities = ({ openModal }: { openModal: () => void }) => {
         {cards.map((card, i) => (
           <div
             key={i}
-            className="border rounded-l-[28px]  rounded-r-xl border-[#05667742] flex items-center bg-white overflow-hidden"
+            className="border rounded-l-xl md:rounded-l-[28px]  rounded-r-xl border-[#05667742] flex items-center bg-white overflow-hidden justify-between"
           >
             <div className="w-[50%] m-3 md:m-8 manrope-font">
               <h3 className="text-black font-bold mb-2">{card.title}</h3>
-              <ul className="text-[#4A5565] list-disc list-inside space-y-2 text-xs marker:text-[#00ACC1]">
+              <ul className="text-[#4A5565] list-disc list-inside space-y-2 text-xs marker:text-[#00ACC1] text-nowrap">
                 {card.points.map((p, idx) => (
                   <li key={idx}>{p}</li>
                 ))}
               </ul>
             </div>
-            <div className="w-full md:w-[40%] h-full">
+            <div className="w-[33%] md:w-[40%] h-full">
               <img
                 src={card.img}
                 className="w-full h-full object-fill "

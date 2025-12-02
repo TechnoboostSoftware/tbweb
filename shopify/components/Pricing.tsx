@@ -7,7 +7,7 @@ const Pricing = () => {
     {
       name: "Launch Kit",
       subtitle: "Basic",
-      price: "x-y-z (USD-AUD)",
+      price: "$699 USD",
       highlight: false,
       btnText: "Book Launch Kit",
       features: [
@@ -19,9 +19,9 @@ const Pricing = () => {
       ],
     },
     {
-      name: "Growth Build",
+      name: "Growth Kit",
       subtitle: "Enhanced",
-      price: "x-y-z (USD-AUD)",
+      price: "$1,799 USD",
       highlight: true,
       btnText: "Start Growth Build",
       features: [
@@ -59,7 +59,7 @@ const Pricing = () => {
               className={`border-2 rounded-2xl p-6 shadow-sm bg-white/60 transition-shadow duration-300 ${
                 plan.highlight
                   ? "border-[#2AB7CA80] hover:shadow-[0_0_5px_1px_#2AB7CA80] relative"
-                  : "border-[#E5E7EB] hover:shadow-[0_0_5px_1px_#E5E7EB]"
+                  : "border-[#E5E7EB] hover:shadow-[0_0_5px_1px_#E5E7EB] relative"
               }`}
             >
               {/* Recommended Badge */}
@@ -114,9 +114,15 @@ const Pricing = () => {
                   <img src={Arrow} alt="" />
                 </button>
               )}
+              <p className=" text-xs font-normal right-4 bottom-2 absolute hidden md:block">
+                *Final pricing depends on scope after a free audit.
+              </p>
             </div>
           ))}
         </div>
+        <p className="text-xs mt-2 font-normal text-center  block md:hidden">
+          *Final pricing depends on scope after a free audit.
+        </p>
       </section>
     </div>
   );

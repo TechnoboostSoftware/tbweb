@@ -136,13 +136,13 @@ const ServicesCarousel = ({ openModal }: { openModal: () => void }) => {
               </p>
 
               <button
-                className="relative flex items-center gap-2 px-4 py-0.5 md:px-4 md:py-3 rounded-full bg-gradient-to-b from-gray-800 to-black text-white md:font-semibold overflow-hidden shadow-xl text-[10px] md:text-sm cursor-pointer"
+                className="relative flex items-center gap-2 px-4 py-2 md:px-4 md:py-3 rounded-full bg-gradient-to-b from-gray-800 to-black text-white md:font-semibold overflow-hidden shadow-xl text-[10px] md:text-sm cursor-pointer"
                 onClick={openModal}
               >
                 <span className="relative flex gap-2 items-center">
                   <span className="z-10 text-nowrap">Start Your Journey</span>
                   <span className="z-10 text-xl">
-                    <img src={ArrowWhite} alt="" className="w-4" />
+                    <img src={ArrowWhite} alt="" className="w-3 md:w-4" />
                   </span>
                 </span>
 
