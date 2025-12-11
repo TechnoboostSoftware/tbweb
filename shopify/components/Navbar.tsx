@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
+import technoIcon from "../../components/assets/technoboostIcon.png";
 
 const NAV_ITEMS = [
   { label: "Services", href: "#services" },
@@ -36,11 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className=" flex items-center cursor-pointer gap-2"
             onClick={(e) => handleNavClick(e, "#")}
           >
-            <img
-              src="./components/assets/technoboostIcon.png"
-              className="w-[45%]"
-              alt=""
-            />
+            <img src={technoIcon} className="w-[45%]" alt="" />
           </div>
 
           {/* Desktop Nav */}

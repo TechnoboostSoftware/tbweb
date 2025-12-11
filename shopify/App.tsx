@@ -12,6 +12,8 @@ import { ContactModal } from "./components/ContactModal";
 import { MessageCircle, MapPin, Mail, Phone, Linkedin } from "lucide-react";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsOfService } from "./components/TermsOfService";
+import technoIcon from "../components/assets/technoboostIcon.png";
+
 import Toast from "./components/toast";
 
 function App() {
@@ -133,11 +135,7 @@ function App() {
                 className="flex items-center gap-2 mb-6 cursor-pointer"
                 onClick={() => handleLinkClick("#")}
               >
-                <img
-                  src="./components/assets/technoboostIcon.png"
-                  className="w-[30%]"
-                  alt=""
-                />
+                <img src={technoIcon} className="w-[30%]" alt="" />
               </div>
               <p className="text-gray-500 leading-relaxed max-w-lg text-lg mb-8">
                 We're Technoboost. A group of dedicated individuals
