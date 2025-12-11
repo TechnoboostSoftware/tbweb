@@ -134,7 +134,7 @@ function App() {
                 onClick={() => handleLinkClick("#")}
               >
                 <img
-                  src="/components/assets/technoboostIcon.png"
+                  src="./components/assets/technoboostIcon.png"
                   className="w-[30%]"
                   alt=""
                 />

@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={(e) => handleNavClick(e, "#")}
           >
             <img
-              src="/components/assets/technoboostIcon.png"
+              src="./components/assets/technoboostIcon.png"
               className="w-[45%]"
               alt=""
             />
