@@ -21,7 +21,6 @@ import { PrivacyPolicyPage } from "./PrivacyPolicyPage";
 import { TermsOfServicePage } from "./TermsOfServicePage";
 import { CookiePolicyPage } from "./CookiePolicyPage";
 import { useEffect, useState } from "react";
-import { ShopifyHomePage } from "../shopify/pages/ShopifyHomePage";
 
 export function Router() {
   const [currentRoute, setCurrentRoute] = useState("home");

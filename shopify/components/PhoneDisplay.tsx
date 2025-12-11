@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Zap,
-  Rocket,
-  BarChart3,
-  LayoutGrid,
-  Search,
-  ShoppingBag,
-  User,
-} from "lucide-react";
+import { Zap, Rocket, BarChart3, LayoutGrid } from "lucide-react";
 import { BarChart, Bar, Cell, ResponsiveContainer } from "recharts";
 
 const chartData = [
@@ -59,10 +51,10 @@ export const PhoneDisplay: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
                 <Bar dataKey="value" radius={[2, 2, 0, 0]}>
-                  {chartData.map((entry, index) => (
+                  {chartData.map((index) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={index === 5 ? "#22c55e" : "#dcfce7"}
+                      fill={Number(index) === 5 ? "#22c55e" : "#dcfce7"}
                     />
                   ))}
                 </Bar>

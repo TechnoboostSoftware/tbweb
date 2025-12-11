@@ -80,7 +80,6 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         setFormData({
           name: "",
           email: "",
-          scheduleCall: false,
           date: "",
           time: "",
           timezone: "",

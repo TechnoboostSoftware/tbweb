@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
-import { Logo } from "./Logo";
 
 const NAV_ITEMS = [
   { label: "Services", href: "#services" },
