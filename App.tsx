@@ -24,13 +24,11 @@ export default function App() {
     };
   }, []);
 
-  const isShopify = currentRoute === "shopify";
-
   return (
     <div className="min-h-screen">
-      {!isShopify && <ModernNavigation currentRoute={currentRoute} />}
+      <ModernNavigation currentRoute={currentRoute} />
       <Router />
-      {!isShopify && <ModernFooter />}
+      <ModernFooter />
       <Toaster />
     </div>
   );

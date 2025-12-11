@@ -100,8 +100,7 @@ export function Router() {
         return <TermsOfServicePage />;
       case "cookie-policy":
         return <CookiePolicyPage />;
-      case "shopify":
-        return <ShopifyHomePage />;
+
       default:
         return (
           <>

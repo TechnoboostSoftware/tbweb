@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technoboost</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/components/assets/technoboostfavicon.svg"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "Inter", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                purple: "#4F46E5", // Primary Brand Color
+                "purple-light": "#EEF2FF",
+                "purple-dark": "#4338ca",
+                dark: "#0F172A",
+              },
+            },
+            animation: {
+              "bounce-slow": "bounce 3s infinite",
+              float: "float 6s ease-in-out infinite",
+              marquee: "marquee 40s linear infinite",
+              "marquee-reverse": "marqueeReverse 40s linear infinite",
+              shake: "shake 0.5s cubic-bezier(.36,.07,.19,.97) both",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              marqueeReverse: {
+                "0%": { transform: "translateX(-50%)" },
+                "100%": { transform: "translateX(0%)" },
+              },
+              shake: {
+                "10%, 90%": { transform: "translate3d(-1px, 0, 0)" },
+                "20%, 80%": { transform: "translate3d(2px, 0, 0)" },
+                "30%, 50%, 70%": { transform: "translate3d(-4px, 0, 0)" },
+                "40%, 60%": { transform: "translate3d(4px, 0, 0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Custom scrollbar for aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c7c7c7;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.1",
+          "react/": "https://aistudiocdn.com/react@^19.2.1/",
+          "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+        }
+      }
+    </script>
+    <script type="module" src="/shopify/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

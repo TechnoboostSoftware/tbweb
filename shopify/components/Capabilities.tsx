@@ -1,121 +1,119 @@
-import Tropology from "../assets/07-topography.jpg";
-import Card1 from "../assets/card-1.png";
-import Card2 from "../assets/card-2.jpg";
-import Card3 from "../assets/card-3.jpg";
-import Card4 from "../assets/card-4.jpg";
+import React from "react";
+import { Code, Puzzle, Palette, Gauge, TrendingUp, Cpu } from "lucide-react";
 
-const Capabilities = ({ openModal }: { openModal: () => void }) => {
-  const cards = [
-    {
-      title: "Fast Delivery",
-      points: [
-        "Proven process that avoids delays.",
-        "We move fast so you can start selling sooner.",
-        "Agile workflow with regular feedback.",
-      ],
-      img: Card1,
-    },
-    {
-      title: "Design-First Approach",
-      points: [
-        "Custom theme development from scratch",
-        "UX patterns tested for higher conversions",
-        "Branding elements integrated seamlessly",
-      ],
-      img: Card2,
-    },
-    {
-      title: "Clear Pricing",
-      points: [
-        "Two transparent tiers",
-        "Detailed inclusions listed upfront",
-        "No unexpected add-on costs mid-project",
-      ],
-      img: Card3,
-    },
-    {
-      title: "Post-Launch Care",
-      points: [
-        "Bug fixes and minor tweaks included.",
-        "Hands-on assistance with app usage.",
-        "Priority response so you’re never left waiting.",
-      ],
-      img: Card4,
-    },
-  ];
+const CAPABILITIES = [
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    description:
+      "Data-driven interfaces designed for conversion and brand affinity.",
+    className: "",
+  },
+  {
+    icon: Gauge,
+    title: "Speed Optimization",
+    description: "Core Web Vitals tuning for sub-second load times.",
+    className: "",
+  },
+  {
+    icon: Puzzle,
+    title: "App Ecosystem",
+    description:
+      "Seamless integration of third-party apps for reviews, loyalty, and marketing.",
+    className: "",
+  },
+  {
+    icon: TrendingUp,
+    title: "Conversion Strategy",
+    description:
+      "A/B testing, funnel optimization, and data analysis to turn visitors into buyers.",
+    className: "",
+  },
+  {
+    icon: Code,
+    title: "Custom Development",
+    description:
+      "Bespoke Liquid & React builds tailored to your unique business logic. We handle complex integrations and custom functionality that standard themes can't match.",
+    className:
+      "md:col-span-2 lg:col-span-2 relative overflow-hidden bg-brand-purple/5", // Feature card
+  },
+];
 
+export const Capabilities: React.FC = () => {
   return (
     <section
-      style={{ backgroundImage: `url(${Tropology})` }}
-      className="bg-center border-t-4 border-[#FAFBFC] mt-16 text-black"
+      className="py-24 bg-white relative overflow-hidden"
+      id="capabilities"
     >
-      <div className="pt-12 mx-4 flex flex-col items-center justify-center text-center">
-        <h3 className="font-bold text-[1.75rem] mb-1 manrope-font">
-          Our{" "}
-          <span className="instrument-serif-font font-normal">
-            Capabilities
-          </span>
-        </h3>
-
-        <p className="max-w-5xl mx-auto text-[#262626] manrope-font">
-          At our core, we focus on helping new brands launch and grow on
-          Shopify. We deliver lean, reliable, and professional stores built for
-          speed, conversions, and scalability.
-        </p>
-
-        <button
-          onClick={openModal}
-          className="relative flex mt-3 items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-0.5 cursor-pointer"
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Subtle Grid Texture */}
+        <div
+          className="absolute inset-0 opacity-[0.3]"
           style={{
-            background: "linear-gradient(180deg, #3a3a3a 0%, #0a0a0a 100%)",
+            backgroundImage: `radial-gradient(#CBD5E1 1px, transparent 1px)`,
+            backgroundSize: "24px 24px",
           }}
-        >
-          <span className="relative z-10">Let's Connect</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-5 h-5 relative z-10"
-          >
-            <path d="M5 12h14" />
-            <path d="M13 6l6 6-6 6" />
-          </svg>
-
-          {/* subtle glossy shine layer */}
-          <span className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-white/20 rounded-full pointer-events-none"></span>
-        </button>
+        ></div>
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-7xl mx-auto px-4">
-        {cards.map((card, i) => (
-          <div
-            key={i}
-            className="border rounded-l-xl md:rounded-l-[28px]  rounded-r-xl border-[#05667742] flex items-center bg-white overflow-hidden justify-between"
-          >
-            <div className="w-[50%] m-3 md:m-8 manrope-font">
-              <h3 className="text-black font-bold mb-2">{card.title}</h3>
-              <ul className="text-[#4A5565] list-disc list-inside space-y-2 text-xs marker:text-[#00ACC1] text-nowrap">
-                {card.points.map((p, idx) => (
-                  <li key={idx}>{p}</li>
-                ))}
-              </ul>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-1 bg-brand-purple rounded-full"></div>
+              <span className="text-brand-purple font-bold tracking-wider uppercase text-sm">
+                Core Competencies
+              </span>
             </div>
-            <div className="w-[33%] md:w-[40%] h-full">
-              <img
-                src={card.img}
-                className="w-full h-full object-fill "
-                alt={card.title}
-              />
-            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6">
+              Engineering Digital Success
+            </h2>
+            <p className="text-xl text-gray-500 leading-relaxed">
+              We focus on the technical pillars that actually drive revenue:
+              performance, experience, and scalability.
+            </p>
           </div>
-        ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {CAPABILITIES.map((cap, index) => (
+            <div
+              key={index}
+              // Updated classes: Permanent shadow, border, and white background. Shake only on hover.
+              className={`p-8 rounded-2xl border border-brand-purple/20 shadow-lg shadow-brand-purple/5 transition-all duration-300 group cursor-pointer hover:animate-shake bg-white ${
+                cap.className || ""
+              }`}
+            >
+              {/* Special decoration for the big card */}
+              {cap.className?.includes("col-span-2") && (
+                <div className="absolute right-0 top-0 opacity-10 pointer-events-none">
+                  <Cpu className="w-64 h-64 -mr-16 -mt-16 text-brand-purple rotate-12" />
+                </div>
+              )}
+
+              <div className="flex justify-between items-start mb-8 relative z-10">
+                <div
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm bg-brand-purple/10 text-brand-purple`}
+                >
+                  <cap.icon className="w-7 h-7" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold mb-3 text-brand-dark transition-colors">
+                  {cap.title}
+                </h3>
+                <p className="leading-relaxed font-medium text-gray-500">
+                  {cap.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
-
-export default Capabilities;
