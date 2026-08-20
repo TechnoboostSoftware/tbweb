@@ -1,5 +1,5 @@
 /* =========================================================================
-   Technoboost — interactions & motion
+   Technoboost: interactions & motion
    ========================================================================= */
 (function () {
   'use strict';
@@ -8,12 +8,12 @@
      Where form submissions go.
 
      Both the contact form and the careers application POST to the Technoboost
-     mail service. It accepts a subject and a body string only — no
-     attachments — so a resume is uploaded to Drive first and the email
+     mail service. It accepts a subject and a body string only, with no
+     attachments, so a resume is uploaded to Drive first and the email
      carries the link.
 
      The service checks the browser's Origin header against a whitelist, and
-     the only host on it is https://technoboostservices.com — exactly that,
+     the only host on it is https://technoboostservices.com, exactly that:
      apex and https. Anywhere else (a Vercel preview, localhost, a www
      subdomain) the send returns 404 "Access Token or Host not Verified".
      That is not something the page can work around: Origin is set by the
@@ -23,7 +23,7 @@
      DRIVE_ENDPOINT is the Apps Script web app from notes/resume-drive-upload.gs.
      It answers with a 302 to script.googleusercontent.com; fetch follows that
      automatically and the final response carries Access-Control-Allow-Origin,
-     so no proxy is needed. Empty it and the application still sends — the
+     so no proxy is needed. Empty it and the application still sends; the
      email just says the CV could not be attached.
      ----------------------------------------------------------------------- */
   var MAIL_ENDPOINT  = 'https://es.technoboost.in/api/v1/mail-send';
@@ -116,7 +116,7 @@
 
 
   /* =======================================================================
-     Header — sticky, and coloured by whatever is behind it
+     Header: sticky, and coloured by whatever is behind it
      ======================================================================= */
   (function () {
     var head = document.querySelector('.site-header');
@@ -132,7 +132,7 @@
     function paint() {
       queued = false;
       // Dark wins on any overlap with the header band, so the header stays
-      // black for the whole of a dark section — from the moment its top edge
+      // black for the whole of a dark section, from the moment its top edge
       // reaches the header until its bottom edge has cleared the viewport top.
       // A midpoint sample would flicker white in the first 30px of the hero,
       // where nothing sits behind the header yet.
@@ -232,7 +232,7 @@
       queued = false;
       var vh = window.innerHeight;
       for (var i = items.length - 1; i >= 0; i--) {
-        // anything at or above the fold reveals — including content the
+        // anything at or above the fold reveals, including content the
         // visitor jumped straight past via an anchor link
         var r = items[i].getBoundingClientRect();
         if (r.top < vh - 60) {
@@ -280,7 +280,7 @@
     });
   }
 
-  /* every nav flyout — products and case studies — shares one handler */
+  /* every nav flyout, products and case studies alike, shares one handler */
   var menus = [].slice.call(document.querySelectorAll('.nav-menu'));
 
   menus.forEach(function (menu) {
@@ -353,7 +353,7 @@
         btn.setAttribute('aria-expanded', 'true');
       }
 
-      // heights changed under the smooth scroller — resync it
+      // heights changed under the smooth scroller, so resync it
       if (smooth) setTimeout(smooth.sync, 600);
     });
   }
@@ -404,7 +404,7 @@
 
 
   /* =======================================================================
-     Form delivery — one path for the contact form and the job application
+     Form delivery: one path for the contact form and the job application
      ======================================================================= */
 
   function esc(v) {
@@ -414,7 +414,7 @@
 
   // The mail service takes one body string. Whether it renders that as HTML or
   // as plain text is not documented, so each line carries both a <br> and a
-  // newline — it reads correctly either way.
+  // newline, so it reads correctly either way.
   function line(label, value) {
     if (!value) return '';
     return '<strong>' + esc(label) + ':</strong> ' + esc(value) + '<br>\n';
@@ -448,7 +448,7 @@
        a CORS preflight, and an application/json content type would trigger
        one.
      * Its /exec answers with a redirect, and that redirect intermittently
-       serves Google's own HTML error page instead of the script's JSON —
+       serves Google's own HTML error page instead of the script's JSON,
        often enough to matter on a first submission, and more so once Google
        starts throttling. Three attempts with a widening gap clear it in
        practice; the whole thing is still bounded at about four seconds. A
@@ -602,13 +602,13 @@
           (link
             ? '<strong>Resume:</strong> <a href="' + link + '">' + esc(f.name) + '</a><br>\n' +
               esc(link) + '<br>\n'
-            : '<strong>Resume:</strong> ' + esc(f.name) + ' could not be uploaded — ' +
+            : '<strong>Resume:</strong> ' + esc(f.name) + ' could not be uploaded. ' +
               'reply to this candidate and ask them to send it.<br>\n');
 
         var note = form.querySelector('#ap-note').value.trim();
         if (note) body += '<br>\n<strong>Cover letter</strong><br>\n' + esc(note).replace(/\n/g, '<br>\n') + '<br>\n';
 
-        return postMail('Job application — ' + name.value.trim(), body);
+        return postMail('Job application: ' + name.value.trim(), body);
       })
       .then(function (ok) {
         form.classList.remove('is-sending');
@@ -617,7 +617,7 @@
           return;
         }
         shown.hidden = true;
-        if (!showThanks(form)) setStatus(form, true, 'Thanks — your application is in.');
+        if (!showThanks(form)) setStatus(form, true, 'Thanks, your application is in.');
       })
       .catch(function () {
         form.classList.remove('is-sending');
@@ -663,7 +663,7 @@
       var msg = form.querySelector('#cf-msg').value.trim();
       if (msg) body += '<br>\n<strong>Message</strong><br>\n' + esc(msg).replace(/\n/g, '<br>\n') + '<br>\n';
 
-      postMail('Website enquiry — ' + name.value.trim(), body).then(function (ok) {
+      postMail('Website enquiry: ' + name.value.trim(), body).then(function (ok) {
         form.classList.remove('is-sending');
         if (!ok) {
           setStatus(form, false, 'Something went wrong. Please email ' + MAIL_TO + ' instead.');
@@ -671,7 +671,7 @@
         }
         form.reset();
         if (!showThanks(form)) {
-          setStatus(form, true, 'Thanks — we\u2019ll be in touch shortly.');
+          setStatus(form, true, 'Thanks, we\u2019ll be in touch shortly.');
           return;
         }
         var panel = form.parentElement.querySelector('.thanks');
@@ -685,7 +685,7 @@
   }
 
   /* =======================================================================
-     Marquee — pause on hover
+     Marquee: pause on hover
      ======================================================================= */
   var marquee = document.querySelector('.marquee');
   if (marquee) {

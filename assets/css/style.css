@@ -1,5 +1,5 @@
 /* =========================================================================
-   Technoboost — 1432w default
+   Technoboost: 1432w default
    Tokens, spacing and typography transcribed 1:1 from the Figma document
    ========================================================================= */
 
@@ -39,7 +39,7 @@
 
   /* layout -------------------------------------------------------------- */
   --page:      1441px;   /* design canvas                                   */
-  --content:   1140px;   /* the design's content column — held as long as
+  --content:   1140px;   /* the design's content column, held as long as
                             it fits, so section proportions never squeeze   */
   --pad-x:     clamp(20px, 4vw, 60px);      /* gutter outside the column     */
   --header-h:  66px;
@@ -97,7 +97,7 @@ ul{ margin:0; padding:0; list-style:none; }
   margin-inline:auto;      /* one shared content column, every section */
 }
 
-/* eyebrow — DM Sans Black 14 / 14, +3.08 tracking, uppercase --------------- */
+/* eyebrow: DM Sans Black 14 / 14, +3.08 tracking, uppercase --------------- */
 .eyebrow{
   display:flex;
   align-items:center;
@@ -195,7 +195,7 @@ ul{ margin:0; padding:0; list-style:none; }
    Header
    ========================================================================= */
 
-/* Sticky, and it takes its colour from whatever section is behind it — dark
+/* Sticky, and it takes its colour from whatever section is behind it: dark
    over the hero, the dark bands and the footer; light everywhere else. */
 .site-header{
   position:sticky;
@@ -368,7 +368,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .hero{
   background:var(--black);
   padding-inline:var(--pad-x);
-  overflow:hidden;      /* the cube sits flush to the bottom edge — keep it in */
+  overflow:hidden;      /* the cube sits flush to the bottom edge, so keep it in */
   /* the art is 1.32x taller than wide; cap it so the hero always fits */
   --art-w:min(412px, 34vw, calc((100svh - var(--header-h) - 90px) * 0.757));
   min-height:calc(100svh - var(--header-h));
@@ -460,7 +460,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .s-clients__head{ display:flex; flex-direction:column; align-items:flex-start; }
 .s-clients__head .h2{ margin-top:var(--head-gap); max-width:63.158%; }
 
-/* the intro paragraph under every section heading — one shared style */
+/* the intro paragraph under every section heading: one shared style */
 .sec-intro{
   margin-top:16px;
   max-width:640px;
@@ -803,7 +803,7 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 
 /* No hover available (touch): the panel can't slide up, so the card reads
-   top to bottom instead — logo, then the description, then the action row. */
+   top to bottom instead: logo, then the description, then the action row. */
 @media (hover:none){
   .product__media{
     flex-direction:column;
@@ -869,7 +869,7 @@ ul{ margin:0; padding:0; list-style:none; }
   padding-bottom:6px;
   transition:transform .45s var(--ease);
 }
-/* hover highlight — a tinted plate behind the card, drawn outside its box */
+/* hover highlight: a tinted plate behind the card, drawn outside its box */
 .case::before{
   content:"";
   position:absolute;
@@ -1130,7 +1130,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .promo-wrap{ position:relative; }
 
 /* The card overhangs the footer, so whatever section ends a page has to
-   reserve that clearance — otherwise the card lands on its content.
+   reserve that clearance, otherwise the card lands on its content.
    Applies to every page automatically, homepage and case studies alike. */
 main > section:last-child{ padding-bottom:max(var(--sec-y), 150px); }
 .site-footer__tab{
@@ -1165,7 +1165,7 @@ main > section:last-child{ padding-bottom:max(var(--sec-y), 150px); }
   line-height:24px;
   color:#fff;
 }
-/* A quiet watermark line rather than another link — it closes the card
+/* A quiet watermark line rather than another link; it closes the card
    without competing with the paragraph above it. */
 .promo__tag{
   margin-top:auto;
@@ -1288,7 +1288,7 @@ main > section:last-child{ padding-bottom:max(var(--sec-y), 150px); }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-100%); } }
 
 /* =========================================================================
-   Motion — custom cursor, smooth scroll, floats, scroll reveals
+   Motion: custom cursor, smooth scroll, floats, scroll reveals
    ========================================================================= */
 
 /* --- custom cursor -------------------------------------------------------- */
@@ -1359,7 +1359,7 @@ html.smooth body{ overscroll-behavior-y:none; }
   50%    { transform:translate3d(0,14px,0)  rotate(1.2deg); }
 }
 /* the big cube is flush with the section's bottom edge, so it only ever
-   settles downward (clipped by .hero) — lifting it would open a gap */
+   settles downward (clipped by .hero); lifting it would open a gap */
 @keyframes floatB{
   0%,100%{ transform:translate3d(0,0,0)    scale(1); }
   50%    { transform:translate3d(0,13px,0) scale(1.012); }
@@ -1453,7 +1453,7 @@ html.smooth body{ overscroll-behavior-y:none; }
    ========================================================================= */
 
 /* =========================================================================
-   Responsive — three tiers
+   Responsive: three tiers
      > 1024px   design proportions (columns are % of the 1140 content column)
      641–1024   two-up / stacked, hamburger nav
      <= 640     single column
@@ -1819,7 +1819,7 @@ html.smooth body{ overscroll-behavior-y:none; }
 .nd__all:hover svg{ transform:translate(2px,-2px); }
 
 /* =========================================================================
-   Insights — homepage section, blog index, article pages
+   Insights: homepage section, blog index, article pages
    ========================================================================= */
 
 .s-blog__head{ position:relative; }
@@ -2092,7 +2092,7 @@ html.smooth body{ overscroll-behavior-y:none; }
 }
 
 /* =========================================================================
-   Confirmation — shown in place of a form once it has been sent
+   Confirmation: shown in place of a form once it has been sent
    ========================================================================= */
 .thanks[hidden]{ display:none; }
 /* both forms are grids, so [hidden] alone loses the cascade */
@@ -2152,9 +2152,9 @@ form[hidden]{ display:none !important; }
 }
 
 /* =========================================================================
-   Legal pages — privacy, terms, cookies
+   Legal pages: privacy, terms, cookies
    ========================================================================= */
-/* same dark hero as the case studies — one page standard, not a second one */
+/* same dark hero as the case studies: one page standard, not a second one */
 .legal-hero{
   position:relative;
   background:var(--black);
@@ -2180,7 +2180,7 @@ form[hidden]{ display:none !important; }
 }
 .legal-body .container{ display:flex; gap:clamp(40px, 6vw, 88px); align-items:flex-start; }
 
-/* a measured column — legal copy is unreadable at full section width */
+/* a measured column; legal copy is unreadable at full section width */
 .legal-doc{ flex:1 1 0; min-width:0; max-width:70ch; }
 .legal-h2{
   margin-top:44px;
@@ -2279,7 +2279,7 @@ form[hidden]{ display:none !important; }
 .site-header--light .nd > a:hover strong{ color:var(--teal); }
 .site-header--light .nd__all{ border-top-color:var(--botticelli); }
 
-/* An on-brand keyboard focus ring — the browser default draws a dark box that
+/* An on-brand keyboard focus ring; the browser default draws a dark box that
    reads as a stray border on the white bar. */
 .main-nav__link:focus-visible,
 .brand:focus-visible,
