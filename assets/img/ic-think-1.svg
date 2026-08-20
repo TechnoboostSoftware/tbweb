@@ -1,0 +1,46 @@
+<svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g id="1432w default">
+
+<g id="Frame 2085661490">
+<g id="Section">
+
+
+<g id="Container">
+<g id="HorizontalBorder">
+<mask id="path-1-inside-1_729_1057" fill="white">
+<path d="M0 -41H1140V490H0V-41Z"/>
+</mask>
+<path d="M0 -41V-40H1140V-41V-42H0V-41Z" fill="#3C3C3C" mask="url(#path-1-inside-1_729_1057)"/>
+<g id="HorizontalBorder_2">
+<g id="Container_2">
+<g id="Container_3">
+<g id="Icon" clip-path="url(#clip0_729_1057)">
+<g id="Component 1" clip-path="url(#clip1_729_1057)">
+<path id="Vector" d="M1.125 1.125H25.125" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M3.375 1.125V4.17058C3.375 6.0334 4.24023 7.79055 5.71674 8.92633L13.125 14.625L20.5332 8.92633C22.0098 7.79056 22.875 6.0334 22.875 4.17058V1.125" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M3.375 28.125V25.0794C3.375 23.2166 4.24023 21.4594 5.71674 20.3236L13.125 14.625L20.5332 20.3236C22.0098 21.4594 22.875 23.2166 22.875 25.0794V28.125" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M1.125 28.125H25.125" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_729_1057" x1="720.5" y1="0" x2="720.5" y2="1075.01" gradientUnits="userSpaceOnUse">
+<stop offset="0.08" stop-opacity="0.7"/>
+<stop offset="0.7"/>
+</linearGradient>
+<clipPath id="clip0_729_1057">
+<rect width="27" height="30" fill="white"/>
+</clipPath>
+<clipPath id="clip1_729_1057">
+<rect width="27" height="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>

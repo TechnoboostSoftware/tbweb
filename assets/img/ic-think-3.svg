@@ -1,0 +1,43 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g id="1432w default">
+
+<g id="Frame 2085661490">
+<g id="Section">
+
+
+<g id="Container">
+<g id="HorizontalBorder">
+<mask id="path-1-inside-1_729_1057" fill="white">
+<path d="M-814 -41H326V490H-814V-41Z"/>
+</mask>
+<path d="M-814 -41V-40H326V-41V-42H-814V-41Z" fill="#3C3C3C" mask="url(#path-1-inside-1_729_1057)"/>
+<g id="HorizontalBorder_2">
+<g id="Container_2">
+<g id="Container_3">
+<g id="Icon" clip-path="url(#clip0_729_1057)">
+<g id="Component 1">
+<path id="Vector" d="M33 21V15C33 9.34314 33 6.51473 31.2426 4.75736C29.4853 3 26.6568 3 21 3H18C12.3431 3 9.51472 3 7.75735 4.75736C6 6.51473 6 9.34314 6 15V21C6 26.6568 6 29.4853 7.75735 31.2426C9.51472 33 12.3431 33 18 33H21C26.6568 33 29.4853 33 31.2426 31.2426C33 29.4853 33 26.6568 33 21Z" stroke="#2AB7CA" stroke-width="2.25"/>
+<path id="Vector_2" d="M7.5 9H3M7.5 18H3M7.5 27H3" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M26.25 10.5H20.25M23.25 16.5H20.25" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M13.5 33V3" stroke="#2AB7CA" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_729_1057" x1="720.5" y1="0" x2="720.5" y2="1075.01" gradientUnits="userSpaceOnUse">
+<stop offset="0.08" stop-opacity="0.7"/>
+<stop offset="0.7"/>
+</linearGradient>
+<clipPath id="clip0_729_1057">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>

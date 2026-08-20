@@ -1,0 +1,5 @@
+# Every crawler is welcome, including AI answer engines.
+User-agent: *
+Allow: /
+
+Sitemap: https://technoboostservices.com/sitemap.xml
