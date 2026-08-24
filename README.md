@@ -29,6 +29,17 @@ files are the deployment. Three of them exist only for the host:
   does not need and which would skip anything named with a leading underscore.
 * `notes/` — internal documentation, deliberately *not* called `docs/`, since
   Pages can be configured to serve a `docs/` folder as the site root.
+  `notes/build/` holds the generators for the eleven pages that are not
+  hand-written. Run them from the repo root, in this order:
+
+  ```bash
+  python3 notes/build/build_cases.py && python3 notes/build/build_blog.py && python3 notes/build/build_legal.py && python3 notes/build/build_seo.py
+  ```
+
+  They lift the header, footer, careers modal and SVG sprite out of
+  `index.html`, so **edit the nav or footer there and re-run them** or the
+  generated pages drift. `build_seo.py` runs last: it injects the metadata into
+  all fifteen pages and rewrites `robots.txt` and `sitemap.xml`.
 
 `shopify/index.html` and the flat `assets/*.js|.jpg|.png|.svg` bundles beside it
 are **not part of this site**. They are the previous React build's Shopify
