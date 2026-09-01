@@ -275,17 +275,21 @@ Three layers, in `main.js`:
    `display:none`, which the better bots detect. If it comes back filled, the
    submission is dropped.
 2. **A minimum fill time** of three seconds. Bots submit instantly.
-3. **Cloudflare Turnstile**, dormant until `TURNSTILE_SITEKEY` is set. Nothing
-   loads from Cloudflare while it is empty.
+3. **A captcha**, dormant until `CAPTCHA_SITEKEY` is set. `CAPTCHA_PROVIDER`
+   takes `'recaptcha'` or `'turnstile'`, so whichever key you have works.
 
 A submission that trips layer 1 or 2 is shown the normal confirmation and
 nothing is sent, so a bot has no signal to adapt to.
 
-**Turnstile rather than reCAPTCHA on purpose: reCAPTCHA sets cookies**, which
-would make the published cookie policy untrue and require a consent banner.
-Turnstile sets none. If it is switched on, both the cookie and privacy policies
-need a line noting Cloudflare receives the visitor's IP, exactly as Google Fonts
-already does.
+**reCAPTCHA sets cookies; Turnstile does not.** So reCAPTCHA is loaded *only
+after* the visitor accepts on the cookie banner, and Turnstile loads straight
+away. The consent choice lives in `localStorage`, not a cookie, so recording a
+refusal does not itself store anything on a third party's behalf.
+
+The banner appears only when a cookie-setting captcha is actually configured.
+It does not appear at all while `CAPTCHA_SITEKEY` is empty, and it never lists
+categories the site does not use. Declining leaves the forms fully working on
+layers 1 and 2.
 
 **None of this stops a spammer posting straight to the mail API**, because the
 token below is public. The forms send the Turnstile result as `captchaToken`

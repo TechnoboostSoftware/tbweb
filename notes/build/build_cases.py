@@ -13,6 +13,7 @@ SPRITE = between('<svg width="0" height="0"', '</svg>\n')
 BADGE  = between('<a class="call-badge"', '</a>\n')
 HEADER = between('  <!-- ===================== HEADER =====================', '  </header>')
 MODAL  = between('<div class="modal" id="careers"', '</div>\n</div>')
+BANNER = between('<div class="cookie-bar"', '</div>\n</div>')
 FOOTER = between('  <!-- ===================== FOOTER =====================', '  </footer>')
 
 # nav + footer links point back to the homepage from a case page
@@ -112,6 +113,8 @@ PAGE = """<!DOCTYPE html>
 
 {modal}
 
+{banner}
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
@@ -190,7 +193,7 @@ def build(case, nxt):
 
     html = PAGE.format(
         title=case["title"], lead=case["lead"], label=case["label"],
-        modal=MODAL, sprite=SPRITE, badge=BADGE, header=HEADER, footer=FOOTER,
+        modal=MODAL, banner=BANNER, sprite=SPRITE, badge=BADGE, header=HEADER, footer=FOOTER,
         hero_eyebrow=eyebrow(case["n"], "Case study"),
         facts=facts, blocks="\n".join(blocks),
         next_eyebrow=eyebrow(nxt["n"], "Next case study"),

@@ -13,6 +13,7 @@ SPRITE = between('<svg width="0" height="0"', '</svg>\n')
 BADGE  = between('<a class="call-badge"', '</a>\n')
 HEADER = between('  <!-- ===================== HEADER =====================', '  </header>')
 MODAL  = between('<div class="modal" id="careers"', '</div>\n</div>')
+BANNER = between('<div class="cookie-bar"', '</div>\n</div>')
 FOOTER = between('  <!-- ===================== FOOTER =====================', '  </footer>')
 
 def to_home(html):
@@ -77,6 +78,8 @@ SHELL = """<!DOCTYPE html>
 
 {modal}
 
+{banner}
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
@@ -109,7 +112,7 @@ def build_index():
     </section>
 ''' % (eyebrow(None, "Insights"), cards)
 
-    return SHELL.format(bodycls="page-blog", modal=MODAL, sprite=SPRITE, badge=BADGE,
+    return SHELL.format(bodycls="page-blog", modal=MODAL, banner=BANNER, sprite=SPRITE, badge=BADGE,
                         header=HEADER_BLOG, footer=FOOTER, main=main)
 
 # ----------------------------------------------------------------- post ---
@@ -177,7 +180,7 @@ def build_post(p, nxt):
        eyebrow(None, "Work with us"), ARROW,
        eyebrow(None, "Next article"), nxt["title"], nxt["slug"], ARROW)
 
-    return SHELL.format(bodycls="page-blog page-post", modal=MODAL, sprite=SPRITE, badge=BADGE,
+    return SHELL.format(bodycls="page-blog page-post", modal=MODAL, banner=BANNER, sprite=SPRITE, badge=BADGE,
                         header=HEADER_BLOG, footer=FOOTER, main=main)
 
 open(os.path.join(ROOT, "blog.html"), "w", encoding="utf-8").write(build_index())

@@ -13,6 +13,7 @@ SPRITE = between('<svg width="0" height="0"', '</svg>\n')
 BADGE  = between('<a class="call-badge"', '</a>\n')
 HEADER = between('  <!-- ===================== HEADER =====================', '  </header>')
 MODAL  = between('<div class="modal" id="careers"', '</div>\n</div>')
+BANNER = between('<div class="cookie-bar"', '</div>\n</div>')
 FOOTER = between('  <!-- ===================== FOOTER =====================', '  </footer>')
 
 def to_home(html):
@@ -82,6 +83,8 @@ SHELL = """<!DOCTYPE html>
 
 {modal}
 
+{banner}
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
@@ -110,7 +113,7 @@ def build():
             for o in PAGES if o["slug"] != p["slug"])
 
         html = SHELL.format(sprite=SPRITE, badge=BADGE, header=HEADER, footer=FOOTER,
-                            modal=MODAL, eyebrow=p["eyebrow"], title=p["title"],
+                            modal=MODAL, banner=BANNER, eyebrow=p["eyebrow"], title=p["title"],
                             lead=p["lead"], updated=UPDATED,
                             body=render(p["body"]), siblings=sibs)
         path = os.path.join(ROOT, p["slug"] + ".html")

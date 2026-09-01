@@ -26,26 +26,29 @@
      so no proxy is needed. Empty it and the application still sends; the
      email just says the CV could not be attached.
      ----------------------------------------------------------------------- */
-  /* Spam control. Three layers, because the first two cost nothing and the
-     third needs an account:
+  /* Spam control. Three layers:
 
        1. a honeypot field, invisible to people, that naive bots fill in
        2. a minimum time on the form, since bots submit instantly
-       3. Cloudflare Turnstile, once TURNSTILE_SITEKEY is set below
+       3. a captcha, once CAPTCHA_SITEKEY is set
 
-     Turnstile rather than Google reCAPTCHA on purpose: reCAPTCHA sets
-     cookies, which would make our own cookie policy untrue. Turnstile sets
-     none, is free, and is usually invisible to the visitor. Get a site key at
-     dash.cloudflare.com > Turnstile, add technoboostservices.com as the
-     hostname, and paste the key here. Nothing loads from Cloudflare until
-     that key exists.
+     CAPTCHA_PROVIDER takes 'turnstile' or 'recaptcha'; paste whichever site
+     key you have and set the provider to match. Nothing third-party loads
+     until a key exists.
+
+     The difference that matters: reCAPTCHA sets cookies, Turnstile does not.
+     So reCAPTCHA is loaded only after the visitor accepts on the cookie
+     banner, and Turnstile loads straight away. Consent is remembered in
+     localStorage rather than a cookie, so declining really does leave nothing
+     stored by a third party.
 
      IMPORTANT: none of this stops a spammer who posts straight to the mail
-     API, because MAIL_TOKEN is public in this file. The Turnstile token is
+     API, because MAIL_TOKEN is public in this file. The captcha result is
      sent as `captchaToken` so the service can verify it server side and
      reject anything without one. See notes/backend-spam-hardening.md. */
-  var TURNSTILE_SITEKEY = '';
-  var MIN_FILL_SECONDS  = 3;
+  var CAPTCHA_PROVIDER = 'recaptcha';        // 'recaptcha' | 'turnstile'
+  var CAPTCHA_SITEKEY  = '';
+  var MIN_FILL_SECONDS = 3;
 
   var MAIL_ENDPOINT  = 'https://es.technoboost.in/api/v1/mail-send';
   var MAIL_TOKEN     = 'P8gRVxM%P8gRVxYHS';
@@ -445,44 +448,93 @@
   /* =======================================================================
      Spam guard
      ======================================================================= */
+  /* Consent, kept in localStorage so recording a refusal does not itself
+     store anything on a third party's behalf. */
+  var consent = (function () {
+    var KEY = 'tb-consent';
+    function read() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+    function write(v) {
+      try { localStorage.setItem(KEY, v); } catch (e) { /* private mode */ }
+    }
+    var listeners = [];
+    return {
+      state: read,                                  // 'accepted' | 'declined' | null
+      granted: function () { return read() === 'accepted'; },
+      set: function (v) {
+        write(v);
+        listeners.forEach(function (fn) { fn(v); });
+      },
+      onChange: function (fn) { listeners.push(fn); }
+    };
+  })();
+
   var captcha = (function () {
-    var loaded = false, widgets = [];
+    var api = null, loaded = false;
 
     function slots() { return document.querySelectorAll('[data-captcha]'); }
+    function usesCookies() { return CAPTCHA_PROVIDER === 'recaptcha'; }
+
+    function src() {
+      return CAPTCHA_PROVIDER === 'turnstile'
+        ? 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+        : 'https://www.google.com/recaptcha/api.js?render=explicit';
+    }
 
     function mount() {
+      api = CAPTCHA_PROVIDER === 'turnstile' ? window.turnstile : window.grecaptcha;
+      if (!api || !api.render) return;
+      loaded = true;
       slots().forEach(function (slot) {
+        if (slot.dataset.rendered) return;
         slot.hidden = false;
-        widgets.push(window.turnstile.render(slot, {
-          sitekey: TURNSTILE_SITEKEY,
-          theme: 'light',
-          action: slot.closest('form').className.indexOf('apply') > -1 ? 'careers' : 'contact'
-        }));
+        slot.dataset.widget = api.render(slot, {
+          sitekey: CAPTCHA_SITEKEY,
+          theme: 'light'
+        });
+        slot.dataset.rendered = '1';
       });
     }
 
-    if (TURNSTILE_SITEKEY && slots().length) {
+    function load() {
+      if (loaded || !CAPTCHA_SITEKEY || !slots().length) return;
+      if (usesCookies() && !consent.granted()) return;    // wait for the banner
       var tag = document.createElement('script');
-      tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      tag.async = true;
-      tag.defer = true;
-      tag.onload = function () { loaded = true; mount(); };
+      tag.src = src();
+      tag.async = true; tag.defer = true;
+      tag.onload = function () {
+        // grecaptcha needs a beat before render() exists
+        if (window.grecaptcha && window.grecaptcha.ready) window.grecaptcha.ready(mount);
+        else mount();
+      };
       document.head.appendChild(tag);
     }
 
+    load();
+    consent.onChange(function (v) { if (v === 'accepted') load(); });
+
     return {
-      /* '' when Turnstile is off, so the forms behave exactly as before */
+      /* '' when no captcha is configured or it could not load, so the forms
+         behave exactly as they did before. null means "configured, shown, and
+         the visitor has not solved it yet". */
       tokenFor: function (form) {
-        if (!TURNSTILE_SITEKEY || !loaded) return '';
+        if (!CAPTCHA_SITEKEY) return '';
+        if (usesCookies() && !consent.granted()) return '';
+        if (!loaded) return '';
         var slot = form.querySelector('[data-captcha]');
-        return (slot && window.turnstile.getResponse(slot)) || null;   // null = not solved
+        if (!slot || !slot.dataset.rendered) return '';
+        return api.getResponse(slot.dataset.widget) || null;
       },
       reset: function (form) {
-        if (!TURNSTILE_SITEKEY || !loaded) return;
+        if (!loaded) return;
         var slot = form.querySelector('[data-captcha]');
-        if (slot) window.turnstile.reset(slot);
+        if (slot && slot.dataset.rendered) api.reset(slot.dataset.widget);
       },
-      required: function () { return !!TURNSTILE_SITEKEY; }
+      /* true when the visitor must accept cookies before they can send */
+      blockedByConsent: function () {
+        return !!CAPTCHA_SITEKEY && usesCookies() && !consent.granted();
+      }
     };
   })();
 
@@ -787,6 +839,31 @@
       });
     });
   }
+
+
+  /* =======================================================================
+     Cookie banner
+     ======================================================================= */
+  (function () {
+    var bar = document.getElementById('cookie-bar');
+    if (!bar) return;
+
+    // Ask only when there is genuinely something to consent to: a
+    // cookie-setting captcha is configured and the visitor has not answered.
+    // A banner with nothing behind it is theatre, and it trains people to
+    // click through the ones that matter.
+    var somethingToAsk = !!CAPTCHA_SITEKEY && CAPTCHA_PROVIDER === 'recaptcha';
+    if (!somethingToAsk || consent.state() !== null) return;
+
+    bar.hidden = false;
+
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-consent]');
+      if (!btn) return;
+      consent.set(btn.dataset.consent);
+      bar.hidden = true;
+    });
+  })();
 
   /* =======================================================================
      Marquee: pause on hover

@@ -2307,3 +2307,67 @@ form[hidden]{ display:none !important; }
 
 .captcha-slot[hidden]{ display:none; }
 .captcha-slot{ margin-top:4px; min-height:65px; }
+
+/* =========================================================================
+   Cookie banner
+   ========================================================================= */
+/* Only shown when a cookie-setting third party is actually configured, so it
+   never appears for the sake of appearing. */
+.cookie-bar{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:90;
+  background:var(--footer-bg);
+  border-top:1px solid rgba(255,255,255,.10);
+  padding:18px var(--pad-x);
+  animation:cookieIn .45s var(--ease) both;
+}
+.cookie-bar[hidden]{ display:none; }
+@keyframes cookieIn{ from{ transform:translateY(100%); } }
+
+.cookie-bar__inner{
+  width:100%; max-width:var(--content);
+  margin-inline:auto;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:clamp(20px, 4vw, 56px);
+}
+.cookie-bar__text{
+  font-family:var(--f2);
+  font-size:14px;
+  line-height:22px;
+  color:var(--silver);
+  max-width:74ch;
+}
+.cookie-bar__text a{ color:var(--teal); border-bottom:1px solid currentColor; }
+
+.cookie-bar__actions{ display:flex; align-items:center; gap:12px; flex:none; }
+.cookie-bar__btn{
+  height:42px;
+  padding-inline:22px;
+  border-radius:42px;
+  font-family:var(--f1);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+}
+.cookie-bar__btn--solid{ background:var(--teal); color:#fff; }
+.cookie-bar__btn--solid:hover{ background:#22a3b5; }
+.cookie-bar__btn--ghost{
+  background:transparent;
+  color:var(--silver);
+  border:1px solid rgba(255,255,255,.22);
+}
+.cookie-bar__btn--ghost:hover{ color:#fff; border-color:rgba(255,255,255,.5); }
+
+/* the floating call badge would sit on top of the bar */
+.cookie-bar:not([hidden]) ~ .call-badge,
+body:has(.cookie-bar:not([hidden])) .call-badge{ bottom:calc(clamp(14px,3.4vh,40px) + 92px); }
+
+@media (max-width:760px){
+  .cookie-bar__inner{ flex-direction:column; align-items:stretch; gap:16px; }
+  .cookie-bar__actions{ justify-content:flex-end; }
+  .cookie-bar__btn{ flex:1 1 0; }
+}

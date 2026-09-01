@@ -79,6 +79,10 @@ dict(
       "<strong>Google Fonts</strong>, which serves the two typefaces this site uses. Your "
       "browser requests those font files directly from Google, which means Google receives "
       "your IP address as part of that request. Google Fonts sets no cookies.",
+      "<strong>Our form spam check</strong>, which confirms a submission came from a person "
+      "rather than a script. Where the provider sets cookies it is loaded only with your "
+      "consent, and it receives your IP address and interaction with the challenge. See the "
+      "<a href=\"cookie-policy.html\">Cookie Policy</a>.",
     ]),
     ("p",  "We do not sell personal information, and we do not share it with advertisers "
            "or data brokers. We will disclose information if we are legally required to."),
@@ -217,38 +221,33 @@ dict(
   slug="cookie-policy",
   eyebrow="Legal",
   title="Cookie Policy",
-  lead=("Short version: this website sets no cookies at all. There is nothing to "
-        "consent to, which is why you have not seen a banner."),
+  lead=("Short version: this website sets no cookies of its own. The only thing "
+        "that might is the spam check on our forms, and that is loaded only if "
+        "you accept it."),
   seo_title="Cookie Policy | Technoboost",
-  seo_desc=("The Technoboost website sets no cookies and uses no analytics, "
-            "tracking pixels or ad networks. What that means, and the one "
-            "third-party request the site makes."),
+  seo_desc=("The Technoboost website sets no cookies of its own and uses no "
+            "analytics or ad networks. What the form spam check does, and how "
+            "to decline it."),
   kw="Technoboost cookie policy, no cookies, cookie consent, tracking, privacy",
   body=[
-    ("h2", "We do not use cookies"),
+    ("h2", "What we set: nothing"),
     ("p",  "A cookie is a small file a website asks your browser to store so it can "
-           "recognise you later. This site asks your browser to store nothing. It sets no "
-           "cookies: not necessary ones, not preference ones, and certainly not analytics "
-           "or advertising ones. It also uses no local storage, no session storage and no "
-           "browser fingerprinting."),
-    ("p",  "You can check this yourself: open your browser's developer tools, go to the "
-           "storage or application tab, and look at the cookie list for this domain. It is "
-           "empty."),
+           "recognise you later. This site asks your browser to store nothing of its "
+           "own. It sets no cookies, uses no analytics, no tracking pixel, no "
+           "advertising network and no browser fingerprinting."),
 
-    ("h2", "Why there is no cookie banner"),
-    ("p",  "Consent banners exist because the law requires consent before non-essential "
-           "cookies are set. Since we set none, there is nothing to ask you about, and a "
-           "banner would be theatre. If that ever changes, if we add analytics or embed a "
-           "service that needs a cookie, we will publish the detail here and ask for your "
-           "consent before anything is set."),
-
-    ("h2", "What the site does load from elsewhere"),
-    ("p",  "One thing. The two typefaces this site uses, DM Sans and Inter, are served by "
-           "Google Fonts. Your browser fetches those font files directly from Google's "
-           "servers, which means Google sees the IP address making the request. Google "
-           "Fonts sets no cookies and serves no ads from that request. Everything else on "
-           "the site, every image, icon, script and stylesheet, is served from our own "
-           "domain."),
+    ("h2", "The spam check on our forms"),
+    ("p",  "Our contact and careers forms are protected by a challenge that tells a "
+           "person from a script. Where that provider sets cookies, as Google "
+           "reCAPTCHA does, <strong>we load it only if you accept on the banner</strong>. "
+           "Decline, or simply ignore the banner, and nothing from the provider is "
+           "ever requested and no cookies are set. The forms still work either way; "
+           "they fall back to checks that run entirely on this site."),
+    ("p",  "Your choice is remembered in your browser's local storage rather than in "
+           "a cookie, so recording a refusal does not itself store anything on a "
+           "third party's behalf. It stays on your device, is never sent to us, and "
+           "clearing your browsing data removes it. To change your mind, clear site "
+           "data for this domain and the banner will ask again."),
 
     ("h2", "Server logs"),
     ("p",  "Our hosting provider keeps standard web server logs: IP address, browser type, "
