@@ -267,6 +267,30 @@ since `Origin` is set by the browser rather than by script. Two consequences:
   whitelisted. Today the apex answers directly and `www` has no valid
   certificate, so this only matters if the DNS setup changes.
 
+### Spam control
+
+Three layers, in `main.js`:
+
+1. **A honeypot field** on both forms, moved off-screen rather than
+   `display:none`, which the better bots detect. If it comes back filled, the
+   submission is dropped.
+2. **A minimum fill time** of three seconds. Bots submit instantly.
+3. **Cloudflare Turnstile**, dormant until `TURNSTILE_SITEKEY` is set. Nothing
+   loads from Cloudflare while it is empty.
+
+A submission that trips layer 1 or 2 is shown the normal confirmation and
+nothing is sent, so a bot has no signal to adapt to.
+
+**Turnstile rather than reCAPTCHA on purpose: reCAPTCHA sets cookies**, which
+would make the published cookie policy untrue and require a consent banner.
+Turnstile sets none. If it is switched on, both the cookie and privacy policies
+need a line noting Cloudflare receives the visitor's IP, exactly as Google Fonts
+already does.
+
+**None of this stops a spammer posting straight to the mail API**, because the
+token below is public. The forms send the Turnstile result as `captchaToken`
+for the service to verify server-side — see `notes/backend-spam-hardening.md`.
+
 **`MAIL_TOKEN` is in client-side JavaScript, which means it is public.** The
 host lock is what actually protects the endpoint — the token alone is not a
 secret. If it ever needs to be one, move the call behind a Vercel function

@@ -26,6 +26,27 @@
      so no proxy is needed. Empty it and the application still sends; the
      email just says the CV could not be attached.
      ----------------------------------------------------------------------- */
+  /* Spam control. Three layers, because the first two cost nothing and the
+     third needs an account:
+
+       1. a honeypot field, invisible to people, that naive bots fill in
+       2. a minimum time on the form, since bots submit instantly
+       3. Cloudflare Turnstile, once TURNSTILE_SITEKEY is set below
+
+     Turnstile rather than Google reCAPTCHA on purpose: reCAPTCHA sets
+     cookies, which would make our own cookie policy untrue. Turnstile sets
+     none, is free, and is usually invisible to the visitor. Get a site key at
+     dash.cloudflare.com > Turnstile, add technoboostservices.com as the
+     hostname, and paste the key here. Nothing loads from Cloudflare until
+     that key exists.
+
+     IMPORTANT: none of this stops a spammer who posts straight to the mail
+     API, because MAIL_TOKEN is public in this file. The Turnstile token is
+     sent as `captchaToken` so the service can verify it server side and
+     reject anything without one. See notes/backend-spam-hardening.md. */
+  var TURNSTILE_SITEKEY = '';
+  var MIN_FILL_SECONDS  = 3;
+
   var MAIL_ENDPOINT  = 'https://es.technoboost.in/api/v1/mail-send';
   var MAIL_TOKEN     = 'P8gRVxM%P8gRVxYHS';
   var DRIVE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyXrqDGkXcCQUG5KR1_rk3Mr9SwJamJl_KrWYA2MQJiD087bKR4Atud4V7tyWBsW-KskA/exec';
@@ -420,14 +441,78 @@
     return '<strong>' + esc(label) + ':</strong> ' + esc(value) + '<br>\n';
   }
 
-  function postMail(subject, body) {
+
+  /* =======================================================================
+     Spam guard
+     ======================================================================= */
+  var captcha = (function () {
+    var loaded = false, widgets = [];
+
+    function slots() { return document.querySelectorAll('[data-captcha]'); }
+
+    function mount() {
+      slots().forEach(function (slot) {
+        slot.hidden = false;
+        widgets.push(window.turnstile.render(slot, {
+          sitekey: TURNSTILE_SITEKEY,
+          theme: 'light',
+          action: slot.closest('form').className.indexOf('apply') > -1 ? 'careers' : 'contact'
+        }));
+      });
+    }
+
+    if (TURNSTILE_SITEKEY && slots().length) {
+      var tag = document.createElement('script');
+      tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      tag.async = true;
+      tag.defer = true;
+      tag.onload = function () { loaded = true; mount(); };
+      document.head.appendChild(tag);
+    }
+
+    return {
+      /* '' when Turnstile is off, so the forms behave exactly as before */
+      tokenFor: function (form) {
+        if (!TURNSTILE_SITEKEY || !loaded) return '';
+        var slot = form.querySelector('[data-captcha]');
+        return (slot && window.turnstile.getResponse(slot)) || null;   // null = not solved
+      },
+      reset: function (form) {
+        if (!TURNSTILE_SITEKEY || !loaded) return;
+        var slot = form.querySelector('[data-captcha]');
+        if (slot) window.turnstile.reset(slot);
+      },
+      required: function () { return !!TURNSTILE_SITEKEY; }
+    };
+  })();
+
+  /* When a form was first shown, so we can tell a person from a script. */
+  var formShownAt = {};
+  function markShown(form) { formShownAt[form.className] = Date.now(); }
+  document.querySelectorAll('form').forEach(markShown);
+
+  /* Returns a reason string when the submission looks automated, else ''.
+     Bots are told nothing useful, and the form silently pretends to succeed
+     rather than reporting what tripped. */
+  function looksAutomated(form) {
+    var hp = form.querySelector('input[name="website"]');
+    if (hp && hp.value) return 'honeypot';
+
+    var shown = formShownAt[form.className] || 0;
+    if (shown && (Date.now() - shown) < MIN_FILL_SECONDS * 1000) return 'too fast';
+
+    return '';
+  }
+
+  function postMail(subject, body, captchaToken) {
     return fetch(MAIL_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         token: MAIL_TOKEN,
         emailSubjectLine: subject,
-        emailBodyContent: body
+        emailBodyContent: body,
+        captchaToken: captchaToken || ''
       })
     })
     .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
@@ -527,6 +612,8 @@
   function restoreForm(panel) {
     var form = panel.parentElement.querySelector('form');
     if (!form) return;
+    captcha.reset(form);
+    markShown(form);
     panel.hidden = true;
     form.hidden = false;
     form.style.display = '';
@@ -586,6 +673,15 @@
       if (!OK_EXT.test(f.name)) { setStatus(form, false, 'Resume must be a PDF, DOC or DOCX.'); return; }
       if (f.size > MAX)        { setStatus(form, false, 'Resume must be under 5 MB.'); return; }
 
+      // a bot gets the same confirmation a person does, and nothing sent
+      if (looksAutomated(form)) { shown.hidden = true; showThanks(form); return; }
+
+      var capToken = captcha.tokenFor(form);
+      if (capToken === null) {
+        setStatus(form, false, 'Please complete the verification below.');
+        return;
+      }
+
       setStatus(form, true, 'Uploading your resume…');
       form.classList.add('is-sending');
 
@@ -608,7 +704,7 @@
         var note = form.querySelector('#ap-note').value.trim();
         if (note) body += '<br>\n<strong>Cover letter</strong><br>\n' + esc(note).replace(/\n/g, '<br>\n') + '<br>\n';
 
-        return postMail('Job application: ' + name.value.trim(), body);
+        return postMail('Job application: ' + name.value.trim(), body, capToken);
       })
       .then(function (ok) {
         form.classList.remove('is-sending');
@@ -650,6 +746,14 @@
         return;
       }
 
+      if (looksAutomated(form)) { form.reset(); showThanks(form); return; }
+
+      var capToken = captcha.tokenFor(form);
+      if (capToken === null) {
+        setStatus(form, false, 'Please complete the verification below.');
+        return;
+      }
+
       setStatus(form, true, 'Sending…');
       form.classList.add('is-sending');
 
@@ -663,7 +767,7 @@
       var msg = form.querySelector('#cf-msg').value.trim();
       if (msg) body += '<br>\n<strong>Message</strong><br>\n' + esc(msg).replace(/\n/g, '<br>\n') + '<br>\n';
 
-      postMail('Website enquiry: ' + name.value.trim(), body).then(function (ok) {
+      postMail('Website enquiry: ' + name.value.trim(), body, capToken).then(function (ok) {
         form.classList.remove('is-sending');
         if (!ok) {
           setStatus(form, false, 'Something went wrong. Please email ' + MAIL_TO + ' instead.');

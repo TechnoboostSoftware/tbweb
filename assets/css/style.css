@@ -2288,3 +2288,22 @@ form[hidden]{ display:none !important; }
   outline-offset:-3px;
   border-radius:3px;
 }
+
+/* =========================================================================
+   Spam guard
+   ========================================================================= */
+/* The honeypot has to be reachable by a bot parsing the DOM and invisible to
+   everyone else, so it is moved off-screen rather than display:none, which
+   the better bots detect. aria-hidden and tabindex="-1" keep it away from
+   screen readers and the keyboard. */
+.hp{
+  position:absolute !important;
+  left:-9999px;
+  width:1px; height:1px;
+  overflow:hidden;
+  opacity:0;
+  pointer-events:none;
+}
+
+.captcha-slot[hidden]{ display:none; }
+.captcha-slot{ margin-top:4px; min-height:65px; }
