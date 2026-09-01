@@ -2331,12 +2331,20 @@ form[hidden]{ display:none !important; }
   display:flex; align-items:center; justify-content:space-between;
   gap:clamp(20px, 4vw, 56px);
 }
+.cookie-bar__copy{ max-width:78ch; }
+.cookie-bar__title{
+  font-family:var(--f1);
+  font-weight:600;
+  font-size:15px;
+  line-height:22px;
+  color:#fff;
+  margin-bottom:4px;
+}
 .cookie-bar__text{
   font-family:var(--f2);
-  font-size:14px;
-  line-height:22px;
+  font-size:13.5px;
+  line-height:21px;
   color:var(--silver);
-  max-width:74ch;
 }
 .cookie-bar__text a{ color:var(--teal); border-bottom:1px solid currentColor; }
 

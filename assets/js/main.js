@@ -37,10 +37,11 @@
      until a key exists.
 
      The difference that matters: reCAPTCHA sets cookies, Turnstile does not.
-     So reCAPTCHA is loaded only after the visitor accepts on the cookie
-     banner, and Turnstile loads straight away. Consent is remembered in
-     localStorage rather than a cookie, so declining really does leave nothing
-     stored by a third party.
+     Either way the challenge loads by default, because a form without spam
+     protection is not much of a form. Declining on the banner is what turns
+     reCAPTCHA off, and it then stays off. That choice is remembered in
+     localStorage rather than a cookie, so recording a refusal does not itself
+     store anything on a third party's behalf.
 
      IMPORTANT: none of this stops a spammer who posts straight to the mail
      API, because MAIL_TOKEN is public in this file. The captcha result is
@@ -506,7 +507,10 @@
 
     function load() {
       if (loaded || !CAPTCHA_SITEKEY || !slots().length) return;
-      if (usesCookies() && !consent.granted()) return;    // wait for the banner
+      // On by default, because spam protection is what makes the form usable
+      // at all. Declining is what turns it off, not consenting is what turns
+      // it on, so the visitor still has a real choice.
+      if (usesCookies() && consent.state() === 'declined') return;
       var tag = document.createElement('script');
       tag.src = src();
       tag.async = true; tag.defer = true;
@@ -519,7 +523,15 @@
     }
 
     load();
-    consent.onChange(function (v) { if (v === 'accepted') load(); });
+    consent.onChange(function (v) {
+      if (v === 'accepted') { load(); return; }
+      // declined: take the widget away and stop asking for a token
+      slots().forEach(function (slot) {
+        slot.hidden = true;
+        if (slot.dataset.rendered) { try { api.reset(slot.dataset.widget); } catch (e) {} }
+        slot.dataset.rendered = '';
+      });
+    });
 
     return {
       /* '' when no captcha is configured or it could not load, so the forms
@@ -527,7 +539,7 @@
          the visitor has not solved it yet". */
       tokenFor: function (form) {
         if (!CAPTCHA_SITEKEY) return '';
-        if (usesCookies() && !consent.granted()) return '';
+        if (usesCookies() && consent.state() === 'declined') return '';
         if (!loaded) return '';
         var slot = form.querySelector('[data-captcha]');
         if (!slot || !slot.dataset.rendered) return '';
@@ -538,9 +550,9 @@
         var slot = form.querySelector('[data-captcha]');
         if (slot && slot.dataset.rendered) api.reset(slot.dataset.widget);
       },
-      /* true when the visitor must accept cookies before they can send */
-      blockedByConsent: function () {
-        return !!CAPTCHA_SITEKEY && usesCookies() && !consent.granted();
+      /* true when the visitor has actively turned the challenge off */
+      declined: function () {
+        return !!CAPTCHA_SITEKEY && usesCookies() && consent.state() === 'declined';
       }
     };
   })();

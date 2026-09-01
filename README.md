@@ -281,15 +281,17 @@ Three layers, in `main.js`:
 A submission that trips layer 1 or 2 is shown the normal confirmation and
 nothing is sent, so a bot has no signal to adapt to.
 
-**reCAPTCHA sets cookies; Turnstile does not.** So reCAPTCHA is loaded *only
-after* the visitor accepts on the cookie banner, and Turnstile loads straight
-away. The consent choice lives in `localStorage`, not a cookie, so recording a
-refusal does not itself store anything on a third party's behalf.
+**The challenge loads by default**, because a contact form without spam
+protection stops being usable. reCAPTCHA sets cookies, so the banner gives an
+explicit way out: **Decline removes the widget, stops any further request to
+Google, and stays off on later visits.** The forms keep working on layers 1 and
+2, so nothing is gated behind accepting. The choice lives in `localStorage`,
+not a cookie, so recording a refusal does not itself store anything for a third
+party.
 
-The banner appears only when a cookie-setting captcha is actually configured.
-It does not appear at all while `CAPTCHA_SITEKEY` is empty, and it never lists
-categories the site does not use. Declining leaves the forms fully working on
-layers 1 and 2.
+The banner appears only when a cookie-setting captcha is actually configured,
+and asks about that one thing rather than listing categories the site does not
+use.
 
 **None of this stops a spammer posting straight to the mail API**, because the
 token below is public. The forms send the Turnstile result as `captchaToken`

@@ -159,7 +159,7 @@
       <div class="container">
         <p class="eyebrow eyebrow--teal"><span class="eyebrow__text">Legal</span></p>
         <h1 class="case-hero__title">Cookie Policy</h1>
-        <p class="case-hero__lead">Short version: this website sets no cookies of its own. The only thing that might is the spam check on our forms, and that is loaded only if you accept it.</p>
+        <p class="case-hero__lead">Short version: this website sets no cookies of its own. The only ones involved come from the spam check on our forms, and you can switch that off without losing anything.</p>
         <p class="legal-hero__meta">Last updated 18 August 2026</p>
       </div>
     </section>
@@ -169,8 +169,9 @@
         <div class="legal-doc">
           <h2 class="legal-h2">What we set: nothing</h2>
           <p class="legal-p">A cookie is a small file a website asks your browser to store so it can recognise you later. This site asks your browser to store nothing of its own. It sets no cookies, uses no analytics, no tracking pixel, no advertising network and no browser fingerprinting.</p>
-          <h2 class="legal-h2">The spam check on our forms</h2>
-          <p class="legal-p">Our contact and careers forms are protected by a challenge that tells a person from a script. Where that provider sets cookies, as Google reCAPTCHA does, <strong>we load it only if you accept on the banner</strong>. Decline, or simply ignore the banner, and nothing from the provider is ever requested and no cookies are set. The forms still work either way; they fall back to checks that run entirely on this site.</p>
+          <h2 class="legal-h2">The one exception: our form spam check</h2>
+          <p class="legal-p">Our contact and careers forms are protected by Google reCAPTCHA, which tells a person from a script. It is the only thing on this site that sets cookies, and it sets them on Google's domain rather than ours. It is loaded by default, because a contact form without spam protection stops being usable very quickly.</p>
+          <p class="legal-p"><strong>You can turn it off.</strong> Click Decline on the banner and reCAPTCHA is removed, nothing further is requested from Google, and it stays off on later visits. The forms keep working: they fall back to checks that run entirely on this site. Nothing you can do on this site is gated behind accepting.</p>
           <p class="legal-p">Your choice is remembered in your browser's local storage rather than in a cookie, so recording a refusal does not itself store anything on a third party's behalf. It stays on your device, is never sent to us, and clearing your browsing data removes it. To change your mind, clear site data for this domain and the banner will ask again.</p>
           <h2 class="legal-h2">Server logs</h2>
           <p class="legal-p">Our hosting provider keeps standard web server logs: IP address, browser type, the page requested and the time. These are ordinary infrastructure records used for security and diagnostics, not cookies, and they are not used to build a profile of you or to follow you across other sites.</p>
@@ -367,14 +368,17 @@
 </div>
 
 <div class="cookie-bar" id="cookie-bar" role="dialog" aria-live="polite"
-     aria-label="Cookie choice" hidden>
+     aria-label="Cookie notice" hidden>
   <div class="cookie-bar__inner">
-    <p class="cookie-bar__text">
-      This site sets no cookies of its own. Our contact and careers forms use a
-      spam check from Google, which may set cookies once it loads. We only load
-      it if you accept.
-      <a href="cookie-policy.html">Cookie Policy</a>
-    </p>
+    <div class="cookie-bar__copy">
+      <p class="cookie-bar__title">We value your privacy</p>
+      <p class="cookie-bar__text">
+        We use cookies only to keep our contact and careers forms secure and free
+        from spam. We use none for analytics, advertising or tracking. By clicking
+        &ldquo;Accept&rdquo; you agree to these cookies being stored on your device.
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </p>
+    </div>
     <div class="cookie-bar__actions">
       <button class="cookie-bar__btn cookie-bar__btn--ghost" type="button" data-consent="declined">Decline</button>
       <button class="cookie-bar__btn cookie-bar__btn--solid" type="button" data-consent="accepted">Accept</button>

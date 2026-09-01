@@ -221,9 +221,9 @@ dict(
   slug="cookie-policy",
   eyebrow="Legal",
   title="Cookie Policy",
-  lead=("Short version: this website sets no cookies of its own. The only thing "
-        "that might is the spam check on our forms, and that is loaded only if "
-        "you accept it."),
+  lead=("Short version: this website sets no cookies of its own. The only ones "
+        "involved come from the spam check on our forms, and you can switch that "
+        "off without losing anything."),
   seo_title="Cookie Policy | Technoboost",
   seo_desc=("The Technoboost website sets no cookies of its own and uses no "
             "analytics or ad networks. What the form spam check does, and how "
@@ -236,13 +236,17 @@ dict(
            "own. It sets no cookies, uses no analytics, no tracking pixel, no "
            "advertising network and no browser fingerprinting."),
 
-    ("h2", "The spam check on our forms"),
-    ("p",  "Our contact and careers forms are protected by a challenge that tells a "
-           "person from a script. Where that provider sets cookies, as Google "
-           "reCAPTCHA does, <strong>we load it only if you accept on the banner</strong>. "
-           "Decline, or simply ignore the banner, and nothing from the provider is "
-           "ever requested and no cookies are set. The forms still work either way; "
-           "they fall back to checks that run entirely on this site."),
+    ("h2", "The one exception: our form spam check"),
+    ("p",  "Our contact and careers forms are protected by Google reCAPTCHA, which "
+           "tells a person from a script. It is the only thing on this site that "
+           "sets cookies, and it sets them on Google's domain rather than ours. It "
+           "is loaded by default, because a contact form without spam protection "
+           "stops being usable very quickly."),
+    ("p",  "<strong>You can turn it off.</strong> Click Decline on the banner and "
+           "reCAPTCHA is removed, nothing further is requested from Google, and it "
+           "stays off on later visits. The forms keep working: they fall back to "
+           "checks that run entirely on this site. Nothing you can do on this site "
+           "is gated behind accepting."),
     ("p",  "Your choice is remembered in your browser's local storage rather than in "
            "a cookie, so recording a refusal does not itself store anything on a "
            "third party's behalf. It stays on your device, is never sent to us, and "
