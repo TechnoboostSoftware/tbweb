@@ -47,7 +47,7 @@
      sent as `captchaToken` so the service can verify it server side and
      reject anything without one. See notes/backend-spam-hardening.md. */
   var CAPTCHA_PROVIDER = 'recaptcha';        // 'recaptcha' | 'turnstile'
-  var CAPTCHA_SITEKEY  = '';
+  var CAPTCHA_SITEKEY  = '6LcMZqMtAAAAABi0Q3i2MX_iYMPmM9azNbytGVr1';
   var MIN_FILL_SECONDS = 3;
 
   var MAIL_ENDPOINT  = 'https://es.technoboost.in/api/v1/mail-send';
@@ -488,12 +488,19 @@
       loaded = true;
       slots().forEach(function (slot) {
         if (slot.dataset.rendered) return;
-        slot.hidden = false;
-        slot.dataset.widget = api.render(slot, {
-          sitekey: CAPTCHA_SITEKEY,
-          theme: 'light'
-        });
-        slot.dataset.rendered = '1';
+        try {
+          slot.dataset.widget = api.render(slot, {
+            sitekey: CAPTCHA_SITEKEY,
+            theme: 'light'
+          });
+          slot.dataset.rendered = '1';
+          slot.hidden = false;
+        } catch (e) {
+          // wrong key type, wrong domain, blocked script: fall back to the
+          // honeypot and timer rather than locking anyone out of the form
+          slot.hidden = true;
+          if (window.console) console.warn('[technoboost] captcha did not render:', e);
+        }
       });
     }
 
