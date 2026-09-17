@@ -147,6 +147,23 @@ def head_block(fn, m):
         parts.append(ld(breadcrumb(m["post"]["title"], url, ("Insights", BASE+"/blog.html"))))
     return "\n".join(parts)
 
+
+# ------------------------------------------------------- cache busting ----
+# GitHub Pages serves assets with max-age=600, so for ten minutes after a
+# deploy a returning visitor can get the new HTML with the old CSS and JS.
+# Stamping each reference with a hash of the file's contents gives every
+# change a new URL, and an unchanged file keeps its old one and stays cached.
+import hashlib
+def _digest(rel):
+    return hashlib.sha1(open(os.path.join(ROOT, rel), "rb").read()).hexdigest()[:10]
+ASSET_VERSIONS = {rel: _digest(rel) for rel in ("assets/css/style.css", "assets/js/main.js")}
+
+def stamp_assets(html):
+    for rel, v in ASSET_VERSIONS.items():
+        html = re.sub(r'(["\'])%s(?:\?v=[0-9a-f]*)?\1' % re.escape(rel),
+                      lambda m: m.group(1) + rel + "?v=" + v + m.group(1), html)
+    return html
+
 changed = 0
 for fn, m in PAGES.items():
     path = os.path.join(ROOT, fn)
@@ -159,6 +176,7 @@ for fn, m in PAGES.items():
         start = s.index("<title>")
         end = s.index('<link rel="preconnect" href="https://fonts.googleapis.com">')
         s = s[:start] + block + "\n" + s[end:]
+    s = stamp_assets(s)
     open(path, "w", encoding="utf-8").write(s)
     changed += 1
 print("SEO injected into", changed, "pages")

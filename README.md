@@ -39,7 +39,13 @@ files are the deployment. Three of them exist only for the host:
   They lift the header, footer, careers modal and SVG sprite out of
   `index.html`, so **edit the nav or footer there and re-run them** or the
   generated pages drift. `build_seo.py` runs last: it injects the metadata into
-  all fifteen pages and rewrites `robots.txt` and `sitemap.xml`.
+  all fifteen pages, rewrites `robots.txt` and `sitemap.xml`, and stamps the
+  CSS and JS references with a hash of their contents.
+
+  That last step matters. GitHub Pages serves assets with `max-age=600`, so
+  without it a returning visitor can get new HTML with the previous CSS and JS
+  for ten minutes after a deploy. **Always run the build after editing
+  `style.css` or `main.js`**, even when no HTML changed, so the hash moves.
 
 `shopify/index.html` and the flat `assets/*.js|.jpg|.png|.svg` bundles beside it
 are **not part of this site**. They are the previous React build's Shopify

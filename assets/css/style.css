@@ -322,7 +322,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .np__logo img{ max-width:158px; width:auto; height:auto; object-fit:contain; }
 .np__logo .plogo--technoflow{ max-height:19px; }
 .np__logo .plogo--ditos{ max-height:33px; }
-.np__logo .plogo--ditom{ max-height:23px; }
+.np__logo .plogo--ditom{ max-height:18px; }
 .np__logo .plogo--truevisual{ max-height:21px; }
 .np__card figcaption{
   font-family:var(--f2);
@@ -438,6 +438,18 @@ ul{ margin:0; padding:0; list-style:none; }
   line-height:1.75;
   letter-spacing:-0.32px;
   color:#fff;
+}
+
+.hero__note{
+  max-width:470px;
+  padding-left:14px;
+  border-left:2px solid var(--teal);
+  font-family:var(--f2);
+  font-weight:400;
+  font-size:clamp(13px,1.05vw,15px);
+  line-height:1.65;
+  letter-spacing:-0.2px;
+  color:var(--silver);
 }
 
 .hero__cta{ padding-top:clamp(10px,2.4vh,24px); }
@@ -753,7 +765,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .plogo{ width:auto; height:auto; object-fit:contain; max-width:78%; }
 .plogo--technoflow{ max-height:34px; }
 .plogo--ditos{ max-height:60px; }
-.plogo--ditom{ max-height:42px; }
+.plogo--ditom{ max-height:32px; }
 .plogo--truevisual{ max-height:38px; }
 
 /* hover reveals the brief description and prompts the click-through */
@@ -1351,6 +1363,7 @@ html.smooth body{ overscroll-behavior-y:none; }
 .is-ready [data-hero="1"]{ transition-delay:.05s; }
 .is-ready [data-hero="2"]{ transition-delay:.15s; }
 .is-ready [data-hero="3"]{ transition-delay:.25s; }
+.is-ready .hero__note[data-hero]{ transition-delay:.3s; }
 .is-ready [data-hero="4"]{ transition-delay:.35s; }
 .is-ready [data-hero="5"]{ transition-delay:.20s; }
 
