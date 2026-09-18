@@ -1,0 +1,103 @@
+import os, re, sys, html, json
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from cases import CASES
+from blog import POSTS
+
+# Writes chat-worker/src/knowledge.js: everything Techno AI is allowed to say.
+# Built from the site's own copy plus chat-worker/qa.md, so re-run this after
+# changing the site or the Q&A sheet, then redeploy the Worker.
+#
+# Kept short on purpose: the whole file rides along with every chat turn, and
+# every token of it counts against the free daily allowance.
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+def clean(s):
+    s = re.sub(r'<[^>]+>', '', s)
+    return html.unescape(s).replace('&amp;', '&').strip()
+
+def qa():
+    path = os.path.join(ROOT, "chat-worker", "qa.md")
+    text = open(path, encoding="utf-8").read()
+    # drop the instructions comment at the top of the sheet
+    return re.sub(r'(?s)<!--.*?-->', '', text).strip()
+
+COMPANY = """\
+# Technoboost
+Legal name: Technoboost Services Pvt. Ltd. Website: technoboostservices.com
+CEO & Founder: Puneet Parakh.
+Head office: 24, 2nd Floor, Shree Durga Arcade, 1st Cross Rd, Kasavanahalli, Bengaluru, India.
+Email: contactus@technoboost.in. Contact form: [contact form](index.html#contact).
+Careers: send details and CV through Careers in the site footer, or email contactus@technoboost.in.
+Pages you can link to: [about](index.html#about), [services](index.html#services),
+[products](index.html#products), [case studies](index.html#case-studies), [blog](blog.html),
+[contact form](index.html#contact), [privacy policy](privacy-policy.html).
+
+What we are: we build software around how a business actually works. We start with the
+operation, not the technology, then design, automate and engineer the system around it.
+AI is one of the tools we build with, not the pitch: it shows up where it removes real work
+(extraction, approvals, assistants). We work across retail, warehousing, healthcare
+workflows and manufacturing, for startups through to enterprises.
+
+# Services (six areas)
+- Product engineering: one product team from discovery through production. UX/UI, frontend,
+  backend, mobile, cloud-ready architecture. Custom product development, web & mobile apps,
+  UX/UI & design systems.
+- E-commerce & ERP platforms: storefront and back-office ERP on the same stock, pricing and
+  order truth. Ecommerce platforms, Shopify implementation, ERP, POS & store systems,
+  inventory & warehouse.
+- AI & automation: automation around real business rules, approvals, exceptions,
+  integrations and human handoffs. Workflow automation, AI extraction & assistants, RAG.
+- Data & analytics: data engineering and BI (Power BI, Tableau) connected to the systems
+  that create the data. Live insight instead of spreadsheet assembly.
+- Smartsheet solutions: approvals, status-driven operations, process orchestration,
+  cross-system integrations.
+- Process & project consulting: process assessment, redesign, digitisation roadmaps, Agile
+  delivery. Understand first, design second, build third.
+
+# How we work
+Understand the operation, find the friction, design the system, build intelligently,
+launch into reality, keep improving (measure, learn, refine, scale). Design stays on the
+team through delivery and after launch. Support runs 24/7.
+
+# Products (our own)
+- DiTOS, retail: POS, inventory, ecommerce, purchasing, staff and analytics with real-time
+  sync. [ditos.io](https://ditos.io/)
+- DiTOM, manufacturing: products, BOMs, raw materials, production planning, factory
+  execution and inventory. [ditom.io](https://ditom.io/)
+- TrueVisual, advertising inventory lifecycle from discovery and reservation to execution
+  and compliance monitoring. [truevisual.io](https://truevisual.io/)
+- Technoflow, automated workflow builder for business rules, responsibilities and real-time
+  execution monitoring. [technoflow.io](https://technoflow.io/)
+"""
+
+def cases():
+    out = ["# Case studies (clients are never named, only described)"]
+    for c in CASES:
+        facts = "; ".join("%s: %s" % (clean(k), clean(v)) for k, v in c["facts"])
+        built = []
+        for b in c["blocks"]:
+            if b.get("kind") == "grid" and "built" in b.get("eyebrow", "").lower():
+                built = [clean(t) for t, _ in b["items"]]
+        line = "- [%s](%s.html) %s %s" % (clean(c["title"]).rstrip("."), c["slug"], clean(c["lead"]), facts + ".")
+        if built:
+            line += " Built: " + ", ".join(built) + "."
+        out.append(line)
+    return "\n".join(out)
+
+def posts():
+    out = ["# Blog ([all articles](blog.html))"]
+    for p in POSTS:
+        out.append("- [%s](%s.html) %s" % (clean(p["title"]), p["slug"], clean(p["dek"])))
+    return "\n".join(out)
+
+def build():
+    text = "\n\n".join([COMPANY.strip(), cases(), posts(), "# Approved answers\n" + qa()])
+    dest = os.path.join(ROOT, "chat-worker", "src", "knowledge.js")
+    open(dest, "w", encoding="utf-8").write(
+        "// Generated by notes/build/build_chat_knowledge.py. Do not edit by hand.\n"
+        "export const KNOWLEDGE = " + json.dumps(text, ensure_ascii=False) + ";\n")
+    print("wrote chat-worker/src/knowledge.js", len(text), "chars, about", len(text) // 4, "tokens")
+
+if __name__ == "__main__":
+    build()

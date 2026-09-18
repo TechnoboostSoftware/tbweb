@@ -36,6 +36,7 @@ SHELL = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/chat.css">
 </head>
 <body class="page-legal">
 
@@ -86,6 +87,7 @@ SHELL = """<!DOCTYPE html>
 {banner}
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/chat.js"></script>
 </body>
 </html>
 """

@@ -97,7 +97,7 @@
 
     window.addEventListener('wheel', function (e) {
       if (e.ctrlKey) return;                                  // pinch-zoom
-      if (e.target.closest && e.target.closest('.main-nav__dropdown, .modal')) return;
+      if (e.target.closest && e.target.closest('.main-nav__dropdown, .modal, .chat-panel')) return;
       e.preventDefault();
       target = Math.min(Math.max(target + e.deltaY, 0), max());
       start();
@@ -593,6 +593,9 @@
       return ok;
     });
   }
+
+  // the chat widget sends its enquiries through exactly the same path
+  window.technoboost = { postMail: postMail, line: line };
 
   /* Resume upload ---------------------------------------------------------
      The mail service cannot carry an attachment, so the file goes to a Drive

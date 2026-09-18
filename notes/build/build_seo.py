@@ -156,7 +156,8 @@ def head_block(fn, m):
 import hashlib
 def _digest(rel):
     return hashlib.sha1(open(os.path.join(ROOT, rel), "rb").read()).hexdigest()[:10]
-ASSET_VERSIONS = {rel: _digest(rel) for rel in ("assets/css/style.css", "assets/js/main.js")}
+ASSET_VERSIONS = {rel: _digest(rel) for rel in ("assets/css/style.css", "assets/js/main.js",
+                                                      "assets/css/chat.css", "assets/js/chat.js")}
 
 def stamp_assets(html):
     for rel, v in ASSET_VERSIONS.items():

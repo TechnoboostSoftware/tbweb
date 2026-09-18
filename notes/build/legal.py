@@ -11,7 +11,7 @@ BRAND    = "Technoboost"
 EMAIL    = "contactus@technoboost.in"
 ADDRESS  = ("24, 2nd Floor, Shree Durga Arcade, 1st Cross Rd, "
             "Kasavanahalli, Bengaluru, Karnataka, India")
-UPDATED  = "18 August 2026"
+UPDATED  = "18 September 2026"
 SITE     = "technoboostservices.com"
 
 PAGES = [
@@ -45,6 +45,11 @@ dict(
       "address and whatever you write in the message field.",
       "<strong>Job applications.</strong> Your name, email address, phone number, the "
       "position you are applying for, your CV and your cover letter, if you include one.",
+      "<strong>Techno AI chat.</strong> What you type to the assistant is sent to "
+      "generate a reply and is not stored by us; the conversation stays in your browser "
+      "tab and clears when you close it. If you choose to send your details to the team, "
+      "we receive your name, email, optional company and phone, what you need, and the "
+      "conversation, exactly as shown on the card before you tap Send.",
       "<strong>Email you send us directly.</strong> Anything in a message you write to our "
       "published address.",
     ]),
@@ -79,6 +84,10 @@ dict(
       "<strong>Google Fonts</strong>, which serves the two typefaces this site uses. Your "
       "browser requests those font files directly from Google, which means Google receives "
       "your IP address as part of that request. Google Fonts sets no cookies.",
+      "<strong>Cloudflare</strong>, which runs the Techno AI chat assistant. It processes "
+      "your chat messages to produce each reply, and its Turnstile check receives your IP "
+      "address to confirm you are a person. Cloudflare does not use chat content to train "
+      "models, and Turnstile sets no cookies.",
       "<strong>Our form spam check</strong>, which confirms a submission came from a person "
       "rather than a script. Where the provider sets cookies it is loaded only with your "
       "consent, and it receives your IP address and interaction with the challenge. See the "
@@ -252,6 +261,13 @@ dict(
            "third party's behalf. It stays on your device, is never sent to us, and "
            "clearing your browsing data removes it. To change your mind, clear site "
            "data for this domain and the banner will ask again."),
+
+    ("h2", "The Techno AI chat"),
+    ("p",  "The chat assistant sets no cookies. While a conversation is open, it is kept "
+           "in your browser's session storage so it follows you from page to page; closing "
+           "the tab clears it. Whether you muted its sounds is remembered in local storage. "
+           "Neither is sent to us. Cloudflare's Turnstile check, which confirms you are a "
+           "person before the first reply, sets no cookies either."),
 
     ("h2", "Server logs"),
     ("p",  "Our hosting provider keeps standard web server logs: IP address, browser type, "
