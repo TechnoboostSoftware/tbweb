@@ -414,6 +414,7 @@
       id = window.turnstile.render(slot, {
         sitekey: TURNSTILE_SITEKEY,
         appearance: 'interaction-only',
+        theme: 'light',
         size: 'flexible',
         callback: function (t) { slot.classList.remove('is-asking'); settle(t); },
         'before-interactive-callback': function () { slot.classList.add('is-asking'); },

@@ -112,6 +112,7 @@ body.chat-open .call-badge{ opacity:0 !important; pointer-events:none; transform
   flex:1 1 auto;
   font-weight:700; font-size:16px; line-height:28px; letter-spacing:-.32px;
   color:var(--chat-ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;
 }
 .chat-close,
 .chat-new,
@@ -312,7 +313,7 @@ body.chat-open .call-badge{ opacity:0 !important; pointer-events:none; transform
 /* Turnstile stays out of sight unless Cloudflare needs a click */
 .chat-turnstile{ position:relative; z-index:3; padding:0 16px; background:#fff; }
 .chat-turnstile:not(.is-asking){ height:0; overflow:hidden; }
-.chat-turnstile.is-asking{ padding-top:6px; }
+.chat-turnstile.is-asking{ padding-top:6px; overflow-x:auto; }
 
 /* ---------------------------------------------------------------- composer */
 .chat-composer{
