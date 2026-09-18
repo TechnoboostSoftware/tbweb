@@ -177,7 +177,7 @@
     root.classList.add('is-open');
     document.body.classList.add('chat-open');
     launcher.setAttribute('aria-expanded', 'true');
-    if (!greeted) { greeted = true; turnstile.load(); if (history.length) restore(); else greet(); }
+    if (!greeted) { greeted = true; if (!session) turnstile.load(); if (history.length) restore(); else greet(); }
     setTimeout(function () { input.focus({ preventScroll: true }); }, reduced ? 0 : 260);
   }
   function close() {
@@ -407,44 +407,68 @@
      first reply the Worker's session token stands in for it. */
   var turnstile = (function () {
     var slot = root.querySelector('.chat-turnstile');
-    var id = null, token = '', waiting = [];
-    function settle(t) { token = t || ''; var w = waiting; waiting = []; w.forEach(function (fn) { fn(token); }); }
+    var box = document.createElement('div');
+    slot.innerHTML = '<p class="chat-turnstile__hint">Quick check before I answer: tick the box below.</p>';
+    slot.appendChild(box);
+    var id = null, token = '', waiting = [], lastError = '';
+
+    // a token goes to exactly one waiter, or is kept for the next one
+    function give(t) {
+      if (waiting.length) waiting.shift()(t);
+      else token = t;
+    }
     function render() {
       if (id !== null || !window.turnstile) return;
-      id = window.turnstile.render(slot, {
+      id = window.turnstile.render(box, {
         sitekey: TURNSTILE_SITEKEY,
         appearance: 'interaction-only',
         theme: 'light',
         size: 'flexible',
-        callback: function (t) { slot.classList.remove('is-asking'); settle(t); },
-        'before-interactive-callback': function () { slot.classList.add('is-asking'); },
+        callback: function (t) { slot.classList.remove('is-asking'); lastError = ''; give(t); },
+        'before-interactive-callback': function () { slot.classList.add('is-asking'); toBottom(true); },
+        'after-interactive-callback': function () { slot.classList.remove('is-asking'); },
         'expired-callback': function () { token = ''; },
-        'error-callback': function () { settle(''); }
+        'error-callback': function (code) {
+          lastError = String(code || 'error');
+          if (window.console) console.warn('[techno-ai] Turnstile error', lastError);
+          var w = waiting; waiting = [];
+          w.forEach(function (fn) { fn(''); });
+          return true;                       // handled: no console noise from Cloudflare
+        }
       });
     }
+    function load() {
+      if (window.turnstile) { render(); return; }
+      if (document.querySelector('script[data-chat-turnstile]')) return;
+      var tag = document.createElement('script');
+      tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      tag.async = true; tag.defer = true;
+      tag.setAttribute('data-chat-turnstile', '');
+      tag.onload = render;
+      document.head.appendChild(tag);
+    }
     return {
-      load: function () {
-        if (session || window.turnstile || document.querySelector('script[data-chat-turnstile]')) { render(); return; }
-        var tag = document.createElement('script');
-        tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-        tag.async = true; tag.defer = true;
-        tag.setAttribute('data-chat-turnstile', '');
-        tag.onload = render;
-        document.head.appendChild(tag);
-      },
-      // a fresh single-use token, or '' if none arrives in time
+      load: load,
+      // A fresh single-use token. Waits as long as a person might need to
+      // tick the box; resolves '' on an error or after two minutes.
       take: function () {
         return new Promise(function (resolve) {
           if (token) { var t = token; token = ''; resolve(t); return; }
-          waiting.push(resolve);
-          if (id === null) turnstile.load();
-          setTimeout(function () { settle(''); }, 20000);
+          var done = false;
+          function once(t) { if (!done) { done = true; resolve(t); } }
+          waiting.push(once);
+          load();
+          // a token already used, or an earlier error: ask for a new one
+          if (id !== null && window.turnstile && !slot.classList.contains('is-asking')) {
+            try { window.turnstile.reset(id); } catch (e) {}
+          }
+          setTimeout(function () {
+            waiting = waiting.filter(function (fn) { return fn !== once; });
+            once('');
+          }, 120000);
         });
       },
-      reset: function () {
-        token = '';
-        if (id !== null && window.turnstile) window.turnstile.reset(id);
-      }
+      get error() { return lastError; }
     };
   })();
 
@@ -483,12 +507,15 @@
             if (res.lead && lead === res.lead) leadCard(lead);
           });
         });
-    }).catch(function () {
+    }).catch(function (err) {
       history.pop();                         // let them ask the same thing again
       save();
       return done().then(function () {
         root.classList.remove('is-thinking');
         mood('idle');
+        if (err && err.challenge) {
+          return addAI("I couldn't confirm you're a person just now. Please send your message again, and tick the box if one appears. You can also write to [" + MAIL_TO + '](mailto:' + MAIL_TO + ').');
+        }
         return addAI('Something went wrong on my side. Try again in a moment, or write to [' + MAIL_TO + '](mailto:' + MAIL_TO + ').');
       });
     }).then(function () {
@@ -510,18 +537,22 @@
     });
   }
 
+  function withToken() {
+    return turnstile.take().then(function (t) { return post({ turnstile: t }); });
+  }
+
   function answer() {
     // no session yet (or it lapsed): prove we're human first
-    var first = session ? post({}) : turnstile.take().then(function (t) { return post({ turnstile: t }); });
-    return first.then(function (j) {
+    return (session ? post({}) : withToken()).then(function (j) {
       if (j.challenge) {
+        if (window.console) console.warn('[techno-ai] check failed', j.codes, turnstile.error);
         session = '';
-        turnstile.reset();
-        return turnstile.take().then(function (t) { return post({ turnstile: t }); });
+        return withToken();
       }
       return j;
     }).then(function (j) {
       if (j.session) session = j.session;
+      if (j.challenge) { var e = new Error('challenge'); e.challenge = true; throw e; }
       if (!j.reply) throw new Error('chat ' + j.status);
       return j;
     });
